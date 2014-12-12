@@ -93,7 +93,11 @@ Now let's try to download an image using the ```docker pull``` command:
 
 You'll see that Docker starts downloading a Docker image, this specific one is a base Ubuntu image. We'll try other images with more applications later.
 
-When download is complete, you can run this image like this:
+When download is complete, your "Hello World" with Docker command looks something like this:
+
+```docker run ubuntu echo hello world```
+
+You can run other commands or invoke a bash shell like this:
 
 ```docker run -i -t ubuntu /bin/bash```
 
@@ -105,16 +109,37 @@ You'll see that ```-i``` means we'll run this container interactively, and ```-t
 
 This will start the container, giving it its own filesystem, networking etc. and start up a shell for us to rummage around inside the container. Pretty cool!
 
-Now that you're in your container, look around abit and run some commands, like ```ifconfig``` and ```ls /```. You can even install applications here, so try to run ```apt-get update``` and then ```apt-get install apache```.
+Now that you're in your container, look around a bit and run some commands, like ```ifconfig``` and ```ls /```. You can even install applications here, so try to run ```apt-get update``` and then ```apt-get install apache2```.
 
-You now have apache running in a container!
+You now have apache running in the container!
 
 To exit the container, there are two options. ```CTRL-d``` exits the shell and shuts down the container. If you want to keep the container running but detach from it, do ```CTRL-p CTRL-q```.
 
 ## Run some simple apps
 
-Add more info here.
+We will run tomcat which a Java based application server. To do this we use the following command.
 
+```docker run -d -p 8888:8080 tomcat:8.0```
+
+The image will be downloaded if required and tomcat will be run in a *deamon* mode.
+
+Now run the following command.
+
+```docker ps```
+
+Which will yield an output that looks something like below (Partial output).
+
+```
+STATUS              PORTS                    NAMES
+Up 17 seconds       0.0.0.0:8888->8080/tcp   romantic_stallman
+```
+Notice that under the PORTS section the port 8888 of the localhost is forwarded to port 8080 of tomcat running in the container.
+
+You can run your apps by pointing your browser to ```localhost:8888``` or you can just verify using the following curl commands.
+
+```curl -L localhost:8888```
+
+```curl -L localhost:8888/examples```
 
 ## Troubleshooting
 
