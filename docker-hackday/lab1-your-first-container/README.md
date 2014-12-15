@@ -145,11 +145,25 @@ You can run your apps by pointing your browser to ```localhost:8888``` or you ca
 
 ## Troubleshooting
 
-If you see:
+#### Environment variables
 
 ```
 $ docker search sensu
 2014/12/12 09:39:42 Cannot connect to the Docker daemon. Is 'docker -d' running on this host?
 ```
-
+<br>
+#### Certificate and Trust Issues
 You probably haven't set the environment variables correctly. See [Lab setup verification](#lab-setup-verification)
+<br>
+<br>
+If you have a problem when running ```docker run``` commands and you are in the EMC corporate network, it is likely that you are running into SSL certificate errors and trust issues.
+
+- Open ```http://gso.corp.emc.com/installupdatedcerts.aspx``` and Download ```EMCs SSL Decryption``` certificate.
+- Convert the certificate to a PEM file with ```openssl x509 -in ~/Downloads/EMC\ SSL.cer -out EMC_SSL.pem```
+- SSH to the Boot2Docker image to place the certificate there since it makes the SSL calls with ```boot2docker ssh```
+- Update the CA certificates files to include this certificate with ```cat EMC_SSL.pem | sudo tee -a /etc/ssl/certs/ca-certificates.crt```
+- Restart the Docker daemon services with ```sudo /etc/init.d/docker restart```
+
+<br><br>
+
+
