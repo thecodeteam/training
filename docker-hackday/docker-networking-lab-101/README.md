@@ -1,32 +1,32 @@
 
 Docker Networking (101) - Dec 2014
 ========================
-
+![alt text][logo]
 [logo]: https://d3oypxn00j2a10.cloudfront.net/0.12.10/img/nav/docker-logo-loggedout.png
 
 ## What you need
-.* **On Mac**
-..* Install Boot2Docker, Virtualbox
-..* https://github.com/boot2docker/osx-installer/releases
-...* ```boot2docker download```
-...* ```boot2docker init```
-...* ```boot2docker up```
-...* ```export DOCKER_HOST=tcp://<VM-IP>:2375```
-...* or ```boot2docker ssh```
+- **On Mac**
+  - Install Boot2Docker, Virtualbox
+  - https://github.com/boot2docker/osx-installer/releases
+  - ```boot2docker download```
+  - ```boot2docker init```
+  - ```boot2docker up```
+  - ```export DOCKER_HOST=tcp://<VM-IP>:2375```
+  - or ```boot2docker ssh```
 
 
 Introduction
 ===============
 
 ### What we will cover:
-.* The Docker Bridge & Veth Pairs
-.* Networking Modes
-.* Containers and IP Addresses
-.* How to Connect Containers
-.* How to Manage Ports
-.* How to Link Containers
-.* How to Create Services Between Containers
-..* Mysql+Flask Example
+- The Docker Bridge & Veth Pairs
+- Networking Modes
+- Containers and IP Addresses
+- How to Connect Containers
+- How to Manage Ports
+- How to Link Containers
+- How to Create Services Between Containers
+  - Mysql+Flask Example
 
 The Docker Bridge & Veth Pairs
 ==============================
@@ -54,6 +54,7 @@ There are various options to change the docker bridge and general docker network
 
 ###### NAT
 See what forwarding rules exists on your Docker-host
+
 ```sudo iptables -t nat -L -n```
 
 ###### V-Eth Pairs
@@ -154,7 +155,7 @@ root@boot2docker:/# ip link
 
 How to Manage Ports
 ===================
-## Docker exposes port managment in two main ways, via the Dockerfile and during runtime.
+Docker exposes port managment in two main ways, via the Dockerfile and during runtime.
 
 ### Dockerfile
 //TOOD
@@ -173,10 +174,10 @@ How to Create Services Between Containers
 Future Networking & Docker Proposals
 ===================================
 
-.* Native Multi-host Networking
-..* https://github.com/docker/docker/issues/8951
-.* Network Drivers
-..* https://github.com/docker/docker/issues/8952
-.* Plugins
-..* https://github.com/docker/docker/pull/8968
+- Native Multi-host Networking
+  - https://github.com/docker/docker/issues/8951
+- Network Drivers
+  - https://github.com/docker/docker/issues/8952
+- Plugins
+  - https://github.com/docker/docker/pull/8968
 
