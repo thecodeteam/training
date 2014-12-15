@@ -11,7 +11,9 @@ Docker Networking (101) - Dec 2014
   - ```boot2docker download```
   - ```boot2docker init```
   - ```boot2docker up```
-  - ```export DOCKER_HOST=tcp://<VM-IP>:2375```
+  - ```export DOCKER_CERT_PATH=/Users/<youruser>/.boot2docker/certs/boot2docker-vm```
+  - ```export DOCKER_TLS_VERIFY=1```
+  - ```export DOCKER_HOST=tcp://<VM-IP>:2376```
   - or ```boot2docker ssh```
 
 
@@ -157,19 +159,83 @@ How to Manage Ports
 ===================
 Docker exposes port managment in two main ways, via the Dockerfile and during runtime.
 
-### Dockerfile
-//TOOD
+###### Dockerfile
+Dockerfile's use ```EXPOSE``` instructions informs Docker that the container will listen on the specified network ports at runtime. Docker uses this information to interconnect containers using links (We'll cover this later). The ```EXPOSE``` instruction allows ports to be exposed in the app, but not to the host, we need to use ```-p``` at runtime for this.
 
-### Runtime
-//TODO
+Lets build a simple application with ```EXPOSE```
+```
+# Version: 0.0.1
+FROM ubuntu:14.04
+MAINTAINER First Last “email@example.com"
+RUN apt-get update
+RUN apt-get install -y nginx
+RUN echo 'Hi, I am in your container' \
+>/usr/share/nginx/html/index.html
+EXPOSE 80
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+CMD ["nginx"]
+```
+
+###### Runtime
+```
+docker build -t expose_demo .
+docker run -d -p 8080:80 --name expose8080 expose_demo
+
+visit: http://<boot2dockervm>:8080
+```
+
+###### The different between ```-p``` and ```-P```
+With ```-p``` you much set ```[ip]:<host-port>:<container-port>[/type]``` and with ```-P``` docker will choose a random port for the ports that you have using ```EXPOSE```
+
+```-p``` gives us the flexibility of different schemas:
+- 5000:5000
+- 127.0.0.1:5000:5000
+- 127.0.0.1:5000:5000/udp
+
+###### Retrieve a bound port with using -P on a specific container.
+```
+docker port <name>
+```
+
 
 How to Link Containers
 ======================
-//TODO
 
-How to Create Services Between Containers
-=========================================
-//TODO
+Containers do not always have to use IP-based ways to communicate, docker has another flag called ```--link``` that allows a way for containers to share data, environment variables, and other resources without tieing IP-based address together.
+```
+--link name:alias
+```
+
+How to Create Services Between Containers using ```--link```
+=============================================================
+
+```
+(Run our docker image that exposed port 80 from before)
+docker run -it -rm --name mycontainter 3b13d0f99031 /bin/bash
+
+(Link web with db using --link)
+docker run -it -P --name web --link mycontainer:mycontainer ubuntu /bin/bash
+
+$env
+
+$cat /etc/hosts
+$ping mycontainer
+```
+
+A Real Example
+```
+docker run -d --name db training/postgres
+
+docker run -d -P --name web --link db:db training/webapp python app.py
+
+docker ps
+CONTAINER ID        IMAGE                      COMMAND                CREATED             STATUS              PORTS                     NAMES
+7343f3c9d585        training/webapp:latest     "python app.py"        2 seconds ago       Up 1 seconds        0.0.0.0:49156->5000/tcp   web
+416d1aee9835        training/postgres:latest   "su postgres -c '/us   11 seconds ago      Up 10 seconds       5432/tcp                  db
+```
+
+What's actually happening is Docker creates a secure tunnel between the containers that doesn't need to expose any ports externally on the container; For instance, we did not need to expose the postgress port externally on the ``db`` container for it to communicate with web. Docker uses environment variables and the /etc/hosts file for expose information.
+
 
 Future Networking & Docker Proposals
 ===================================
