@@ -1,4 +1,4 @@
-# CoreOS and Panamax
+# CoreOS 101
 
 ### Jonas Rosland
 ### Developer Advocate
@@ -6,6 +6,8 @@
 #### jonas.rosland@emc.com
 #### emccode.github.io
 #### December 2014
+
+^ Run this presentation with [Deckset](http://www.decksetapp.com/)
 ---
 
 ## CoreOS
