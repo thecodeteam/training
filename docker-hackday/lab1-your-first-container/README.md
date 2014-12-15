@@ -24,13 +24,13 @@ Run the following commands to validate that your boot2docker installation is cor
   Waiting for VM and Docker daemon to start...
   ...............ooo
   Started.
-  Writing /Users/jonas/.boot2docker/certs/boot2docker-vm/ca.pem
-  Writing /Users/jonas/.boot2docker/certs/boot2docker-vm/cert.pem
-  Writing /Users/jonas/.boot2docker/certs/boot2docker-vm/key.pem
+  Writing /Users/<youruser>/.boot2docker/certs/boot2docker-vm/ca.pem
+  Writing /Users/<youruser>/.boot2docker/certs/boot2docker-vm/cert.pem
+  Writing /Users/<youruser>/.boot2docker/certs/boot2docker-vm/key.pem
 
   To connect the Docker client to the Docker daemon, please set:
   export DOCKER_HOST=tcp://192.168.59.103:2376
-  export DOCKER_CERT_PATH=/Users/jonas/.boot2docker/certs/boot2docker-vm
+  export DOCKER_CERT_PATH=/Users/<youruser>/.boot2docker/certs/boot2docker-vm
   export DOCKER_TLS_VERIFY=1
   ```
 

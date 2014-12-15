@@ -31,5 +31,6 @@ Follow the steps found [here](https://coreos.com/docs/running-coreos/platforms/v
 ## Running containers in CoreOS
 
 Please read the [documentation](https://coreos.com/docs/launching-containers/launching/launching-containers-fleet/) and follow along with the instructor.
+We'll cover running one container in a CoreOS cluster, verify failover functionality, create a multi-container HA setup, and get used to working with so called sidekicks and the etcd service discovery.
 
 ## Troubleshooting
