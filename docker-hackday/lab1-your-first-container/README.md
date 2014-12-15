@@ -13,6 +13,8 @@ Verify that you have the following software installed:
 2. Vagrant
 3. boot2docker
 
+(Sidenote: If you want to get into managing your apps in a more interesting way have a look at [Homebrew](http://brew.sh/) and [Homebrew Cask](http://caskroom.io/) for OS X, and [Chocolatey for Windows](https://chocolatey.org/packages/docker).)
+
 Run the following commands to validate that your boot2docker installation is correct and working:
 
 1. ```boot2docker init```
