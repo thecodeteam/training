@@ -156,6 +156,11 @@ $ docker search sensu
 There are two encryption paths that must be considered.  There is TLS encryption going from the Docker client running on your laptop to the Boot2Docker Docker daemon.  There is also TLS encryption running from the Docker daemon within Boot2Docker to the public Docker Hub/CDN.
 
 If you have problems with your client ther are likely two issues.
+<<<<<<< HEAD
+=======
+
+1. Check that you can reach the Boot2Docker image by checking the IP with ```ping $(Boot2Docker ip)```.  If this doesn't work then you probably need to add a route for the ```192.168.59.x``` traffic to the proper VBoxNet interface.  This issue is caused by Cisco VPN.  Run an ```ifconfig``` to identify which is the proper interface and then run ```sudo route -n add -net 192.168.59.0/24 -interface vboxnetX``` for the proper interface.
+>>>>>>> master
 
 1. Check that you can reach the Boot2Docker image by checking the IP with ```ping $(Boot2Docker ip)```.  If this doesn't work then you probably need to add a route for the ```192.168.59.x``` traffic to the proper VBoxNet interface.  This issue is caused by Cisco VPN.  Run an ```ifconfig``` to identify which is the proper interface and then run ```sudo route -n add -net 192.168.59.0/24 -interface vboxnetX``` for the proper interface.
 >As a side note, you can communicate to the Boot2Docker image via a ```NAT``` and ```BRIDGED``` method.  The ```NAT``` method means that you can leverage the ```127.0.0.1``` address of your laptop and it forwards appropriate ports to a static IP of Boot2Docker.  The method we were describing before that the ```Docker``` client uses is the ```BRIDGED``` mode and uses a ```routed``` IP.
