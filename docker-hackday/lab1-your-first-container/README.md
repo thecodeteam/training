@@ -153,17 +153,17 @@ $ docker search sensu
 ```
 <br>
 #### Certificate and Trust Issues
-There are two encryption paths that must be considered.  There is TLS encryption going from the Docker client running on your laptop to the Boot2Docker Docker daemon.  There is also TLS encryption running from the Docker daemon within Boot2Docker to the public Docker Hub.
+There are two encryption paths that must be considered.  There is TLS encryption going from the Docker client running on your laptop to the Boot2Docker Docker daemon.  There is also TLS encryption running from the Docker daemon within Boot2Docker to the public Docker Hub/CDN.
 
 If you have problems with your client ther are likely two issues.
-1. Check that you can reach the Boot2Docker image by checking the IP with ```ping $(Boot2Docker ip)```.  If this doesn't work then you probably need to add a route for the ```192.168.59.x``` traffic to the proper VBoxNet interface.  This issue is caused by Cisco VPN.  Run an ```ifconfig``` to identify which is the proper interface and then run ```sudo route -n add -net 192.168.59.0/24 -interface vboxnetX``` for the proper interface.
 
-As a side note, you can communicate to the Boot2Docker image via a ```NAT``` and ```BRIDGED``` method.  The ```NAT``` method means that you can leverage the ```127.0.0.1``` address of your laptop and it forwards appropriate ports to a static IP of Boot2Docker.  The method we were describing before that the ```Docker``` client uses is the ```BRIDGED``` mode since it uses a ```routed``` IP.
+1. Check that you can reach the Boot2Docker image by checking the IP with ```ping $(Boot2Docker ip)```.  If this doesn't work then you probably need to add a route for the ```192.168.59.x``` traffic to the proper VBoxNet interface.  This issue is caused by Cisco VPN.  Run an ```ifconfig``` to identify which is the proper interface and then run ```sudo route -n add -net 192.168.59.0/24 -interface vboxnetX``` for the proper interface.
+>As a side note, you can communicate to the Boot2Docker image via a ```NAT``` and ```BRIDGED``` method.  The ```NAT``` method means that you can leverage the ```127.0.0.1``` address of your laptop and it forwards appropriate ports to a static IP of Boot2Docker.  The method we were describing before that the ```Docker``` client uses is the ```BRIDGED``` mode and uses a ```routed``` IP.
 
 2. You probably haven't set the environment variables correctly. See [Lab setup verification](#lab-setup-verification)
 <br>
 <br>
-If you have a problem when running ```docker run``` where it pauses when downloading FS layers and you are in the EMC corporate network, it is likely that you are running into SSL certificate errors and trust issues between the Docker daemon and the public Docker Hub/CDN.  For this you must donwload our SSL certificate and place it on the Boot2Docker image.
+If you have a problem when running ```docker run``` where it pauses when downloading FS layers and you are in the EMC corporate network, it is likely that you are running into SSL certificate errors and trust issues between the Docker daemon and the public Docker Hub/CDN.  For this you must download our SSL certificate and place it on the Boot2Docker image.
 
 - Open ```http://gso.corp.emc.com/installupdatedcerts.aspx``` and Download ```EMCs SSL Decryption``` certificate.
 - Convert the certificate to a PEM file with ```openssl x509 -in ~/Downloads/EMC\ SSL.cer -out EMC_SSL.pem```
@@ -173,6 +173,7 @@ If you have a problem when running ```docker run``` where it pauses when downloa
 
 #### General Troubleshooting
 One way to troubleshoot is to run the Docker daemon manually to see the logs in real-time.  
+
 1. Make to sure SSH to the Boot2Docker image with ```boot2docker ssh```.  
 2. Get the command that we run the Docker daemon with by running ```ps auxfw | grep docker```.  
 3. Stop the Docker daemon with ```/etc/init.d/docker stop```.
