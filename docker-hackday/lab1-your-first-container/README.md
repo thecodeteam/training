@@ -176,9 +176,10 @@ If you have a problem when running ```docker run``` where it pauses when downloa
 One way to troubleshoot is to run the Docker daemon manually to see the logs in real-time.  
 1. Make to sure SSH to the Boot2Docker image with ```boot2docker ssh```.  
 2. Get the command that we run the Docker daemon with by running ```ps auxfw | grep docker```.  
-3. Stop the Docker daemon with ```/etc/init.d/docker stop```. 
-4. Manually run the Docker daemon with the command you found from ```ps``` which should be something similar to ```/usr/local/bin/docker -d -D -g /var/lib/docker -H unix:// -H tcp://0.0.0.0:2376 --tlsverify --tlscacert=/var/lib/boot2docker/tls/ca.pem --tlscert=/var/lib/boot2docker/tls/server.pem --tlskey=/var/lib/boot2docker/tls/serverkey.pem```. 
+3. Stop the Docker daemon with ```/etc/init.d/docker stop```.  
+4. Manually run the Docker daemon with the command you found from ```ps``` which should be something similar to ```/usr/local/bin/docker -d -D -g /var/lib/docker -H unix:// -H tcp://0.0.0.0:2376 --tlsverify --tlscacert=/var/lib/boot2docker/tls/ca.pem --tlscert=/var/lib/boot2docker/tls/server.pem --tlskey=/var/lib/boot2docker/tls/serverkey.pem```.   
 5. Make sure to leave this process ```running``` and open another window for other operations.
+
 
 <br><br>
 
