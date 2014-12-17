@@ -143,6 +143,16 @@ You can run your apps by pointing your browser to ```localhost:8888``` or you ca
 
 ```curl -L localhost:8888/examples```
 
+## Build your own container
+
+Building containers is easy, and we'll show how to by using a Dockerfile.
+
+A Dockerfile is just a simple textfile with information about what to start from (a linux distro usually), what commands to run before it's complete (installing packages and changing configuration files for instance), what port to open and lastly what binary to run.
+
+There are more settings of course, and we'd recommend you to read up on them [here](https://docs.docker.com/).
+
+An easy container to build is the Redis key-value store service. Read through the steps [outlined here](https://docs.docker.com/examples/running_redis_service/).
+
 ## Troubleshooting
 
 #### Environment variables
