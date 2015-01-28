@@ -52,6 +52,8 @@ a distributed version control system, where every user has a complete and full c
 
 if you can't check it in, you can't keep track of it, so you can't version it, so you can't automate it.  *everything* belongs in source code control, and git is the standard in 3rd platform.  other possible options: subversion (svn), mercurial (hg), Perforce (p4), ClearCase (cc).
 
+---
+
 ##GitHub?
 
 A freemium service to host Git repositories (repos).  Public repos are free, private ones are $$$

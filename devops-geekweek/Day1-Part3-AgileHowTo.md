@@ -13,7 +13,11 @@ The Product Owner is responsible for creating a list of things he/she wants done
 
 ---
 
-> At this point, the Product Owner is typically asked to leave while the team decomposes the sprint backlog items into tasks. While the Product Owner is asked to leave so that the team can candidly discuss the work, he or she is still expected to be “on call” to answer questions, clarify acceptance criteria, or renegotiate
+> At this point, the Product Owner is typically asked to leave while the team decomposes the sprint backlog items into tasks.
+
+---
+
+> While the Product Owner is asked to leave so that the team can candidly discuss the work, he or she is still expected to be “on call” to answer questions
 
 ---
 

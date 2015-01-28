@@ -85,7 +85,7 @@ deliver our customers
 
 ---
 
-# Influences On Agile (contd.) Agile Follows Lean Thinking
+# Agile Follows Lean Thinking
 * Add nothing but value (eliminate waste)
 * Flow value from demand (delay commitment)
 * Minimize inventory (minimize intermediate artifacts)
@@ -95,6 +95,8 @@ deliver our customers
 
 # The Agile Manifesto
 
+---
+
 >We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have come to value:
 
 * Individuals and interactions over processes and tools
@@ -102,7 +104,7 @@ deliver our customers
 * Customer collaboration over contract negotiation
 * Responding to change over following a plan.
 
->That is, while there is value in the items on the right, we value the items on the left more.”
+>That is, while there is value in the items on the right, we value the items on the left more.
 
 ---
 
@@ -118,9 +120,6 @@ development.
 * Deliver working software frequently, with a preference to the shorter timescale.
 * Business people and developers must work together throughout the project.
 * Build projects around motivated
-
----
-
 *  individuals. Give them the environment and support they need, and trust them to get the job done.
 * The most efficient and effective method of conveying information is face-to-face conversation.
 
@@ -133,12 +132,10 @@ development.
 
 * Continuous attention to technical excellence and good design enhances agility.
 * Simplicity--the art of maximizing the amount of work not done--is essential.
-
----
-
 * The best architectures, requirements, and designs emerge from self-organizing teams.
 * At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behaviour accordingly.
 
+---
 
 #Agile Project Lifecycle
 ## Timeboxed iterations
@@ -183,6 +180,18 @@ Agile Myths
 
 #Agile Roles
 
-* Product Owner
-* Scrum Master
-* Pigs (Team Members)
+---
+
+Product Owner
+> the one person responsible for a project’s success. The Product Owner leads the development effort by conveying his or her vision to the team, outlining work in the scrum backlog, and prioritizing it based on business value.
+
+---
+
+Scrum Master
+> serves as a facilitator for both the Product Owner and the team. He or she has no management authority within the team and may never commit to work on behalf of the team.
+
+---
+
+Pigs (Team Members)
+
+> those responsible for committing work to the project
