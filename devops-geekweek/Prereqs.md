@@ -5,6 +5,9 @@ Prereqs for the DevOps GeekWeek
 
 List of necessary tools to have installed and required reading material due before the first day of the class.
 
+## Command Line
+ - [Linux/Unix Command Line](https://www.udemy.com/linux-command-line-volume1/)
+
 ## Tools
 
  - [Git](https://help.github.com/articles/set-up-git/)
