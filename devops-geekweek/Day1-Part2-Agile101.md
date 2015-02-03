@@ -2,15 +2,19 @@
 
 > - You can't gather all the requirements up front
 - The requirements you do gather **will** change
-- The is always more to do than time and money will allow
+- There is always more to do than time and money will allow
 
 -- The Agile Samurai, J. Rasmusson
 
+^ Open this presentation with [Deckset](http://www.decksetapp.com/)
+
 ---
 
-> 21% of software projects are considered "failed", 42% "challenged"
+> 18% of software projects are considered "failed", 43% "challenged"
 
---2010 study
+> 39% actually succeeding
+
+-- 2012 study by [The Standish Group](http://www.versionone.com/assets/img/files/CHAOSManifesto2013.pdf)
 
 ---
 
@@ -28,12 +32,16 @@
 ---
 
 # Software Development Methodologies
-* Code-fix” (or no process)
+* "Code-fix” (or no process)
 * Structured, heavy weight methodologies a.k.a.
 “Plan Driven Methodologies” and “Waterfall”
-* Largely influenced by _traditional engineering_ and quality processes in industries
-* Desire to make software development more _predictable, measurable_ and efficient
-* Strong emphas is on _detailed planning_ and then_ executing to the plan_
+
+---
+# Software Development Methodologies (cont)
+
+* Largely influenced by _traditional engineering_ and _quality processes_ in industries
+* Desire to make software development more _predictable_, _measurable_ and _efficient_
+* Strong emphasis on _detailed planning_ and then _executing to the plan_
 
 ---
 
@@ -46,40 +54,41 @@
 ---
 
 # Relevance
-
 ###Heavy weight methodologies are most successful when:
-* Requirements are stable
-* Technology is well known and mature
-* Everything happens as one would expect
-* We are not taking on anything new or unknown
-* Coding is ‘copy and paste’
+
+ - Requirements are stable
+ - Technology is well known and mature
+ - Everything happens as one would expect
+ - We are not taking on anything new or unknown
+ - Coding is ‘copy and paste’
 
 ---
 
->Today, projects with these characteristics are few and far between
+# That's not true for most projects though
 
 ---
 
->Heavy weight methodologies work in some instances, but there are high costs, and the risk in using them in dynamic environments is high
+# Projects with these characteristics are few and far between
+
+Heavy weight methodologies work in some instances, but there are high costs, and the risk in using them in dynamic environments is high.
 
 ---
 
 # Origins Of Agile
 
 ###Agile Methods are a reaction to:
+
 * Rigidity of heavy weight methods
-* Bureaucracy introduced by heavy weight
-methods
-* Unpleasant Surprises due to lack of visibility
-* The myth that a well defined process is more valuable than the people who use it
+* Bureaucracy introduced by heavy weight methods
+* Unpleasant surprises due to lack of visibility
+* **The myth that a well defined process is more valuable than the people who use it**
 
 ---
 
 # Agile Follows Systems Thinking
-* System Thinking is a way of looking how things influence each other as a whole and not as individual parts
+* System Thinking is a way of looking at how things influence each other as a whole and not as individual parts
 * Focus on Flow, not Function
-* Look at the end-to-end process and the value we
-deliver our customers
+* Look at the end-to-end process and the value we deliver to our customers
   * What do our customers value
   * How do we respond to the demands from our customers, as a system
 
@@ -110,30 +119,61 @@ deliver our customers
 
 #12 Principles of Agile
 
-* Our highest priority is to satisfy the customer through early
-and continuous delivery of valuable software.
-* Welcome changing requirements, even late in
-development.
+* Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.
+* Welcome changing requirements, even late in development.
+* Deliver working software frequently, with a preference to the shorter timescale.
 
 ---
 
-* Deliver working software frequently, with a preference to the shorter timescale.
+#12 Principles of Agile (cont)
+
 * Business people and developers must work together throughout the project.
-* Build projects around motivated
-*  individuals. Give them the environment and support they need, and trust them to get the job done.
+* Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.
 * The most efficient and effective method of conveying information is face-to-face conversation.
 
 ---
 
+#12 Principles of Agile (cont)
+
 * Working software is the primary measure of progress.
 * Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.
+* Continuous attention to technical excellence and good design enhances agility.
 
 ---
 
-* Continuous attention to technical excellence and good design enhances agility.
-* Simplicity--the art of maximizing the amount of work not done--is essential.
+#12 Principles of Agile (cont)
+
+* Simplicity - the art of maximizing the amount of work not done - is essential.
 * The best architectures, requirements, and designs emerge from self-organizing teams.
 * At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behaviour accordingly.
+
+---
+
+# Timeboxing
+
+Timeboxing is used as a project planning technique.
+
+The schedule is divided into a number of separate time periods (timeboxes), with each part having its own deliverables, deadline and budget.
+
+---
+
+# Without Timeboxing
+
+Without timeboxing, projects usually work to a fixed scope
+
+When it is clear that some deliverables cannot be completed, either the deadline slips (to allow more time) or more people are involved (to do more in the same time)
+
+Usually both happen, delivery is late, costs go up, and often quality suffers
+
+---
+
+# With Timeboxing
+
+With timeboxing, the deadline is fixed but the scope may be reduced
+
+Work focuses on the most important deliverables
+
+For this reason, timeboxing depends on the prioritization of deliverables to ensure that it is the project stakeholders who determine the important deliverables rather than software developers
 
 ---
 
@@ -143,38 +183,42 @@ development.
 
 ---
 
-#The Basics
+# The Basics
 ![inline](images/basic.png)
 
 ---
 
-#Lifecycle
+# Lifecycle
 
 ![inline](images/showcase.png)
 
 ---
 
-#Iterative
+# Iterative
 
 ![inline](images/iterative.png)
 
 ---
 
-#Incremental
+# Incremental
 
 ![inline](images/incremental.png)
 
 ---
 
-#Agile Myths
+# Minimum Viable Product (MVP)
 
-Agile Myths
+![inline](images/mvp_fail_01.png)
+
+---
+
+# Agile Myths
+
 * No Planning
 * No Documentation
 * Lacks Discipline
 * Limited to Co-Located Teams
 * Open Ended
-
 
 ---
 
@@ -182,16 +226,21 @@ Agile Myths
 
 ---
 
-Product Owner
-> the one person responsible for a project’s success. The Product Owner leads the development effort by conveying his or her vision to the team, outlining work in the scrum backlog, and prioritizing it based on business value.
+# Product Owner
+
+The one person responsible for a project’s success
+
+The Product Owner leads the development effort by conveying his or her vision to the team, outlining work in the scrum backlog, and prioritizing it based on business value
 
 ---
 
-Scrum Master
-> serves as a facilitator for both the Product Owner and the team. He or she has no management authority within the team and may never commit to work on behalf of the team.
+# Scrum Master
+Serves as a facilitator for both the Product Owner and the team
+
+He or she has no management authority within the team and may never commit to work on behalf of the team
 
 ---
 
-Pigs (Team Members)
+# Pigs (Team Members)
 
-> those responsible for committing work to the project
+Those responsible for committing work to the project
