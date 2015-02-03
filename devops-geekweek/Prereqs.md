@@ -16,6 +16,7 @@ List of necessary tools to have installed and required reading material due befo
  - [Boot2Docker](http://boot2docker.io/)
  - [CloudFoundry CLI](http://docs.cloudfoundry.org/devguide/installcf/)
  - [Slack](http://slack.com)
+ - [Google Hangouts](http://hangouts.google.com)
 
 ## Required reading
 
