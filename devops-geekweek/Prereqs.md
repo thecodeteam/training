@@ -13,7 +13,8 @@ List of necessary tools to have installed and required reading material due befo
  - [Boot2Docker](http://boot2docker.io/)
  - [CloudFoundry CLI](http://docs.cloudfoundry.org/devguide/installcf/)
  - [Slack](http://slack.com)
-
+ - [Trello](http://trello.com)
+ 
 ## Required reading
 
  - [The Twelve-Factor App](http://12factor.net/)
