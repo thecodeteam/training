@@ -5,6 +5,9 @@ Prereqs for the DevOps GeekWeek
 
 List of necessary tools to have installed and required reading material due before the first day of the class.
 
+## Command Line
+ - [Linux/Unix Command Line](https://www.udemy.com/linux-command-line-volume1/)
+
 ## Tools
 
  - [Git](https://help.github.com/articles/set-up-git/)
@@ -14,7 +17,8 @@ List of necessary tools to have installed and required reading material due befo
  - [CloudFoundry CLI](http://docs.cloudfoundry.org/devguide/installcf/)
  - [Slack](http://slack.com)
  - [Trello](http://trello.com)
- 
+ - [Google Hangouts](http://hangouts.google.com)
+
 ## Required reading
 
  - [The Twelve-Factor App](http://12factor.net/)
