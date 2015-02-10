@@ -232,15 +232,21 @@ The one person responsible for a project’s success
 
 The Product Owner leads the development effort by conveying his or her vision to the team, outlining work in the scrum backlog, and prioritizing it based on business value
 
+Determines what needs to be built in 30 days or less
+
+---
+
+# Development Teams
+
+Those responsible for committing work to the project
+
+Builds what is needed in 30 days or less and then demos it
+
+Based on the demo the Product Owner determines what to build next
+
 ---
 
 # Scrum Master
 Serves as a facilitator for both the Product Owner and the team
 
 He or she has no management authority within the team and may never commit to work on behalf of the team
-
----
-
-# Pigs (Team Members)
-
-Those responsible for committing work to the project
