@@ -150,7 +150,7 @@ What happens?
 
 ---
 
-# If a Pull Request is alright, it can then be merged
+## If a Pull Request is alright, it can then be merged
 
 ---
 
@@ -166,6 +166,28 @@ What happens?
 
 ---
 
+# Why use a branch?
+
+Create a branch for every new feature or bugfix
+
+Keeps the "master" clean and with only working code
+
+You can then pull in fixes and features to the master when they're complete
+
+And then create new releases such as v1.1 or v20150215 from master
+
+---
+
+# Releases are stable
+
+Use releases to make it easy for the community to use stable code
+
+![inline,75%](https://camo.githubusercontent.com/9f23f54df9e2f69047fb0f9f80b2e33c8339606f/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f32312f3733373136362f62643163623637652d653332392d313165322d393064312d3361656365653930373339662e6a7067)
+
+---
+
+# Create a new branch
+
 ```git branch new-feature```
 
 ![inline](images/github_new_branch.png)
@@ -174,7 +196,7 @@ What happens?
 
 # Switch to your branch
 
-```git check new-feature```
+```git checkout new-feature```
 
 ---
 
@@ -206,4 +228,4 @@ Now go look at that branch up on GitHub
 
 ---
 
-# You can now create a pull request from that branch!
+## You can now create a pull request from that branch!
