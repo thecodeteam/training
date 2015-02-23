@@ -22,7 +22,7 @@ Participants should:
 
 * Be able to commit fully to the program, for the entire duration with at least 75% of their time each day.  This is a critical, hard requirement to experience the course material as designed.
 * Have a basic understanding of virtualization, database, systems and storage concepts at a 101 level (Any EMC SE beyond Associate should be at this level).
-* Be able to *read* (writing not required) very basic code in at least one language.  For example, be able to understand [whats happening in the following Task in at least one language at Rosetta Code](http://rosettacode.org/wiki/Read_a_file_line_by_line). This course is not focused on significant development, but some basic familiarity is important.
+* Be able to *read* (writing not required) very basic code in at least one language.  For example, be able to understand [whats happening in the following Task in at least one language at Rosetta Code](http://rosettacode.org/wiki/Read_a_file_line_by_line). This course is not focused on significant development, but some basic familiarity is important.  Much of the code we will be reviewing will be written in Python, so if you want to get familiar, that would be a good place to start: [Python @ CodeAcademy](http://www.codecademy.com/en/tracks/python) - everything up until the "Advanced Python" section will be useful.
 
 Before you come to the class you must have completed **all** the instructions in the [prerequisites](Prereqs.md).
 
