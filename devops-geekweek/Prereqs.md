@@ -21,7 +21,7 @@ List of necessary tools to have installed and required reading material due befo
 
 ## Required reading
 
- - [The Twelve-Factor App](http://12factor.net/)
+ - [The Twelve-Factor App](http://12factor.net/) (all the in depth pages, not just the home page)
 
 ## Recommended reading
 
