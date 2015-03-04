@@ -1,4 +1,5 @@
-# Modern communication and collaboration tools
+# Modern DevOps-style communication and collaboration tools
+## 2015 Q2 EMC Accreditation
 ## Jonas Rosland & Matt Cowger
 
 ---
@@ -18,9 +19,13 @@
 # Let's start with email
 
 Multitasking with email may seem like it's productive but it's mostly distracting
+
 Email takes up around 28% of the average desk worker’s day
+
 It's been estimated to take up to an average of 23 minutes to get back to the task at hand
+
 Sometimes you forget to answer an email and it will frustrate the sender
+
 Reply-All...
 
 ![right fit](http://images.huffingtonpost.com/2014-10-06-IMG_3930.PNG)
@@ -30,6 +35,7 @@ Reply-All...
 # Phone calls
 
 Can sometimes be very distracting, both to you and the people around you
+
 1-to-1 communication is great for certain things, but useless for team communication
 
 ![inline bottom, 120%](http://www.blogcdn.com/jobs.aol.com/articles/media/2012/11/frustrated-woman-phone-620jt111212.jpg)
@@ -39,19 +45,29 @@ Can sometimes be very distracting, both to you and the people around you
 # Modern tools
 
 Modern tools are allowing for semi-synchronous communication and collaboration
+
 Across regions and timezones
+
 Answering something in a chat is faster than an email
+
 Visualizing tasks are better than having them in an out-of-date spreadsheet
 
 ![right fit](http://i.huffpost.com/gen/1569428/thumbs/o-HAPPY-PEOPLE-facebook.jpg)
 
 ---
 
+# Examples
+
+---
+
 # Slack
 
 A great communication tool with powerful features
+
 Everything in one place, instantly searchable, available wherever you go
+
 Makes team and organization communication visible and more productive
+
 Makes on-boarding easy since new members of a team can see all the previous discussions
 
 ![right fit](http://www5.pcmag.com/media/images/396209-slack-apps.jpg?thumb=y)
@@ -61,7 +77,9 @@ Makes on-boarding easy since new members of a team can see all the previous disc
 # HipChat
 
 Group and private chat with many integrations
+
 Has built in video calling, screen sharing and are more focused on enterprise
+
 Available on all platforms, work from anywhere
 
 ![right fit](https://dc080p1pxrpu1.cloudfront.net/screenshots/14450/optimal.png)
@@ -71,9 +89,12 @@ Available on all platforms, work from anywhere
 # Trello
 
 A digital *kanban* board
-Visualizing tasks
 
-![right fit](https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/fb4de993e22034b76539da073ea8d35c/home-hero.png)
+Able to visualize tasks
+
+No longer stuck with crusty old spreadsheets
+
+![right fit, 80%](https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/fb4de993e22034b76539da073ea8d35c/home-hero.png)
 
 ---
 
@@ -97,7 +118,8 @@ Example: You're tagged in a picture on Facebook, automatically store that pictur
 # Zapier
 
 Professional integration and automation tool
-Similar to IFTTT but for professional applications such as KnackHQ, Slack, Basecamp, Trello, etc
+
+Similar to IFTTT but for professional applications such as Slack, Basecamp, Trello, Evernote, OneDrive, etc
 
 ![inline 60%](http://webtoolswiki.com/wp-content/uploads/2014/05/Screen-shot-2012-06-20-at-3.55.05-PM.png)
 
@@ -105,13 +127,34 @@ Similar to IFTTT but for professional applications such as KnackHQ, Slack, Basec
 
 # ChatOps
 
+---
+
+# Team collaboration in chat rooms
+
 Team members type commands into a chat room, a chat bot then executes those commands
+
 Commands can range from deployments to security event responses to team notifications
+
 The entire team collaborates in real-time
 
-Examples:
-Hubot
-Lita
-Err
-
 ![right fit](https://octodex.github.com/images/hubot.jpg)
+
+---
+
+# Summary
+
+Use more efficient tools
+
+For both personal and professional tasks
+
+Don't use email
+
+---
+
+Further reading
+
+[Slack](http://slack.com)
+[HipChat](http://hipchat.com)
+[Trello](http://trello.com)
+[IFTTT](http://ifttt.com)
+[Zapier](http://zapier.com)
