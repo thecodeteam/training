@@ -1,6 +1,22 @@
 # Infrastructure As Code
-
+## 2015 Q2 EMC Accreditation
 ## Jonas Rosland & Matt Cowger
+
+---
+
+# What do we define as infrastructure?
+
+---
+
+![fit](images/what-is-infra.001.png)
+
+---
+
+![fit](images/what-is-infra.002.png)
+
+---
+
+![fit](images/what-is-infra.003.png)
 
 ---
 
@@ -12,81 +28,106 @@
 
 ---
 
-# Why should you care? (1/2)
+# How do we do this?
 
- - Accelerate push-to-production demands
-  - No more waiting up to 6 months for a change
- - Enhance customer satisfaction
-  - Real end-user experience monitoring
- - Solve configuration drift issues
-  - Dev should look like Test which looks like Production
+ - Desired state specified in text files
+ - Autonomic (self-corrects to desired state)
+ - State should be known through monitoring
+ - Remove snowflake servers
 
 ---
 
-# Why should you care? (2/2)
+# Simple example
 
- - Detect incidents correctly
-  - Know exactly what's wrong, where and why
- - Resolve problems faster
-  - With correct deployment procedures, changes can be pushed out within minutes
-
----
-
-# We start with infrastructure automation
-
-- vCloud Automation Center
-- Mirantis Fuel
-
-or
-
-- vCloud Air
-- Amazon Web Services
-- Rackspace Cloud
-and many more
-
-![right](http://www.exacttarget.com/blog/wp-content/uploads/2014/06/automation_2_w10241.jpeg)
+```
+node 'www2' {
+  class { 'apache': }             # use apache module
+  apache::vhost { 'awesomewebsite.com':  # define vhost resource
+    port    => '80',
+    docroot => '/var/www/html'
+  }
+}
+```
 
 ---
 
-# Configuration management
+# Change root password
 
-- Puppet
-- Chef
-- Ansible
-- SaltStack
-- CFEngine
-
-![right fit](https://puppetlabs.com/wp-content/uploads/2012/03/PL_dataflow_notitle.png)
-
----
-
-# Deployment Automation
-
-- Cloud Foundry
-- Jenkins
-- Travis
-- Fabric
-- Capistrano
+```
+user { root:
+  ensure   => present,
+  password => '$ecretP@ssw0rd',
+}
+```
 
 ---
 
-# Containers
-
-- Docker
-- Framework for app container management
-- Huge community built
-- Others: Rocket, LXC
-
-![right, 60%](https://d3oypxn00j2a10.cloudfront.net/0.14.4/images/pages/brand_guidelines/small_v.png)
+![fit](https://puppetlabs.com/wp-content/uploads/2012/03/PL_dataflow_notitle.png)
 
 ---
 
-# Log management
+![fit](http://upload.wikimedia.org/wikipedia/commons/1/19/SDLC_-_Software_Development_Life_Cycle.jpg)
 
-- Splunk
-- LogStash
-- LogInsight
-- Loggly
-- SumoLogic
+---
 
-![right fit](http://docs.splunk.com/images/8/81/VisualizationExamples.png)
+> Manually configured environments are like a house of cards in a china shop
+-- Neal Ford
+
+---
+
+# Snowflake servers
+
+Deploying, provisioning and scaling automatically is virtually impossible if every server is unique
+
+Adds friction between the requestor and the deployer
+
+Mistakes happen
+
+We're all human
+
+---
+
+# What can happen if you don't treat infrastructure as code?
+
+---
+
+# Knight Capital Group
+
+![inline](https://infocus.emc.com/wp-content/uploads/2012/08/KCG.jpg)
+
+---
+
+# Knight Capital Group - What happened?
+
+Manual deployment of new trading software
+
+7 of 8 servers correctly updated
+
+## Old function still alive on the 8th server led to
+# $440 million loss in 45 minutes
+
+---
+
+# Treat your infrastructure as code
+
+---
+
+# Benefits
+
+Self documenting infrastructure
+
+You now have source code for how anything in your datacenter is setup
+
+**Executable documentation**
+
+---
+
+Further reading:
+
+[PuppetLabs](http://puppetlabs.com)
+
+[Vagrant](http://vagrantup.com)
+
+[Docker](http://docker.com)
+
+[Infrastructure as Code: A reason to smile](http://www.thoughtworks.com/insights/blog/infrastructure-code-reason-smile)
