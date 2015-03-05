@@ -1,3 +1,5 @@
+(open this document in stackedit.io to see the diagrams rendered)
+
 #System Design for Project Vasco da Gama
 
 ##Data Collection:
@@ -33,11 +35,25 @@ note over Dashboard App: Some internal cleanup of the data
 Dashboard App->Redis RQ: Here's some data to post to Freeboard.io
 Redis RQ-->Dashboard App: Understood and stored.
 Dashboard Worker->Redis RQ: Do I have any work to post?
-Redis RQ-> Dashboard Worker: Sure, here you go.
+Redis RQ--> Dashboard Worker: Sure, here you go.
 Dashboard Worker->Freeboard: Here's some metrics, buddy
-Dashboard Worker->Redis RQ: I'm done
+Dashboard Worker-->Redis RQ: I'm done
 Note over Dashboard App: Sleep 10 seconds and repeat
 ```
+
+##UI Visualization
+```sequence
+User->UI: GET /
+UI->Redis: Give me 100 random keys from the database.
+Redis-->UI: Here!
+UI->Redis: For each one of these keys, gimme the URL
+Redis-->UI: Here!
+UI->User: Here's a page, with 100 URLs filled in.
+User->ViPR Object: Gimme these images
+ViPR Object-->User: Here they are
+Note over User: Gasp!  Its beautiful!
+```
+
 
 ##Scaling Controller
 ```sequence
