@@ -16,6 +16,8 @@
 
 ---
 
+# How bad is it?
+
 > 18% of software projects are considered "failed", 43% "challenged"
 
 > 39% actually succeeding
@@ -24,16 +26,16 @@
 
 ---
 
-#Why Agile?
+# What can happen without Agile?
 
-* Too many projects not delivered
-* Software taking too long to get to market
-* Requirements not met
-* High costs to make changes after delivery
-* Having to “get it right” first time/up front
-*  Too many defects
-* Unhappy Customers
-* Unhappy Developers
+* Software projects aren't delivered on time to market
+* Requirements not met with high cost to make changes after delivery
+* Having to “get it right” first time/up front is really hard
+
+---
+
+# Unhappy Customers and Developers
+![](http://www.therelationalmarketer.com/wp-content/uploads/2009/02/11389_0_Fotolia_11045915_Subscription_L1.jpg)
 
 ---
 
@@ -43,7 +45,16 @@
 “Plan Driven Methodologies” and “Waterfall”
 
 ---
-# Software Development Methodologies (cont)
+
+# Traditional waterfall process
+
+---
+
+![](http://i.ytimg.com/vi/_ZKvvaZEFKE/maxresdefault.jpg)
+
+---
+
+# Waterfall Methodology
 
 * Largely influenced by _traditional engineering_ and _quality processes_ in industries
 * Desire to make software development more _predictable_, _measurable_ and _efficient_
@@ -71,12 +82,6 @@
 ---
 
 # That's not true for most projects though
-
----
-
-# Projects with these characteristics are few and far between
-
-Heavy weight methodologies work in some instances, but there are high costs, and the risk in using them in dynamic environments is high.
 
 ---
 
@@ -114,12 +119,13 @@ Heavy weight methodologies work in some instances, but there are high costs, and
 
 >We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have come to value:
 
-* Individuals and interactions over processes and tools
-* Working software over comprehensive documentation
-* Customer collaboration over contract negotiation
-* Responding to change over following a plan.
+* **Individuals and interactions** over _processes and tools_
+* **Working software** over _comprehensive documentation_
+* **Customer collaboration** over _contract negotiation_
+* **Responding to change** over _following a plan_.
 
->That is, while there is value in the items on the right, we value the items on the left more.
+>That is, while there is value in the items on _the right_,
+we value the **items on the left** more.
 
 ---
 
@@ -155,66 +161,9 @@ Heavy weight methodologies work in some instances, but there are high costs, and
 
 ---
 
-# Timeboxing
-
-Timeboxing is used as a project planning technique.
-
-The schedule is divided into a number of separate time periods (timeboxes), with each part having its own deliverables, deadline and budget.
-
----
-
-# Without Timeboxing
-
-Without timeboxing, projects usually work to a fixed scope
-
-When it is clear that some deliverables cannot be completed, either the deadline slips (to allow more time) or more people are involved (to do more in the same time)
-
-Usually both happen, delivery is late, costs go up, and often quality suffers
-
----
-
-# With Timeboxing
-
-With timeboxing, the deadline is fixed but the scope may be reduced
-
-Work focuses on the most important deliverables
-
-For this reason, timeboxing depends on the prioritization of deliverables to ensure that it is the project stakeholders who determine the important deliverables rather than software developers
-
----
-
-#Agile Project Lifecycle
-## Timeboxed iterations
-![inline](images/timebox.png)
-
----
-
-# The Basics
-![inline](images/basic.png)
-
----
-
-# Lifecycle
-
-![inline](images/showcase.png)
-
----
-
-# Iterative
-
-![inline](images/iterative.png)
-
----
-
-# Incremental
-
-![inline](images/incremental.png)
-
----
-
 # Minimum Viable Product (MVP)
 
-![inline](images/mvp_fail_01.png)
+![inline](../devops-geekweek/images/mvp_fail_01.png)
 
 ---
 
@@ -227,32 +176,3 @@ For this reason, timeboxing depends on the prioritization of deliverables to ens
 * Open Ended
 
 ---
-
-#Agile Roles
-
----
-
-# Product Owner
-
-The one person responsible for a project’s success
-
-The Product Owner leads the development effort by conveying his or her vision to the team, outlining work in the scrum backlog, and prioritizing it based on business value
-
-Determines what needs to be built in 30 days or less
-
----
-
-# Development Teams
-
-Those responsible for committing work to the project
-
-Builds what is needed in 30 days or less and then demos it
-
-Based on the demo the Product Owner determines what to build next
-
----
-
-# Scrum Master
-Serves as a facilitator for both the Product Owner and the team
-
-He or she has no management authority within the team and may never commit to work on behalf of the team
