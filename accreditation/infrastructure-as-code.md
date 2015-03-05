@@ -37,6 +37,15 @@
 
 ---
 
+# Why store them in text files?
+
+ - Easy to read and edit
+ - Shareable
+ - Can use standard version control like Git or SVN
+ - Becomes executable documentation
+
+---
+
 # Simple example
 
 ```
@@ -108,7 +117,7 @@ Manual deployment of new trading software
 
 ---
 
-# Treat your infrastructure as code
+# **Treat your infrastructure as code**
 
 ---
 
