@@ -1,20 +1,38 @@
 (open this document in stackedit.io to see the diagrams rendered)
 
 #Documentation for Project Vasco da Gama
-
+---
 ##Purpose
-
 The purposes of Project VdG is to demonstrate the nexus of a number of products in the EMC federation.  Specifically, the things we are trying to demonstrate are:
+
 * Pivotal CloudFoundry
   * CF scaling capabilities
   * CF deployment capabilities
 * EMC ViPR Object Store
+  * ViPR supports S3-style object access
 * Redis NoSQL Database
   * (Redis development is supported by Pivotal)
 
+The application displays a random subset of tweet images to the user upon request.
 
+---
+##Components
+### Twitter Watcher
+####Description
+Specifically, the application requests a stream of tweets from Twitter using the streaming API (which gives us about 1% of the feed) that match some given hash tags.  For every tweet received, we check for an attached image, and if it has one, we dispatch a job into a job queue for processing.  In that job, the following actions are performed:
 
-##Data Collection:
+1. The tweet image is retrieved from the web
+2. The image undergoes some processing (currently a simple blur, but its demonstrative of other things that could be done, such as face recognition)
+3. The image is stored into the ViPR object store
+4. The image metadata is stored into Redis
+
+The code for this part of the module is found in the `twitter_watch` subdirectory, and can be executed with `python run.py` from the main code directory.  
+
+Additionally, there are 1 or more workers that must be deployed and which receive jobs from the job queue for execution.  These are called `rqworkers`, and can be executed by running `rqworker -u redis://:<password>@<hostname>/3 default dashboard` from the same directory as the remainder of the code.  The number of workers deployed may be increased from a minimum of 1 to a maximum of at least 100 (although no more than 20 have been tested, the larger job queue system in use, called RQ, has been tested with hundreds).  Overall its been found that about 5 workers are sufficient to handle the load.
+
+A sequence diagram follows.
+
+####Data Collection Sequence :
 ```sequence
 Twitter->Twitter Watcher: Here is a Tweet for You
 Twitter Watcher->Redis RQ: Here's an image URL to queue
@@ -37,7 +55,16 @@ Redis RQ-->Redis DB: Store this Job Result, and Mark it Complete
 Redis DB-->Redis RQ: Done!
 ```
 
-##Dashboard Generation
+### Twitter Dashboard
+####Description
+A second component to the application is generation of the [dashboard](https://freeboard.io/board/kofu1K), specifically the data that feeds that dashboard.  This is the responsbility of the dashboard part of the application found in the `dashboard` directory, and executable with `python run_dashboard.py`.  Its operation consists of gather a number of statistics from Redis, ViPR and the job queue and adds jobs to the queue to upload that data.
+
+The actual jobs to upload the data are simple calls into a service called [Dweet](http://dweet.io), which is styled as a 'Twitter for Devices', and accepts updated in a streaming fashion, making them available to other services like Freeboard.
+
+The workers can be started similarly to the watcher workers described above, and we recommend having at least 1 dedicated worker: `rqworker -u redis://:<password>@<hostname>/3 dashboard`
+
+
+####Dashboard Generation
 ```sequence
 Dashboard App->Redis RQ: Give me some stats
 Redis RQ-> Dashboard App: Here's some
@@ -53,7 +80,15 @@ Dashboard Worker-->Redis RQ: I'm done
 Note over Dashboard App: Sleep 10 seconds and repeat
 ```
 
-##UI Visualization
+### Twitter Visualization
+####Description
+The final and clearest interaction a user has with the application is to access its UI via a standard web browser.   Upon connection to the server (which is contained in `viewer`, and executed with `python viewer/show_images.py`), the user receives a page designed by the brilliant [Kenny Coleman](http://kendrickcoleman.com) which displays a set of 100 images, randomly selected from the Redis database and served directly from ViPR object.
+
+A new set of images are chosen on each page load.
+
+Intentionally, very little work is done in the UI side of the application to keep it simple and scalable.
+
+####UI Visualization
 ```sequence
 User->UI: GET /
 UI->Redis: Give me 100 random keys from the database.
@@ -66,8 +101,14 @@ ViPR Object-->User: Here they are
 Note over User: Gasp!  Its beautiful!
 ```
 
+### Twitter Scaling
+####Description
+A huge part of the demonstration is to show how quickly and easily applications like this can be scaled.  As a result, a 'scaling controller' was written (code: `scaler`  execute: `python scaler/__init__.py`) to accept requests via a REST API, and cause the CloudFoundry CloudController to change the number of running instances.  This is used to change the number of Twitter Watcher workers on the fly and on demand.  
 
-##Scaling Controller
+Conccurently, a demonstration iOS app wa written to utilize this REST API, and its code is available at TODO.
+
+
+####Scaling Controller
 ```sequence
 participant iPhone App
 Scaling App->CloudController: Login
@@ -81,3 +122,22 @@ iPhone App->Scaling App: Scale app named "a" to "n"
 Scaling App->iPhone App: Understood
 Scaling App->CloudController: scale app A to 'N'
 ```
+
+### Other Components
+####Cloud Foundry Manifest
+The Cloud Foundry configuration can be easily predefined, and this is done so in the `manifest.yml` file, which defines the various components and their requirements.  A sample follows:
+
+```
+- name: twitter-scaler #name of the application
+  memory: 128M         #How much memory to allocate to the service.
+  no-route: false      #make sure this is publicly listening
+  instances: 1         #start with 1 instances of the service
+  buildpack: python_buildpack  #which CF build pack should be used?
+  command: python scaler/__init__.py #how to execute the service
+```
+
+####rqinfo
+RQ includes a tool to watch the state of workers and the job queues.  It can be executed from within the directory with the following: `rqinfo --interval 3 -u redis://:<password>@<hostname>/3`
+
+####requirements.txt
+All python requirements for the application can be found in `pip` format in `requirements.txt`.  You can install all of them (best if done inside a `virtualenv`) with `pip install -r requirements.txt`
