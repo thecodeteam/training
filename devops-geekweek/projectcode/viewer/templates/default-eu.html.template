@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>marco polo</title>
+        <script src="../static/js/jquery.min.js"></script>
+        <script src="../static/js/tiksluscarousel.min.js"></script>
+        <script src="../static/js/main.js"></script>
+        <link rel="stylesheet" type="text/css" href="../static/css/normalize.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../static/css/main.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../static/css/tiksluscarousel.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../static/css/responsive.css" media="screen">
+        <link href='http://fonts.googleapis.com/css?family=Raleway:700,400' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+      <div id="content-wrapper">
+        <h1>#superbowlselfie  <span><img img src='../static/images/et.png' style="width:40px;height:60px"></span> #paris</h1>
+
+          <div id="carouselWidth">
+            <div id="carousel1">
+              <ul>
+                <li><img src='../static/images/superbowl-ht.png' style="width:100%"></li>
+                {% for object in objects %}
+                <li><img src='{{ object["object_url"] }}'></li>
+                {% endfor %}
+		</ul>
+            </div>
+            <p>
+                <!--<img img src='../static/images/eci.png' style="width:40px;height:40px" align="middle" class="grayscale">-->
+                <img img src='../static/images/cloud.png' style="width:40px;height:30px" align="middle">
+                <img img src='../static/images/vagrant.png' style="width:40px;height:40px" align="middle">
+                <img img src='../static/images/coreos.png' style="width:40px;height:40px" align="middle">
+                <img img src='../static/images/docker.png' style="width:60px;height:40px" align="middle">
+                <img img src='../static/images/vipr.png' style="width:40px;height:40px" align="middle">
+                <img img src='../static/images/python.png' style="width:40px;height:40px" align="middle">
+                <img img src='../static/images/hadoop.png' style="width:50px;height:40px" align="middle" class="grayscale">
+                <img img src='../static/images/github.png' style="width:40px;height:40px" align="middle">
+            </p>
+          </div>
+        
+        <div id="authorText">
+            <p><strong>project marco polo</strong><br>
+            <a href="http://emccode.github.io">emccode.github.io</a></p>
+        </div>
+      </div>
+    </body>
+</html>

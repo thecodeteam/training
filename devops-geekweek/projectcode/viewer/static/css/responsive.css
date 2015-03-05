@@ -1,0 +1,55 @@
+
+/* #Media Queries
+================================================== */
+/* Nice Big Banner and fix when screen gets smaller than 1276 */
+@media only screen and (max-width: 1290px) {
+
+}
+
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+  #carouselWidth {
+    width: 75%;
+  }
+
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 765px) {
+
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  #content-wrapper {
+    padding: 25px 1% 50px;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #carouselWidth {
+    width: 80%;
+  }
+
+  .tiksluscarousel ul li img{
+    height:325px;
+  }
+
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+  #carouselWidth {
+    width: 85%;
+  }
+
+  .tiksluscarousel ul li img{
+    height:250px;
+  }
+}

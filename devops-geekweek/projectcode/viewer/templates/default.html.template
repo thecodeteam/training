@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>{{ template_param['page_title'] }}</title>
+        <script src="../static/js/jquery.min.js"></script>
+        <script src="../static/js/tiksluscarousel.min.js"></script>
+        <script src="../static/js/main.js"></script>
+        <link rel="stylesheet" type="text/css" href="../static/css/normalize.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../static/css/main.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../static/css/tiksluscarousel.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../static/css/responsive.css" media="screen">
+        <link href='http://fonts.googleapis.com/css?family=Raleway:700,400' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+      <div id="content-wrapper">
+        <h1>{{ template_param['page_header1'] }}</h1>
+        
+          <div id="carouselWidth">
+            <div id="carousel1">
+              <ul>
+                {{ template_param['carousel_image_first'] }}
+                {% for object in objects %}
+                <li><img src='{{ object["object_url"] }}'></li>
+                {% endfor %}
+                {{ template_param['carousel_image_last'] }}
+              </ul>
+            </div>
+            <p>
+                {{ template_param['page_footer'] }}
+            </p>
+          </div>
+        
+        <div id="authorText">
+            {{ template_param['author_text'] }}
+        </div>
+      </div>
+    </body>
+</html>

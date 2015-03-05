@@ -1,0 +1,44 @@
+---
+applications:
+- name: twitter-watcher
+  memory: 128M
+  no-route: true
+  instances: 1
+  buildpack: python_buildpack
+  command: python run.py
+
+- name: twitter-worker
+  memory: 128M
+  no-route: true
+  instances: 5
+  buildpack: python_buildpack
+  command: rqworker -u redis://:Habloo12@direct.exaforge.com/3 default dashboard
+
+- name: twitter-dashworker
+  memory: 128M
+  no-route: true
+  instances: 1
+  buildpack: python_buildpack
+  command: rqworker -u redis://:Habloo12@direct.exaforge.com/3 dashboard
+
+- name: twitter-dashboard
+  memory: 128M
+  no-route: true
+  instances: 1
+  buildpack: python_buildpack
+  command: python run_dashboard.py
+
+- name: twitter-scaler
+  memory: 128M
+  no-route: false
+  instances: 1
+  buildpack: python_buildpack
+  command: python scaler/__init__.py
+
+- name: twitter-images
+  memory: 128M
+  no-route: false
+  host: vascodegama
+  instances: 1
+  buildpack: python_buildpack
+  command: python viewer/show_images.py
