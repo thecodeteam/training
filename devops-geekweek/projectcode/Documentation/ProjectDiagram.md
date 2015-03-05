@@ -44,12 +44,12 @@ Redis RQ-->Twitter Worker: I sure do, here's a URL
 Twitter Worker->Twitter Image Server: Gimme that Image!
 Twitter Image Server-->Twitter Worker: Fine! So needy!
 Note over Twitter Worker: Performs image manipulation
-Twitter Worker->ViPR Object: Please store this image, and delete it in 1 day
+Twitter Worker->ViPR Object: Please store this image, expire 1d
 ViPR Object-->Twitter Worker: Done
 Twitter Worker->ViPR Object: Please give me a public URL for this image
 ViPR Object-->Twitter Worker: <URL>
-Twitter Worker->Redis DB: Please store a record of this image and its URL and size. Delete the record in 1 day
-Redis DB-> Twitter Worker: Done
+Twitter Worker->Redis DB: Please store a record of this image and its URL/size. Expire 1d
+Redis DB--> Twitter Worker: Done
 Twitter Worker-->Redis RQ: My Job is Complete, Here's the Result
 Redis RQ-->Redis DB: Store this Job Result, and Mark it Complete
 Redis DB-->Redis RQ: Done!
@@ -75,7 +75,8 @@ Dashboard App->Redis RQ: Here's some data to post to Freeboard.io
 Redis RQ-->Dashboard App: Understood and stored.
 Dashboard Worker->Redis RQ: Do I have any work to post?
 Redis RQ--> Dashboard Worker: Sure, here you go.
-Dashboard Worker->Freeboard: Here's some metrics, buddy
+Dashboard Worker->Dweet.io: Here's some metrics.
+Dweet.io->Freeboard: Here's some metrics
 Dashboard Worker-->Redis RQ: I'm done
 Note over Dashboard App: Sleep 10 seconds and repeat
 ```
