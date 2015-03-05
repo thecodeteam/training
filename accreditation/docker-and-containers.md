@@ -272,3 +272,9 @@ They will always look the same
 They are always portable
 
 And they leave your host OS clean
+
+---
+
+# Further reading
+
+[Docker](http://docker.com)
