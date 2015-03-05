@@ -113,6 +113,10 @@
 
 ---
 
+![fit](http://www.flockofbirds.nl/wp/wp-content/uploads/2014/03/Agile-Development-Diagram.jpg)
+
+---
+
 # The Agile Manifesto
 
 ---
