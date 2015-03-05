@@ -1,6 +1,18 @@
 (open this document in stackedit.io to see the diagrams rendered)
 
-#System Design for Project Vasco da Gama
+#Documentation for Project Vasco da Gama
+
+##Purpose
+
+The purposes of Project VdG is to demonstrate the nexus of a number of products in the EMC federation.  Specifically, the things we are trying to demonstrate are:
+* Pivotal CloudFoundry
+  * CF scaling capabilities
+  * CF deployment capabilities
+* EMC ViPR Object Store
+* Redis NoSQL Database
+  * (Redis development is supported by Pivotal)
+
+
 
 ##Data Collection:
 ```sequence
@@ -69,4 +81,3 @@ iPhone App->Scaling App: Scale app named "a" to "n"
 Scaling App->iPhone App: Understood
 Scaling App->CloudController: scale app A to 'N'
 ```
-
