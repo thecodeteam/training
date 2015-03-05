@@ -4,29 +4,11 @@
 
 ---
 
-![](http://blog.docker.com/wp-content/uploads/2013/06/Docker-logo-011.png)
-
----
-
-# Docker facts
-
-Launched in March 2013
-
-Over 100 million downloads
-
-Over 75 000 Dockerized applications
-
-150+ Meetup Groups around the world
-
-100+ case studies from companies such as eBay, Rackspace, New Relic, Gilt, Spotify, Cloudflare, Yandex, Cambridge Healthcare, Yelp and RelatelQ.
-
----
-
 # Apps have fundamentally changed
 
 ---
 
-# A decade ago (and still true for some)
+# A decade ago (and still true for many)
 
 Apps were monolithic
 
@@ -63,6 +45,10 @@ Deployed to a multitude of servers
 ---
 
 ![fit](http://cantina.co/wp-content/uploads/2013/08/SOA.jpg)
+
+---
+
+# How do you handle all these parts?
 
 ---
 
@@ -105,7 +91,7 @@ Deployed to a multitude of servers
 
 ---
 
-# Starting to get cramped
+# Things start to break when the whiskey spills all over the piano
 
 ---
 
@@ -133,7 +119,7 @@ Deployed to a multitude of servers
 
 ---
 
-# Enter, the intermodal container
+# Enter, the Intermodal container
 
 ---
 
@@ -164,6 +150,10 @@ Deployed to a multitude of servers
 ---
 
 # You have an app built out of a lot of small parts
+
+---
+
+# These small parts are called micro services
 
 ---
 
@@ -199,7 +189,7 @@ Deployed to a multitude of servers
 
 ---
 
-# Enter, the Docker container
+# Enter, the Container
 
 ---
 
@@ -208,6 +198,30 @@ Deployed to a multitude of servers
  - It looks the same everywhere
  - No matter where you run it
  - Doesn't need you to install all the app dependencies on your host
+
+---
+
+# Docker is one container standard
+
+![](http://blog.docker.com/wp-content/uploads/2013/06/Docker-logo-011.png)
+
+---
+
+# Docker has built a large ecosystem around it
+
+---
+
+# Docker facts
+
+Launched in March 2013
+
+Over 100 million downloads
+
+Over 75 000 Dockerized applications
+
+150+ Meetup Groups around the world
+
+100+ case studies from companies such as eBay, Rackspace, New Relic, Gilt, Spotify, Cloudflare, Yandex, Cambridge Healthcare, Yelp and RelatelQ.
 
 ---
 
@@ -226,19 +240,20 @@ ENTRYPOINT  ["/usr/bin/redis-server"]
 
 # Containers contain everything your app needs
 
-Binaries
-
-Libraries
-
-File system
+ - Binaries
+ - Libraries
+ - File system
 
 ---
 
 # Containers use the host for certain things
 
-Networking
+ - Networking
+ - Kernel
 
-Kernel
+---
+
+# So no need to run an entire OS (like in a VM) to run an app
 
 ---
 
@@ -248,8 +263,12 @@ Kernel
 
 # Containers are awesome
 
-Use them for your next app
+You can use them for your next app
 
-Use already existing apps
+You can use thousands of already existing apps
 
-Do not install stuff on your OS anymore
+They will always look the same
+
+They are always portable
+
+And they leave your host OS clean
