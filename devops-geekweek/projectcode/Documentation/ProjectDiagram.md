@@ -1,4 +1,4 @@
-(open this document in stackedit.io to see the diagrams rendered)
+(open this document in http://stackedit.io to see the diagrams rendered)
 
 #Documentation for Project Vasco da Gama
 ---
