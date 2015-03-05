@@ -100,7 +100,11 @@ We're all human
 
 ---
 
-# Knight Capital Group
+# Some firms have found that up to 60% of failures are caused by human error, not hardware failure
+
+---
+
+# Example - Knight Capital Group
 
 ![inline](https://infocus.emc.com/wp-content/uploads/2012/08/KCG.jpg)
 
