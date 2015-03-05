@@ -13,7 +13,7 @@ The purposes of Project VdG is to demonstrate the nexus of a number of products 
 * Redis NoSQL Database
   * (Redis development is supported by Pivotal)
 
-The application displays a random subset of tweet images to the user upon request.
+The application displays a random subset of tweet images to the user upon request, after collecting and storing them in a scalable way.
 
 ---
 ##Components
