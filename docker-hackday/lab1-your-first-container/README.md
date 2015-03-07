@@ -139,9 +139,9 @@ Notice that under the PORTS section the port 8888 of the localhost is forwarded 
 
 You can run your apps by pointing your browser to ```localhost:8888``` or you can just verify using the following curl commands.
 
-```curl -L $(boot2docker ip):8888```
+```curl -L $(boot2docker ip 2>/dev/null):8888```
 
-```curl -L $(boot2docker ip):8888/examples```
+```curl -L $(boot2docker ip 2>/dev/null):8888/examples```
 
 ## Build your own container
 
