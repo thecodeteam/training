@@ -4,7 +4,7 @@
 
 ---
 
-# You're not as efficient as you could be; period
+# You're not as efficient as you could be, period
 
 ---
 
@@ -26,9 +26,12 @@ It's been estimated to take up to an average of 23 minutes to get back to the ta
 
 Sometimes you forget to answer an email and it will frustrate the sender
 
-Reply-All...
-
 ![right fit](http://images.huffingtonpost.com/2014-10-06-IMG_3930.PNG)
+
+---
+
+# The dreaded
+# Reply-All...
 
 ---
 
