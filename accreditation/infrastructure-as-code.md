@@ -10,13 +10,20 @@
 
 ![fit](images/what-is-infra.001.png)
 
+^ storage network compute
+^ what we normally sell
+
 ---
 
 ![fit](images/what-is-infra.002.png)
 
+^ support services
+
 ---
 
 ![fit](images/what-is-infra.003.png)
+
+^ app code, queueing, databases, etc
 
 ---
 
