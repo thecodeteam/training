@@ -1,6 +1,7 @@
 # The 12 factor App
 
 ^ Open this presentation with [Deckset](http://www.decksetapp.com/)
+^ Matt
 
 ---
 
@@ -63,7 +64,7 @@ The process of turning the code into a bundle of scripts, assets and binaries th
 
 # \#6: Processes
 
-* As a rule, you want each of those instances of running code to be stateless. 
+* As a rule, you want each of those instances of running code to be stateless.
 * This makes your app more resilient, and easier to recover
 
 Importances: High.  Makes tools like CF even possible

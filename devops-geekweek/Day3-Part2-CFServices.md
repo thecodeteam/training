@@ -2,6 +2,7 @@
 ## Day 3
 
 ^ Open this presentation with [Deckset](http://www.decksetapp.com/)
+^ Jonas
 
 ---
 

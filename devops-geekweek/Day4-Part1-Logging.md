@@ -6,6 +6,7 @@ Treat logs as event streams
 -- The 12 Factor App
 
 ^ Open this presentation with [Deckset](http://www.decksetapp.com/)
+^ Jonas
 
 ---
 
