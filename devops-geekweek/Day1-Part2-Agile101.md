@@ -8,6 +8,7 @@
 
 ^ Open this presentation with [Deckset](http://www.decksetapp.com/)
 ^ Jonas
+
 ---
 
 > 18% of software projects are considered "failed", 43% "challenged"
