@@ -1,4 +1,4 @@
-(open this document in http://stackedit.io to see the diagrams rendered)
+(open this document in [StackEdit](https://stackedit.io/viewer#!url=https://raw.githubusercontent.com/emccode/training/master/devops-geekweek/projectcode/Documentation/ProjectDiagram.md) to see the diagrams rendered)
 
 #Documentation for Project Vasco da Gama
 ---
