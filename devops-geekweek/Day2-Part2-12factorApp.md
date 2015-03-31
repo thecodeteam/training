@@ -24,11 +24,11 @@ Importance: Non-negotiable. Everyone does this, and developers will laugh at you
 
 # \#2: Dependencies
 
-* Dependencies must be explcitly declared
+* Dependencies must be explicitly declared
 * They should be declared with the rest of the code, and tracked the same way
-* Depedencies tracking ashould contain version numbers of depedencies
+* Dependencies tracking should contain version numbers of dependencies
 
-Importance: High.  Without this, your team will have a constant slow time-suck of confusion and frustration, multiplied by their size and number of applications. Spare yourself.
+Importance: High. Without this, your team will have a constant slow time-suck of confusion and frustration, multiplied by their size and number of applications. Spare yourself.
 
 ---
 
@@ -46,8 +46,8 @@ Importance: Medium. You can get away without it, but its sloppy.
 
 * Anything your application uses as a resource (database, queueing system, email, cache) should be referenced with 'bindings' to these services.
 * Possibly discovered via:
-  * Discovery mechanism (zookeeper, etc)
-  * environment
+  * Discovery mechanism (Zookeeper, etcd, Consul etc )
+  * Environment
 
 Importance: High.  Its easy to do, and follows with the Config rules above
 
@@ -55,10 +55,9 @@ Importance: High.  Its easy to do, and follows with the Config rules above
 
 # \#5: Build Release Run
 
-* Build, Release and Run are seperate stages for the application life cycle.
-> The process of turning the code into a bundle of scripts, assets and binaries that run the code is the build. The release sends that code to a server in a fresh package together with the nicely-separate config files for that environment (See III. above). Then the code is run so the application is available on those servers.
+* Build, Release and Run are separate stages for the application life cycle.
 
-The process of turning the code into a bundle of scripts, assets and binaries that run the code is the build. The release sends that code to a server in a fresh package together with the nicely-separate config files for that environment (See III. above). Then the code is run so the application is available on those servers.
+> The process of turning the code into a bundle of scripts, assets and binaries that run the code is the build. The release sends that code to a server in a fresh package together with the nicely-separate config files for that environment (See III. above). Then the code is run so the application is available on those servers.
 
 ---
 
