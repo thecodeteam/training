@@ -229,3 +229,10 @@ Now go look at that branch up on GitHub
 ---
 
 ## You can now create a pull request from that branch!
+
+
+---
+
+A great cheat sheet:
+
+http://www.clearvision-cm.com/wp-content/uploads/2014/08/Git-Cheat-Sheet_Clearvision.pdf
