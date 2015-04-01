@@ -2,6 +2,7 @@
 
 ^ Open this presentation with [Deckset](http://www.decksetapp.com/)
 ^ Jonas
+
 ---
 
 # What You'll Learn
@@ -76,7 +77,7 @@ Most open source projects are hosted and collaborated on here.
 
 # Clone the repo
 
-```git clone https://github.com/virtualswede/training-repo.git```
+```git clone https://github.com/jonasrosland/training-repo.git```
 
 ---
 
