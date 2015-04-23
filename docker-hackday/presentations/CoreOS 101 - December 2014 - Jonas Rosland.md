@@ -2,10 +2,10 @@
 
 ### Jonas Rosland
 ### Developer Advocate
-#### @virtualswede
+#### @jonasrosland
 #### jonas.rosland@emc.com
 #### emccode.github.io
-#### December 2014
+#### April 2015
 
 ^ Run this presentation with [Deckset](http://www.decksetapp.com/)
 
