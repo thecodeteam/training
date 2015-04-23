@@ -1,6 +1,15 @@
+^ Open this presentation with [Deckset](http://www.decksetapp.com/)
+
+
+![fit] (cfsummit_ppt1/Slide1.jpg) 
+
+---
+
+![fit] (cfsummit_ppt1/Slide2.jpg)
+
+---
 # The 12 factor App for Operations
 
-^ Open this presentation with [Deckset](http://www.decksetapp.com/)
 
 ---
 
@@ -43,6 +52,7 @@ Importance: Medium. You can get away without it, but its sloppy.
 
 * Anything your application uses as a resource (database, queueing system, email, cache) should be referenced with 'bindings' to these services.
 * Possibly discovered via:
+  * Spring Cloud (pay attention to configuration files)
   * Discovery mechanism (Zookeeper, etcd, Consul etc )
   * Environment
 
@@ -126,3 +136,23 @@ Importances: High. Can't debug without logs.
 * ChatOps can help here
 
 Importances: Moderate. Helps prevent mistakes
+
+---
+
+# More Resources
+
+* [Pivotal Podcasts: Episode 23 (Operational transformation) ](http://blog.pivotal.io/podcasts-pivotal) 
+* [You Build it, you run it - an interview with Werner Vogels] (https://queue.acm.org/detail.cfm?id=1142065)
+
+---
+
+# 6 Laws of Systems that never stop
+
+* Isolation
+* Concurrency
+* Failure Detection
+* Fault Identification
+* Live Code Upgrade
+* Stable Storage
+
+[http://www.infoq.com/presentations/Systems-that-Never-Stop-Joe-Armstrong] (http://www.infoq.com/presentations/Systems-that-Never-Stop-Joe-Armstrong)
