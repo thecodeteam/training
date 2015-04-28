@@ -2,10 +2,10 @@
 
 ### Jonas Rosland
 ### Developer Advocate
-#### @virtualswede
+#### @jonasrosland
 #### jonas.rosland@emc.com
 #### emccode.github.io
-#### March 2015
+#### April 2015
 
 ---
 
