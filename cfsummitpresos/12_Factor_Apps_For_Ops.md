@@ -51,6 +51,7 @@ Importance: Medium. You can get away without it, but its sloppy.
 # \#4: Backing Services
 
 * Anything your application uses as a resource (database, queueing system, email, cache) should be referenced with 'bindings' to these services.
+* All applications deployed with explicit references to data services in manifest.yml (mechanism for User Provided Services)
 * Possibly discovered via:
   * Spring Cloud (pay attention to configuration files)
   * Discovery mechanism (Zookeeper, etcd, Consul etc )
@@ -65,8 +66,9 @@ Importance: High. Its easy to do, and follows with the Config rules above
 # \#5: Build Release Run
 
 * Build, Release and Run are separate stages for the application life cycle.
+* Use profiles (ala Spring Boot) for running in different environments. Profiles should be easily grepable.
 
-> The process of turning the code into a bundle of scripts, assets and binaries that run the code is the build. The release sends that code to a server in a fresh package together with the nicely-separate config files for that environment (see Config again). Then the code is run so the application is available on those servers.
+> The process of turning the code into a bundle of scripts, assets and binaries that run the code is the build. The release sends that code to a server in a fresh package together with the nicely-separated config files for that environment (see Config again). Then the code is run so the application is available on those servers.
 
 ^Rags
 
@@ -75,6 +77,7 @@ Importance: High. Its easy to do, and follows with the Config rules above
 # \#6: Processes
 
 * As a rule, you want each of those instances of running code to be stateless.
+* Seperation of concerns - each microservice is a single process
 * This makes your app more resilient, and easier to recover
 
 Importances: High. Makes tools like CF even possible
