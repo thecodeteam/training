@@ -1,30 +1,44 @@
+build-lists: true
 ^ Open this presentation with [Deckset](http://www.decksetapp.com/)
 
 
-![fit] (cfsummit_ppt1/Slide1.jpg) 
+![fit] (images/title.jpg) 
 
 ---
 
-![fit] (cfsummit_ppt1/Slide2.jpg)
+![fit] (images/speakers.jpg)
+ 
+  
+# 12 Factor Apps for Operations
 
----
-# The 12 factor App for Operations
-
-
----
-
-### The Basics
-
-> much of this source: http://www.clearlytech.com/2014/01/04/12-factor-apps-plain-english/
+### rags srinivasan (@ragss)
+### matt cowger (@mcowger)
 
 ---
 
 # \#1: Codebase
 
-* One codebase tracked in revision control, many deploys
-* Put all your code in a source control system. Heck, just put it up on GitHub from the start.
+* Everything in revision control
+  * Including environment configuration
 
-Importance: Non-negotiable. Everyone does this, and developers will laugh at you if you aren’t.
+^ Matt
+
+---
+
+> I didn't change anything!
+-- every. developer. ever.
+
+---
+
+> Well the environment didn't change!
+-- every. ops. person. ever.
+
+---
+
+# Revision Control -> `git blame`
+#####(`svn blame` if you must)
+
+^ Matt
 
 ---
 
@@ -34,7 +48,17 @@ Importance: Non-negotiable. Everyone does this, and developers will laugh at you
 * They should be declared with the rest of the code, and tracked the same way
 * Dependencies tracking should contain version numbers of dependencies
 
-Importance: High. Without this, your team will have a constant slow time-suck of confusion and frustration, multiplied by their size and number of applications. Spare yourself.
+---
+
+![fit] (images/obama.jpg)
+
+^Matt - If it wasn't documented, how could you know it even was a requirement?  if it doesn't exist in SCM, it doesn't exist.
+
+---
+
+![fit] (images/deprecated.png)
+
+^Matt - Deprecated functions means version numbers are critical.  Image courtesy: http://blog.simpsn.com/replacing-deprecated-functions-in-phpthumb-to-be-compatible-with-php-version-5-3-0
 
 ---
 
@@ -44,7 +68,20 @@ Importance: High. Without this, your team will have a constant slow time-suck of
 * Includes access credentials, logging config, etc.
 * Should be read at runtime, not preprocessed into code.
 
-Importance: Medium. You can get away without it, but its sloppy.
+^Matt - config, especially passwords, suck.
+
+---
+
+![fit] (images/configshuffle.png)
+
+^Matt - this is a recipe for horribleness.  
+
+---
+
+* Only people with access to host & account can see creds
+* Creds can be specific (maybe avoid shared accounts!)
+* Now everyone knows the live config, all the time, and be sure code is using it.
+* Less danger of having critical file stolen/checked in
 
 ---
 
@@ -125,7 +162,13 @@ Importances: Moderate. Makes it easy to release quickly
 * Dev MUST == Production in config, but not performance
 * Following the above helps do this
 
-Importances: Critical. You can't do continuous push (or push at all) safely without it.
+---
+
+![fit] (images/worksonmymachine.jpg)
+
+---
+
+![fit] (images/workedonmine.jpg)
 
 ---
 
@@ -137,10 +180,15 @@ Importances: Critical. You can't do continuous push (or push at all) safely with
 * Logs help fix problems *after* they happen
 * Use tokens for specific flows
 
-Importances: High. Can't debug without logs.
+---
+
+![fit] (images/criticalerror.png)
 
 ---
 
+![fit] (images/rca.jpg)
+
+---
 
 # \#12: Admin Processes
 
@@ -151,22 +199,4 @@ Importances: High. Can't debug without logs.
 
 Importances: Moderate. Helps prevent mistakes
 
----
 
-# More Resources
-
-* [Pivotal Podcasts: Episode 23 (Operational transformation) ](http://blog.pivotal.io/podcasts-pivotal) 
-* [You Build it, you run it - an interview with Werner Vogels] (https://queue.acm.org/detail.cfm?id=1142065)
-
----
-
-# 6 Laws of Systems that never stop
-
-* Isolation
-* Concurrency
-* Failure Detection
-* Fault Identification
-* Live Code Upgrade
-* Stable Storage
-
-[http://www.infoq.com/presentations/Systems-that-Never-Stop-Joe-Armstrong] (http://www.infoq.com/presentations/Systems-that-Never-Stop-Joe-Armstrong)
