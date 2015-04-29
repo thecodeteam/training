@@ -2,13 +2,13 @@ build-lists: true
 ^ Open this presentation with [Deckset](http://www.decksetapp.com/)
 
 
-![fit] (images/title.jpg) 
+![fit] (images/title.jpg)
 
 ---
 
 ![fit] (images/speakers.jpg)
- 
-  
+
+
 # 12 Factor Apps for Operations
 
 ### rags srinivasan (@ragss)
@@ -164,7 +164,7 @@ Importances: Moderate. Makes it easy to release quickly
 
 ---
 
-![fit] (images/worksonmymachine.jpg)
+![fit] (images/worksonmymachine.png)
 
 ---
 
@@ -198,5 +198,3 @@ Importances: Moderate. Makes it easy to release quickly
 * ChatOps can help here
 
 Importances: Moderate. Helps prevent mistakes
-
-
