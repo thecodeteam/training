@@ -58,6 +58,8 @@ Importance: Medium. You can get away without it, but its sloppy.
 
 Importance: High. Its easy to do, and follows with the Config rules above
 
+^Rags
+
 ---
 
 # \#5: Build Release Run
@@ -65,6 +67,8 @@ Importance: High. Its easy to do, and follows with the Config rules above
 * Build, Release and Run are separate stages for the application life cycle.
 
 > The process of turning the code into a bundle of scripts, assets and binaries that run the code is the build. The release sends that code to a server in a fresh package together with the nicely-separate config files for that environment (see Config again). Then the code is run so the application is available on those servers.
+
+^Rags
 
 ---
 
@@ -75,6 +79,8 @@ Importance: High. Its easy to do, and follows with the Config rules above
 
 Importances: High. Makes tools like CF even possible
 
+^Rags
+
 ---
 
 # \#7: Port Binding
@@ -84,6 +90,8 @@ Importances: High. Makes tools like CF even possible
 
 Importances: Moderate. Most tools like Heroku, CF do this for you, and enforce it
 
+^Rags
+
 ---
 
 # \#8: Concurrency
@@ -92,6 +100,8 @@ Importances: Moderate. Most tools like Heroku, CF do this for you, and enforce i
 * Not necessarily required for certain aspects (single process workers, etc)
 
 Importances: Low. But it helps scale certain parts.
+
+^Rags
 
 ---
 
@@ -103,6 +113,7 @@ Importances: Low. But it helps scale certain parts.
 
 Importances: Moderate. Makes it easy to release quickly
 
+^Rags
 
 ---
 
