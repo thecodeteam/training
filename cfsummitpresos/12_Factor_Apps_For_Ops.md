@@ -11,8 +11,14 @@ build-lists: true
 
 # 12 Factor Apps for Operations
 
-### rags srinivasan (@ragss)
+### rags srinivas (@ragss)
 ### matt cowger (@mcowger)
+
+---
+
+![fit] (images/Devops.png)
+
+^ http://41.media.tumblr.com/0c94178debc2aa4aa492859b049a24c9/tumblr_nngy3hkPDo1rdlfnuo2_1280.png
 
 ---
 
@@ -99,6 +105,11 @@ Importance: High. Its easy to do, and follows with the Config rules above
 ^Rags
 
 ---
+
+![fit] (images/yaml.jpg)
+
+---
+
 
 # \#5: Build Release Run
 
