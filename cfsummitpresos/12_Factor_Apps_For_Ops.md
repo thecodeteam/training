@@ -16,6 +16,8 @@ build-lists: true
 
 ---
 
+`footer: Image Courtesy: http://41.media.tumblr.com/0c94178debc2aa4aa492859b049a24c9/tumblr_nngy3hkPDo1rdlfnuo2_1280.png`
+
 ![fit] (images/Devops.png)
 
 ^ http://41.media.tumblr.com/0c94178debc2aa4aa492859b049a24c9/tumblr_nngy3hkPDo1rdlfnuo2_1280.png
@@ -110,20 +112,23 @@ build-lists: true
   * Environment
   * Avoid Customer User Provided Services
 
-
+---
 
 
 # \#5: Build Release Run
 
 * Build, Release and Run are separate stages for the application life cycle.
 * Use profiles (ala Spring Boot) for running in different environments or containers. Profiles should be easily searchable.
+* A/B Testing and Blue/Green Deployments are great.
 
 > The process of turning the code into a bundle of scripts, assets and binaries that run the code is the build. The release sends that code to a server in a fresh package together with the nicely-separated config files for that environment (see Config again). Then the code is run so the application is available on those servers.
 
 ^Rags
 
 ---
+
 ![fit] (images/profiles.jpg)
+
 ---
 
 # \#6: Processes
@@ -139,6 +144,8 @@ build-lists: true
 
 ![fit] (images/bellichick.jpg)
 
+Image courtesy: pintrest.com
+
 ---
 # \#7: Port Binding
 
@@ -153,9 +160,16 @@ build-lists: true
 # \#8: Concurrency
 
 * An extension of 6 above.
+* An implication to scale out.
 * Not necessarily required for certain aspects (single process workers, etc)
 
 ^Rags
+
+---
+
+![fit] (images/concurrency.png)
+
+`http://12factor.net/concurrency`
 
 ---
 
@@ -171,6 +185,8 @@ build-lists: true
 ---
 
 ![fit] (images/petversuscattle.png)
+
+Image courtesy: http://www.slideshare.net/gmccance/cern-data-centre-evolution
 
 ---
 
@@ -215,3 +231,14 @@ build-lists: true
 * ChatOps can help here
 
 Importances: Moderate. Helps prevent mistakes
+
+---
+
+# Measure/Monitor Everything
+
+---
+
+![fit] (images/pcfopsmanager.tiff)
+
+---
+
