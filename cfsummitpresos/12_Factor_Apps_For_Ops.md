@@ -95,12 +95,6 @@ build-lists: true
 
 * Anything your application uses as a resource (database, queueing system, email, cache) should be referenced with 'bindings' to these services.
 * All applications deployed with explicit references to data services in manifest.yml (mechanism for User Provided Services)
-* Possibly discovered via:
-  * Spring Cloud (pay attention to configuration files)
-  * Discovery mechanism (Zookeeper, etcd, Consul etc )
-  * Environment
-
-Importance: High. Its easy to do, and follows with the Config rules above
 
 ^Rags
 
@@ -110,16 +104,26 @@ Importance: High. Its easy to do, and follows with the Config rules above
 
 ---
 
+* Backing Services discovered via:
+  * Spring Cloud (pay attention to configuration files)
+  * Discovery mechanism (Zookeeper, etcd, Consul etc )
+  * Environment
+  * Avoid Customer User Provided Services
+
+
+
 
 # \#5: Build Release Run
 
 * Build, Release and Run are separate stages for the application life cycle.
-* Use profiles (ala Spring Boot) for running in different environments. Profiles should be easily grepable.
+* Use profiles (ala Spring Boot) for running in different environments or containers. Profiles should be easily searchable.
 
 > The process of turning the code into a bundle of scripts, assets and binaries that run the code is the build. The release sends that code to a server in a fresh package together with the nicely-separated config files for that environment (see Config again). Then the code is run so the application is available on those servers.
 
 ^Rags
 
+---
+![fit] (images/profiles.jpg)
 ---
 
 # \#6: Processes
@@ -127,19 +131,20 @@ Importance: High. Its easy to do, and follows with the Config rules above
 * As a rule, you want each of those instances of running code to be stateless.
 * Seperation of concerns - each microservice is a single process
 * This makes your app more resilient, and easier to recover
-
-Importances: High. Makes tools like CF even possible
+* Categorize processes into Stateful and Stateless
 
 ^Rags
 
 ---
 
+![fit] (images/bellichick.jpg)
+
+---
 # \#7: Port Binding
 
 * Your app should not assume its the only thing running on the same port
 * Bind an internal port/IP to external URL using load balancer
 
-Importances: Moderate. Most tools like Heroku, CF do this for you, and enforce it
 
 ^Rags
 
@@ -150,21 +155,22 @@ Importances: Moderate. Most tools like Heroku, CF do this for you, and enforce i
 * An extension of 6 above.
 * Not necessarily required for certain aspects (single process workers, etc)
 
-Importances: Low. But it helps scale certain parts.
-
 ^Rags
 
 ---
 
 # \#9: Disposability
 
-* Losing a process should be a non event
+* Losing a process should be a normal event
 * No loss of state for user if we lose a process
 * Startup times should be low
-
-Importances: Moderate. Makes it easy to release quickly
+* Lattice Scheduler for instance
 
 ^Rags
+
+---
+
+![fit] (images/petversuscattle.png)
 
 ---
 
