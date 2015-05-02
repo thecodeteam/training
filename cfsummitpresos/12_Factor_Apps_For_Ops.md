@@ -98,7 +98,7 @@ build-lists: true
 * Anything your application uses as a resource (database, queueing system, email, cache) should be referenced with 'bindings' to these services.
 * All applications deployed with explicit references to data services in manifest.yml (mechanism for User Provided Services)
 
-^Rags
+^Rags - put everything in YAML. Including buildpacks. Don't assume buildpack ordering
 
 ---
 
@@ -123,7 +123,7 @@ build-lists: true
 
 > The process of turning the code into a bundle of scripts, assets and binaries that run the code is the build. The release sends that code to a server in a fresh package together with the nicely-separated config files for that environment (see Config again). Then the code is run so the application is available on those servers.
 
-^Rags
+^Rags - Everything is code. Infrastructure is code. Data is code. If it's manual it's broke.
 
 ---
 
@@ -138,7 +138,7 @@ build-lists: true
 * This makes your app more resilient, and easier to recover
 * Categorize processes into Stateful and Stateless
 
-^Rags
+^Rags - The Unix principle. Stateless - no problem. Treat Stateful processes or services differently.
 
 ---
 
@@ -153,7 +153,7 @@ Image courtesy: pintrest.com
 * Bind an internal port/IP to external URL using load balancer
 
 
-^Rags
+^Rags - not very relevant. CF, Lattice and Containers deal with this for the most part. Don't always assume that MySQL runs on 3306 or Couchbase runs on 8091.
 
 ---
 
