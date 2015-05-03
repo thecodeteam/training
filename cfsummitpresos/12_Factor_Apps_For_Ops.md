@@ -118,12 +118,13 @@ build-lists: true
 # \#5: Build Release Run
 
 * Build, Release and Run are separate stages for the application life cycle.
+* Version everything
 * Use profiles (ala Spring Boot) for running in different environments or containers. Profiles should be easily searchable.
 * A/B Testing and Blue/Green Deployments are great.
 
 > The process of turning the code into a bundle of scripts, assets and binaries that run the code is the build. The release sends that code to a server in a fresh package together with the nicely-separated config files for that environment (see Config again). Then the code is run so the application is available on those servers.
 
-^Rags - Everything is code. Infrastructure is code. Data is code. If it's manual it's broke.
+^Rags - Everything is code. Infrastructure is code. Data is code. If it's manual it's broke. If it's not versioned it's broke.
 
 ---
 
