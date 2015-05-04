@@ -1,4 +1,4 @@
-build-lists: true
+^ build-lists: true
 ^ Open this presentation with [Deckset](http://www.decksetapp.com/)
 
 
@@ -16,7 +16,6 @@ build-lists: true
 
 ---
 
-`footer: Image Courtesy: http://41.media.tumblr.com/0c94178debc2aa4aa492859b049a24c9/tumblr_nngy3hkPDo1rdlfnuo2_1280.png`
 
 ![fit] (images/Devops.png)
 
@@ -66,7 +65,7 @@ build-lists: true
 
 ![fit] (images/deprecated.png)
 
-^Matt - Deprecated functions means version numbers are critical.  Image courtesy: http://blog.simpsn.com/replacing-deprecated-functions-in-phpthumb-to-be-compatible-with-php-version-5-3-0
+^Matt - Version everything. Deprecated functions means version numbers are critical.  Image courtesy: http://blog.simpsn.com/replacing-deprecated-functions-in-phpthumb-to-be-compatible-with-php-version-5-3-0
 
 ---
 
@@ -96,21 +95,14 @@ build-lists: true
 # \#4: Backing Services
 
 * Anything your application uses as a resource (database, queueing system, email, cache) should be referenced with 'bindings' to these services.
-* All applications deployed with explicit references to data services in manifest.yml (mechanism for User Provided Services)
+* All applications deployed with explicit declarative references ( as in manifest.yml)
+* Avoid implicit references (User Provided Services)
 
-^Rags - put everything in YAML. Including buildpacks. Don't assume buildpack ordering
+^Rags - Explicitly declared. Access methods must be declared as well. Put everything in YAML, for example 
 
 ---
 
 ![fit] (images/yaml.jpg)
-
----
-
-* Backing Services discovered via:
-  * Spring Cloud (pay attention to configuration files)
-  * Discovery mechanism (Zookeeper, etcd, Consul etc )
-  * Environment
-  * Avoid Customer User Provided Services
 
 ---
 
@@ -119,12 +111,11 @@ build-lists: true
 
 * Build, Release and Run are separate stages for the application life cycle.
 * Version everything
-* Use profiles (ala Spring Boot) for running in different environments or containers. Profiles should be easily searchable.
-* A/B Testing and Blue/Green Deployments are great.
+* Use profiles
+* Blue/Green Deployments are a rule, not an exception.
 
-> The process of turning the code into a bundle of scripts, assets and binaries that run the code is the build. The release sends that code to a server in a fresh package together with the nicely-separated config files for that environment (see Config again). Then the code is run so the application is available on those servers.
 
-^Rags - Everything is code. Infrastructure is code. Data is code. If it's manual it's broke. If it's not versioned it's broke.
+^Rags - Everything is code. Infrastructure is code. Data is code. If it's manual it's broke. If it's not versioned it's broke. This is related to #3 - config
 
 ---
 
@@ -134,9 +125,9 @@ build-lists: true
 
 # \#6: Processes
 
-* As a rule, you want each of those instances of running code to be stateless.
 * Seperation of concerns - each microservice is a single process
-* This makes your app more resilient, and easier to recover
+* Instances of running code to be stateless - certain exceptions apply
+* This makes apps more resilient, and easier to recover
 * Categorize processes into Stateful and Stateless
 
 ^Rags - The Unix principle. Stateless - no problem. Treat Stateful processes or services differently.
@@ -145,32 +136,33 @@ build-lists: true
 
 ![fit] (images/bellichick.jpg)
 
-Image courtesy: pintrest.com
+^ Image courtesy: pintrest.com
 
 ---
 # \#7: Port Binding
 
-* Your app should not assume its the only thing running on the same port
-* Bind an internal port/IP to external URL using load balancer
+* Export services via port binding
+* For instance HTTP is exported as a service via port binding and not injected at run time.
+* The ultimate goal is to be able to horizontally scale.
 
 
-^Rags - not very relevant. CF, Lattice and Containers deal with this for the most part. Don't always assume that MySQL runs on 3306 or Couchbase runs on 8091.
+^Rags -  CF, Lattice and Containers deal with this for the most part. Don't always assume that MySQL runs on 3306 or Couchbase runs on 8091.
 
 ---
 
 # \#8: Concurrency
 
-* An extension of 6 above.
+* An extension of # 6 above.
 * An implication to scale out.
 * Not necessarily required for certain aspects (single process workers, etc)
 
-^Rags
+^Rags -- Application locking and concurrency built in.
 
 ---
 
 ![fit] (images/concurrency.png)
 
-`http://12factor.net/concurrency`
+^ `http://12factor.net/concurrency`
 
 ---
 
@@ -179,7 +171,7 @@ Image courtesy: pintrest.com
 * Losing a process should be a normal event
 * No loss of state for user if we lose a process
 * Startup times should be low
-* Lattice Scheduler for instance
+* Platforms can adapt to errant processes and self heal if required.
 
 ^Rags
 
@@ -187,7 +179,7 @@ Image courtesy: pintrest.com
 
 ![fit] (images/petversuscattle.png)
 
-Image courtesy: http://www.slideshare.net/gmccance/cern-data-centre-evolution
+^ Image courtesy: http://www.slideshare.net/gmccance/cern-data-centre-evolution
 
 ---
 
@@ -224,6 +216,14 @@ Image courtesy: http://www.slideshare.net/gmccance/cern-data-centre-evolution
 
 ---
 
+# Measure/Monitor Everything
+
+---
+
+![fit] (images/pcfopsmanager.tiff)
+
+---
+
 # \#12: Admin Processes
 
 * Use your app/framework for these... build in the tools as needed.
@@ -234,12 +234,29 @@ Image courtesy: http://www.slideshare.net/gmccance/cern-data-centre-evolution
 Importances: Moderate. Helps prevent mistakes
 
 ---
+# 6 Laws of Systems that never stop
 
-# Measure/Monitor Everything
+* Isolation
+* Concurrency
+* Failure Detection
+* Fault Identification
+* Live Code Upgrade
+* Stable Storage
+
+[http://www.infoq.com/presentations/Systems-that-Never-Stop-Joe-Armstrong] (http://www.infoq.com/presentations/Systems-that-Never-Stop-Joe-Armstrong) 
 
 ---
 
-![fit] (images/pcfopsmanager.tiff)
+# More Resources
+
+* [Pivotal Podcasts: Episode 23 (Operational transformation) ](http://blog.pivotal.io/podcasts-pivotal) 
+* [You Build it, you run it - an interview with Werner Vogels] (https://queue.acm.org/detail.cfm?id=1142065)
+* [This presentation] (https://github.com/emccode/training/blob/master/cfsummitpresos/12_Factor_Apps_For_Ops.md)
 
 ---
+
+
+
+
+
 
