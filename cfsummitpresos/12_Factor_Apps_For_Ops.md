@@ -16,10 +16,13 @@
 
 ---
 
+> I didn't change anything!
+-- every. developer. ever.
 
-![fit] (images/Devops.png)
+---
 
-^ http://41.media.tumblr.com/0c94178debc2aa4aa492859b049a24c9/tumblr_nngy3hkPDo1rdlfnuo2_1280.png
+> Well the environment didn't change!
+-- every. ops. person. ever.
 
 ---
 
@@ -32,20 +35,14 @@
 
 ---
 
-> I didn't change anything!
--- every. developer. ever.
-
----
-
-> Well the environment didn't change!
--- every. ops. person. ever.
-
----
-
 # Revision Control -> `git blame`
 #####(`svn blame` if you must)
 
 ^ Matt
+
+---
+
+![fit] (images/blame.png)
 
 ---
 
@@ -57,13 +54,13 @@
 
 ---
 
-![fit] (images/obama.jpg)
+![fit] (https://thisistwitchy.files.wordpress.com/2012/11/passing-the-buck.jpg)
 
 ^Matt - If it wasn't documented, how could you know it even was a requirement?  if it doesn't exist in SCM, it doesn't exist.
 
 ---
 
-![fit] (images/deprecated.png)
+![fit] (http://net-informations.com/faq/framework/img/obsolete.png)
 
 ^Matt - Version everything. Deprecated functions means version numbers are critical.  Image courtesy: http://blog.simpsn.com/replacing-deprecated-functions-in-phpthumb-to-be-compatible-with-php-version-5-3-0
 
@@ -92,6 +89,10 @@
 
 ---
 
+![fit] (images/yaml.jpg)
+
+---
+
 # \#4: Backing Services
 
 * Anything your application uses as a resource (database, queueing system, email, cache) should be referenced with 'bindings' to these services.
@@ -100,12 +101,12 @@
 
 ^Rags - Explicitly declared. Access methods must be declared as well. Put everything in YAML, for example 
 
----
-
-![fit] (images/yaml.jpg)
 
 ---
 
+![fit] (images/profiles.jpg)
+
+---
 
 # \#5: Build Release Run
 
@@ -119,7 +120,9 @@
 
 ---
 
-![fit] (images/profiles.jpg)
+![fit] (images/bellichick.jpg)
+
+^ Image courtesy: pintrest.com
 
 ---
 
@@ -131,12 +134,6 @@
 * Categorize processes into Stateful and Stateless
 
 ^Rags - The Unix principle. Stateless - no problem. Treat Stateful processes or services differently.
-
----
-
-![fit] (images/bellichick.jpg)
-
-^ Image courtesy: pintrest.com
 
 ---
 # \#7: Port Binding
@@ -177,9 +174,14 @@
 
 ---
 
-![fit] (images/petversuscattle.png)
+![fit] (http://upload.wikimedia.org/wikipedia/en/thumb/d/de/Cat-Cute-Kitten-HD-Wallpaper.jpg/1024px-Cat-Cute-Kitten-HD-Wallpaper.jpg)
+![fit] (http://img.photobucket.com/albums/v453/jmr8891/Silkies/Misc/IMG_7264.jpg)
 
 ^ Image courtesy: http://www.slideshare.net/gmccance/cern-data-centre-evolution
+
+---
+
+![fit] (images/workedonmine.jpg)
 
 ---
 
@@ -192,13 +194,16 @@
 
 ![fit] (images/worksonmymachine.png)
 
----
-
-![fit] (images/workedonmine.jpg)
 
 ---
 
 # \#11: Logs
+
+---
+
+![fit] (images/criticalerror.png)
+
+---
 
 * Log *everything*
   * Storage is cheap
@@ -206,9 +211,6 @@
 * Logs help fix problems *after* they happen
 * Use tokens for specific flows
 
----
-
-![fit] (images/criticalerror.png)
 
 ---
 
@@ -231,29 +233,16 @@
 * Don’t run them from a local terminal window
 * ChatOps can help here
 
-Importances: Moderate. Helps prevent mistakes
-
----
-# 6 Laws of Systems that never stop
-
-* Isolation
-* Concurrency
-* Failure Detection
-* Fault Identification
-* Live Code Upgrade
-* Stable Storage
-
-[http://www.infoq.com/presentations/Systems-that-Never-Stop-Joe-Armstrong] (http://www.infoq.com/presentations/Systems-that-Never-Stop-Joe-Armstrong) 
 
 ---
 
 # More Resources
 
+* [Systems that Never Stop] (http://www.infoq.com/presentations/Systems-that-Never-Stop-Joe-Armstrong) 
 * [Pivotal Podcasts: Episode 23 (Operational transformation) ](http://blog.pivotal.io/podcasts-pivotal) 
 * [You Build it, you run it - an interview with Werner Vogels] (https://queue.acm.org/detail.cfm?id=1142065)
-* [This presentation] (https://github.com/emccode/training/blob/master/cfsummitpresos/12_Factor_Apps_For_Ops.md)
+* [This presentation] (https://github.com/emccode/training/blob/master/cfsummitpresos/)
 
----
 
 
 
