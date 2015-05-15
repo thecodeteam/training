@@ -31,7 +31,7 @@ and the services that are installed with the following command.
 cf marketplace
 ```
 
-You should see an output that lists the different services and the plans.
+You should see an output that lists the different services and the plans that have been pre-installed for your convenience.
 
 ```
 +------------+------+------------------------------------------+---------+------+--------+----------+---------+--------+------+
@@ -50,6 +50,8 @@ You should see an output that lists the different services and the plans.
 ```
 
 We will be pushing an app. and connecting to a service in the upcoming exercises.
+
+You can also try additional options for the CLI.
 
 
 
