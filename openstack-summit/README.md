@@ -7,7 +7,24 @@ Needless to say you'll need a laptop! For best experience, a Mac or Linux enviro
 - [Git](http://git-scm.com/downloads) or "brew install git"	
 - A [GitHub](https://github.com) account
 - [**optional**] Java, Your favorite Java editor (Eclipse, IntelliJ IDEA, Netbeans) or your favorite language IDE if you want to build/package artifacts. Installable artifacts will be provided if you do not want to build.
-- [The stackato CLI] (https://github.com/cloudfoundry/cli/releases) - download the latest version that is appropriate for your laptop.
+- [The stackato CLI] (http://www.activestate.com/stackato/download_client) - download the latest version that is appropriate for your laptop and follow the instructions in README.txt. 
+- Create an alias for stackato as cf. You can create an alias for ```stackato``` as ```cf``` in which case the stackato CLI commands will be approximately similar to the cf CLI commands
+
+Verify that you're using the right command with any of the following commands.
+
+```
+cf --version
+```
+
+You should see an output like below.
+
+`stackato 3.2.1 (3.2.1 @ 2015-04-10 14:28:15 -0700)`
+
+or
+
+```
+cf --help
+```
 
 ##Recommended Exercises - User Related
 
