@@ -68,6 +68,42 @@ Started.
 
 ---
 
+# Docker
+
+```
+$ docker version
+Client version: 1.6.2
+Client API version: 1.18
+Go version (client): go1.4.2
+Git commit (client): 7c8fca2
+OS/Arch (client): darwin/amd64
+Server version: 1.6.2
+Server API version: 1.18
+Go version (server): go1.4.2
+Git commit (server): 7c8fca2
+OS/Arch (server): linux/amd64
+```
+
+---
+
+# Docker Compose
+
+```
+$ docker-compose ps
+Name   Command   State   Ports
+------------------------------
+```
+
+---
+
+# Optional: Clean up your Docker environment
+
+```
+docker rm `docker images -q`
+docker rmi `docker images -q`
+```
+
+---
 
 ## Docker Compose example (1/3)
 
@@ -116,8 +152,73 @@ redis:
 ```
 ---
 
+# So what are we defining?
+
+build - the dir we are building from
+command - the command we run inside the container
+ports - the ports we open and map to the host
+volumes - directory we map as a volume and where we mount it
+links - what service we link to (create /etc/hosts lines)
 
 ---
+
+# Run it!
+
+```
+$ docker-compose up
+Creating lab3dockercomposeandpanamax_redis_1...
+Pulling image redis:latest...
+latest: Pulling from redis
+<snip>
+Creating lab3dockercomposeandpanamax_web_1...
+Building web...
+Step 0 : FROM python:2.7
+2.7: Pulling from python
+<snip>
+redis_1 | 1:M 05 Jun 16:20:55.105 * DB loaded from disk: 0.000 seconds
+redis_1 | 1:M 05 Jun 16:20:55.105 * The server is now ready to accept connections on port 6379
+web_1   |  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+web_1   |  * Restarting with stat
+```
+
+---
+
+# Sooooo, how do we connect to it?
+
+```
+$ boot2docker ip
+192.168.59.103
+```
+
+---
+
+![fit](images/docker-compose-hello-world.png)
+
+---
+
+# Refresh!
+
+---
+
+![fit](images/docker-compose-hello-world2.png)
+
+---
+
+# So what have you done?
+
+Built a container from scratch
+Run a web app using Flask in the container
+Connect it to Redis
+Store data in Redis
+Retrieve the data and present it
+
+---
+
+# Pretty cool!
+
+---
+
+
 
 # Panamax
 
