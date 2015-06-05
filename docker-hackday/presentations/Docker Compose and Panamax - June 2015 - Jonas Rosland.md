@@ -183,6 +183,57 @@ web_1   |  * Restarting with stat
 
 ---
 
+# Verify that it's running
+
+```
+$ docker-compose ps
+               Name                             Command             State           Ports
+--------------------------------------------------------------------------------------------------
+lab3dockercomposeandpanamax_redis_1   /entrypoint.sh redis-server   Up      6379/tcp
+lab3dockercomposeandpanamax_web_1     python app.py                 Up      0.0.0.0:5000->5000/tcp
+```
+
+---
+
+# Wanna verify more stuff?
+
+---
+
+# docker ps
+
+```
+$ docker ps
+CONTAINER ID        IMAGE
+9f4fe02e2696        lab3dockercomposeandpanamax_web:latest
+d01f11317166        redis:latest
+```
+
+---
+
+# docker exec
+
+```
+$ docker exec -ti 9f4fe02e2696 /bin/bash
+root@9f4fe02e2696:/code# ls
+Dockerfile  app.py  docker-compose.yml	requirements.txt  test
+```
+
+---
+
+# docker exec
+
+```
+root@9f4fe02e2696:/code# cat /etc/hosts
+172.17.0.7	9f4fe02e2696
+127.0.0.1	localhost
+<snip>
+172.17.0.5	lab3dockercomposeandpanamax_redis_1 d01f11317166
+172.17.0.5	redis d01f11317166 lab3dockercomposeandpanamax_redis_1
+172.17.0.5	redis_1 d01f11317166 lab3dockercomposeandpanamax_redis_1
+```
+
+---
+
 # Sooooo, how do we connect to it?
 
 ```
@@ -218,7 +269,131 @@ Retrieve the data and present it
 
 ---
 
+# What happens if you stop and start it?
 
+---
+
+## Was there anything unneccesary in the Dockerfile or docker-compose.yml?
+
+---
+
+# Some more info on Docker Compose
+
+---
+
+# External links
+
+Link to containers outside Docker Compose using **CONTAINER:ALIAS**
+
+```
+external_links:
+ - redis_1
+ - project_db_1:mysql
+ - project_db_1:postgresql
+```
+
+---
+
+# Ports
+
+Using the **HOST:CONTAINER** format, don't use ports lower than 60, because YAML will parse numbers in the format xx:yy as sexagesimal (base 60). For this reason, we recommend always adding port mappings as strings.
+
+```
+ports:
+ - "3000"
+ - "8000:8000"
+ - "49100:22"
+ - "127.0.0.1:8001:8001"
+```
+
+---
+
+# What about scaling?
+
+---
+
+# Let's change our docker-compose.yml
+
+```
+web:
+  build: .
+  command: python app.py
+  ports:
+   - "5000"
+  links:
+   - redis
+redis:
+  image: redis
+```
+
+---
+
+# Re-run docker-compose up
+
+```
+$ docker-compose up
+<snip>
+$ docker-compose ps
+               Name                             Command             State            Ports
+---------------------------------------------------------------------------------------------------
+lab3dockercomposeandpanamax_redis_1   /entrypoint.sh redis-server   Up      6379/tcp
+lab3dockercomposeandpanamax_web_1     python app.py                 Up      0.0.0.0:32770->5000/tcp
+```
+
+See the port number?
+
+---
+
+![fit](images/docker-compose-scale.png)
+
+---
+
+# Scale it!
+
+```
+$ docker-compose scale web=3
+Creating lab3dockercomposeandpanamax_web_2...
+Creating lab3dockercomposeandpanamax_web_3...
+Starting lab3dockercomposeandpanamax_web_2...
+Starting lab3dockercomposeandpanamax_web_3...
+```
+
+---
+
+# Check the ports
+
+```
+$ docker-compose ps
+               Name                             Command             State            Ports
+---------------------------------------------------------------------------------------------------
+lab3dockercomposeandpanamax_redis_1   /entrypoint.sh redis-server   Up      6379/tcp
+lab3dockercomposeandpanamax_web_1     python app.py                 Up      0.0.0.0:32770->5000/tcp
+lab3dockercomposeandpanamax_web_2     python app.py                 Up      0.0.0.0:32771->5000/tcp
+lab3dockercomposeandpanamax_web_3     python app.py                 Up      0.0.0.0:32772->5000/tcp
+```
+
+---
+
+![fit](images/docker-compose-scale2.png)
+
+---
+
+![fit](images/docker-compose-scale3.png)
+
+---
+
+# So what have you done?
+
+Scaled a web app
+Connected all instances to a shared Redis DB
+Stored persistent data in Redis
+Presented that persistent data using all web instances
+
+---
+
+# Well done!
+
+---
 
 # Panamax
 
