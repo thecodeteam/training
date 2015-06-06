@@ -21,6 +21,10 @@
 
 ---
 
+## github.com/emccode/training
+
+---
+
 Different types of management
 
 **Developer-focused:**
