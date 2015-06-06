@@ -11,6 +11,16 @@
 
 ---
 
+# emccode.github.io
+
+---
+
+# Raffle!
+# Follow and tweet
+# @emccode
+
+---
+
 Different types of management
 
 **Developer-focused:**
@@ -385,17 +395,129 @@ lab3dockercomposeandpanamax_web_3     python app.py                 Up      0.0.
 # So what have you done?
 
 Scaled a web app
-Connected all instances to a shared Redis DB
+Connected all web instances to a shared Redis DB
 Stored persistent data in Redis
 Presented that persistent data using all web instances
 
 ---
 
-# Well done!
+# You are awesome :)
 
 ---
 
-# Panamax
+# One more thing...
+
+---
+
+# Docker Compose Extends!
+
+---
+
+# Extends
+
+Enables sharing of common configs
+Lets you reuse commonly-defined services
+
+---
+
+# So how do we do this?
+
+---
+
+# Lets take our example app again
+
+---
+
+# app.py
+
+```
+from flask import Flask
+from redis import Redis
+import os
+
+app = Flask(__name__)
+redis = Redis(host=os.environ['REDIS_HOST'], port=6379)
+
+@app.route('/')
+def hello():
+   redis.incr('hits')
+   return 'Hello World! I have been seen %s times.\n' % redis.get('hits')
+
+if __name__ == "__main__":
+   app.run(host="0.0.0.0", debug=True)
+```
+
+---
+
+# Dockerfile
+
+```
+FROM python:2.7
+ADD . /code
+WORKDIR /code
+RUN pip install -r
+requirements.txt
+CMD python app.py
+```
+
+---
+
+# common.yml
+
+```
+web:
+  build: .
+  ports:
+    - "5000:5000"
+```
+
+---
+
+# docker-compose.yml
+
+```
+web:
+  extends:
+    file: common.yml
+    service: web
+  volumes:
+    - .:/code
+  links:
+    - redis
+  environment:
+    - REDIS_HOST=redis
+redis:
+  image: redis
+```
+
+---
+
+# docker-compose up
+
+---
+
+## Try changing app.py to see what happens :)
+
+---
+
+# production.yml
+
+```
+web:
+  extends:
+    file: common.yml
+    service: web
+  environment:
+    - REDIS_HOST=redis-production.example.com
+```
+
+---
+
+### docker-compose -f production.yml up
+
+---
+
+# Alright, time for Panamax
 
 ---
 
@@ -444,6 +566,38 @@ Released in August 2014
 ## Link containers together
 
 ![inline](https://virtualswede.files.wordpress.com/2014/09/screen-shot-2014-09-08-at-8-20-00-pm.png)
+
+---
+
+# Verify you've got Panamax installed
+
+$ panamax init
+
+---
+
+# Port forwarding your Panamax instance
+
+```
+VBoxManage controlvm panamax-vm natpf1 rule1,tcp,,8080,,80
+```
+
+---
+
+# Demotime!!
+
+---
+
+# Hope you all enjoyed this workshop :)
+
+---
+
+# Contact
+
+### Jonas Rosland
+### Developer Advocate
+#### @jonasrosland
+#### jonas.rosland@emc.com
+#### emccode.github.io
 
 ---
 
