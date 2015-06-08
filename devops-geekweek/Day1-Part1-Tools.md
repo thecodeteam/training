@@ -37,13 +37,15 @@
 
 #Tools
 
-- [Git](https://help.github.com/articles/set-up-git/)
-- [Vagrant](http://vagrantup.com)
-- [VirtualBox](http://virtualbox.org)
-- [Boot2Docker](http://boot2docker.io/)
-- [CloudFoundry CLI](http://docs.cloudfoundry.org/devguide/installcf/)
-- [Slack](http://slack.com)
-- [Trello](http://trello.com)
+[Git](https://help.github.com/articles/set-up-git/)
+[CloudFoundry CLI](http://docs.cloudfoundry.org/devguide/installcf/)
+[Slack](http://slack.com)
+[Trello](http://trello.com)
+
+Optional
+  - [Vagrant](http://vagrantup.com)
+  - [VirtualBox](http://virtualbox.org)
+  - [Boot2Docker](http://boot2docker.io/)
 
 ---
 
@@ -67,24 +69,6 @@ Most open source projects are hosted and collaborated on here.
 
 > If you're not on GitHub you don't exists.
 -- Friendly developer
-
----
-
-#Vagrant
-
-A tool for managing sets of virtual machines that comprise an application, defined as text (so they can be versioned in Git!).
-
-```
-Vagrant.configure("2") do |config|
-  scaleio_nodes.each do |node|
-    config.vm.define node[:hostname] do |node_config|
-      node_config.vm.box = "#{vagrantbox}"
-      node_config.vm.box_url = "#{vagrantboxurl}"
-      node_config.vm.host_name = "#{node[:hostname]}.#{domain}"
-      node_config.vm.provider :virtualbox do |vb|
-        vb.customize ["modifyvm", :id, "--memory", "1024"]
-        ...
-```
 
 ---
 
