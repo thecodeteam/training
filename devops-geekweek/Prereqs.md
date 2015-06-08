@@ -18,6 +18,7 @@ List of necessary tools to have installed and required reading material due befo
  - [Slack](http://slack.com)
  - [Trello](http://trello.com)
  - [Google Hangouts](http://hangouts.google.com)
+ - [Python 2.7](https://www.python.org/downloads/release/python-2710/)
 
 ## Required reading
 
