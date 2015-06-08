@@ -28,7 +28,7 @@
 Different types of management
 
 **Developer-focused:**
-- Fig
+- Docker Compose
 - Panamax
 
 **Ops-focused:**
@@ -459,8 +459,7 @@ if __name__ == "__main__":
 FROM python:2.7
 ADD . /code
 WORKDIR /code
-RUN pip install -r
-requirements.txt
+RUN pip install -r requirements.txt
 CMD python app.py
 ```
 
