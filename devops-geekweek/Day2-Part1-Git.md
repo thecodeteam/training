@@ -123,7 +123,7 @@ Fork it!
 
 # Clone _that_ repo instead of the original one
 
-```git clone https://github.com/yourname/training-repo```
+```git clone https://github.com/<yourname>/training-repo```
 
 Repeat your changes, and try to push
 
@@ -189,7 +189,7 @@ Use releases to make it easy for the community to use stable code
 
 # Create a new branch
 
-```git branch new-feature```
+```git branch awesome-feature```
 
 ![inline](images/github_new_branch.png)
 
