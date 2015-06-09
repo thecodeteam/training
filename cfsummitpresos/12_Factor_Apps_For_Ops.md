@@ -42,7 +42,7 @@
 
 ---
 
-![fit] (images/blame.png)
+![fit] (http://memecrunch.com/meme/ZEUJ/if-you-bothered-to-look-at-git-blame/image.jpg)
 
 ---
 

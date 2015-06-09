@@ -17,10 +17,9 @@
 
 # Day 2 Agenda
 
-* Daily Standup
 * Understand Git / Source Code Management
-* Do work via collaborative methods
-* Write some code, deploy containers locally
+* 12 Factor Apps
+* Divvy Up Some Work
 
 ---
 
