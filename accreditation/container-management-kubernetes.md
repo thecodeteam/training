@@ -59,9 +59,11 @@ Kubernetes can run anywhere!
 
 # Pods
 
-Small group of Docker containers with shared volumes
+Small group of Docker containers that work together
 
 The smallest deployable unit that can be created, scheduled, and managed with Kubernetes
+
+Example: web server and a content syncer
 
 ![inline](http://upload.wikimedia.org/wikipedia/commons/5/5b/NCI_peas_in_pod.jpg)
 
@@ -73,17 +75,17 @@ Ensures that a specified number of pods are running at any given time
 
 Creates or kills pods as required
 
-If you want to have 4 copies of something running, that the desired state
+If you want to have 4 copies of something running, that's the desired state
 
-The RPs always make sure to get to the desired state
+The RCs always make sure to get to the desired state
 
 ---
 
 # Services
 
-Provide a single, stable name and address for a set of pods
+A set of pods that work together
 
-They act as basic load balancers
+Example: load-balanced backends
 
 ---
 
@@ -94,47 +96,34 @@ Used to organize and select groups of objects based on **key:value** pairs.
 Examples:
 ```
 role: frontend
-stage: production
-country: sweden
+vs
+role: backend
 ```
 
 ---
 
-# More than just "running" containers
+# So to put it all together
 
-Scheduling - where should my job be run
-lifecycle
-discovery
-constiencu
-scale-up
-auth
-monitoring
-health
+Containers run on clusters
 
----
+Pods are containers that work together
 
-# Primary concepts
+Services are pods that work together
 
-0. Container - a sealed application package (Docker)
-1. Pod - a small group pf tightly coupled containers
-2. Controler - a loop that drives current state towards desired state
-3. Service - a set of running pods that work together
-4. Labels - identifying metadata attached to other objects
-5. Selector - a query against labels, producinng a set result
+Labels are used to organize services
 
 ---
 
-# Pods
-
-Small group of containers, tightly coupled
-Shared namespace (share IP and localhost)
-Ephemeral (can die and be replaced)
-The smallest thing that can be scheduled, it's the "atom" of Kubernetes
+![fit](images/Kubernetes overview.001.png)
 
 ---
 
-# Why pods?
-
-By coupling things together they can work better
+![fit](images/Kubernetes overview.002.png)
 
 ---
+
+![fit](images/Kubernetes overview.003.png)
+
+---
+
+![fit](images/Kubernetes overview.004.png)
