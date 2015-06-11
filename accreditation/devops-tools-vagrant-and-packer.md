@@ -1,17 +1,35 @@
-# Container Management: Kubernetes
+# DevOps tools: Vagrant and Packer
 ### 2015 Q3 EMC Accreditation
 ### Jonas Rosland (@jonasrosland) &
 ### Matt Cowger (@mcowger)
 
 ---
 
-> Kubernetes
-> Greek for "pilot" or "Helmsman of a ship"
+# Hashicorp
+
+![fit](https://pbs.twimg.com/profile_images/525656622308143104/0pPm3Eov.png)
 
 ---
 
-# koo-ber-nay'-tace
-## Container management at scale
+# Hashicorp
+
+Founded in 2012
+
+Creates Open Source software like:
+ - Vagrant
+ - Packer
+ - Serf
+ - Consul
+ - Terraform
+ - Vault
+
+---
+
+![fit](http://upload.wikimedia.org/wikipedia/commons/8/87/Vagrant.png)
+
+---
+
+![fit](https://d23f6h5jpj26xu.cloudfront.net/mitchellh_24702982422030_small.png)
 
 ---
 
