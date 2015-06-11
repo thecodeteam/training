@@ -38,16 +38,16 @@ A basic outline of the course follows, on a day-by-day basis.  Throughout the co
 ####Day 2:
 * Daily standup
 * Basic tutorial on GitHub / Source Code Management
-* Team works via collaborative methods (Slack, Asana, Google Hangouts, etc) to complete tasks committed for that day.  Code will be written, containers deployed locally.
+* Team works via collaborative methods (Slack, Asana, Google Hangouts, etc) to complete tasks committed for that day.
 
 ####Day 3:
 * Daily standup
-* Basic tutorial on CF concepts and provisioned services (including object storage)
+* Basic tutorial on CF concepts and provisioned services.
 * Team works to produce basic working deployed application to CF by end of day
 
 ####Day 4:
 * Daily standup
-* Basic tutorial on application instrumentation and management (logging, application performance analytics) using Blue/Green Deployment.
+* Basic tutorial on application instrumentation and management (logging, application performance analytics).
 * Team works to add monitoring and management to application, signs up for alerts, etc.
 
 #### Day 5:
