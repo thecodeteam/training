@@ -17,9 +17,11 @@
 
 # Day 2 Agenda
 
-* Understand Git / Source Code Management
+* Daily standup
+* Basic tutorial on GitHub / Source Code Management
 * 12 Factor Apps
-* Divvy Up Some Work
+* Team works via collaborative methods (Slack, Asana, Google Hangouts, etc) to complete tasks committed for that day.
+* Optional: Vagrant & Packer
 
 ---
 

@@ -29,9 +29,10 @@
 
 #Day 1 Agenda
 
-* Get Acclimated to Tools
-* What is / how to do Agile
-* Sprint Planning
+* Get acclimated to the [tools](Day1-Part1-Tools.md) in use
+* Discuss basic Agile methodology and how to use it.
+* Do first Sprint Planning for team project, including story pointing.
+
 
 ---
 
