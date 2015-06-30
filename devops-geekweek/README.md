@@ -49,6 +49,7 @@ Participants should:
 
  - [The Phoenix Project](http://www.amazon.com/The-Phoenix-Project-Helping-Business/dp/0988262592)
  - [The Goal](http://www.amazon.com/The-Goal-Process-Ongoing-Improvement/dp/0884271951)
+
 ##Basic Course Overview
 
 A basic outline of the course follows, on a day-by-day basis.  Throughout the course the proctor/instructor will participate both as a team member completing work as well as mentor for individual tasks (writing code if needed, etc), as well as guiding based on Agile principles.
