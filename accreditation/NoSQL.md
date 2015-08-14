@@ -30,6 +30,7 @@ RDBMs Are Bad At:
 * Large Scale (>10 nodes)
 * Changes (schema, etc) on the fly
 
+
 ---
 
 #Lets Use the Right Tool for the Right Job
@@ -42,6 +43,9 @@ NoSQL Are Good At:
 * Low Latency
 * Large Scale
 * Changes
+  * With great power comes great responsibility
+
+![inline](https://btglifestyle.files.wordpress.com/2013/06/uncle-ben-from-spiderman.jpg)
 
 ---
 
@@ -72,13 +76,11 @@ NoSQL (Might Be) Bad At:
 
 #4 Common Types
 
-
-
 ---
 
 #Key Value
 
-* Stores a simple value (1, "mcowger") in a 'key': ()"number of hits")
+* Stores a simple value (10,456,345) in a 'key': ("usercount")
 * Simple 'CRUD' semantics
   * Create, Read, Update, Delete
 * No schema at all, generally
@@ -126,6 +128,9 @@ NoSQL (Might Be) Bad At:
 * For associating simple data types, these tend to be orders of magnitude faster than SQL
 * "Show me everyone that likes MacOS"
 * Rough Scene :)
+
+^ Twitter finding friends
+^ Logistics shortest route
 
 ---
 
