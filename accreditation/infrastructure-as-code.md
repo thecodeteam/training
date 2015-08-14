@@ -8,20 +8,20 @@
 
 ---
 
-![fit](images/what-is-infra.001.png)
+![fit](http://i.imgur.com/950nSwL.png)
 
 ^ storage network compute
 ^ what we normally sell
 
 ---
 
-![fit](images/what-is-infra.002.png)
+![fit](http://i.imgur.com/L4T2mWr.png)
 
 ^ support services
 
 ---
 
-![fit](images/what-is-infra.003.png)
+![fit](http://i.imgur.com/M9FJ8La.png)
 
 ^ app code, queueing, databases, etc
 
