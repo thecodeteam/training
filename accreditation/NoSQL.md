@@ -113,7 +113,7 @@ NoSQL (Might Be) Bad At:
 ---
 
 * Examples:
-  * CouchDB / Cloudant
+  * CouchDB / Cloudant (try it for free: https://cloudant.com/sign-up/)
   * MarkLogic (popular in .gov)
   * MongoDB (try it for free: https://mongolab.com/)
   * Amazon SimpleDB (outdated)
