@@ -105,6 +105,22 @@ NoSQL (Might Be) Bad At:
 
 * Store Larger Scale Documents
   * Usually in standard encoding: `JSON`, `YML`, `BSON`
+  * *not* Word documents
+
+---
+
+```javascript
+{
+    "id": 1,
+    "name": "A green door",
+    "price": 12.50,
+    "tags": ["home", "green"]
+}
+
+```
+
+---
+  
 * Retrieve Documents Based on Key *or* Contents
 * Highly Scalable (tens to hundreds of nodes)
 * "Show me documents that talk about MacOS"
@@ -141,6 +157,7 @@ NoSQL (Might Be) Bad At:
   * Neo4j (http://console.neo4j.org/)
   * InfiniteGraph
   * AllegroGraph
+  * BlazeGraph (used in ViPR SRM)
 
 ---
 

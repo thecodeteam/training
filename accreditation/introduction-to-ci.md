@@ -50,13 +50,13 @@ but...
 
 * Developer makes changes locally, tests locally
   * Developer runs local unit tests
-  * (optional) Developer runs maual integration tests using CI system
+  * (optional) Developer runs manual integration tests using CI system
 
 ---
 
 #Stage 2  
 
-* Developer checks in his code (`git`, `subversion`)
+* Developer checks in the code (`git`, `subversion`)
 * CI system begins testing
   * Spins up resources required for test (VMs, containers, etc)
   * Checks out code revision added by developer
