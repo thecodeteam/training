@@ -1,4 +1,7 @@
 # NoSQL
+### 2015 Q4 EMC Accreditation
+### Jonas Rosland (@jonasrosland) &
+### Matt Cowger (@mcowger)
 
 ---
 
