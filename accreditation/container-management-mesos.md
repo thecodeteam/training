@@ -39,8 +39,6 @@ Java, Python and C++ APIs for developing new parallel applications
 
 Web UI for viewing cluster state
 
-**Not just for containers!**
-
 ---
 
 ![fit](images/mesos.png)
@@ -61,11 +59,27 @@ Generally considered easier to start with than Apache Aurora
 
 ---
 
-# Aurora
-
-Apache Aurora is a Mesos framework for long-running services and cron jobs.
-
-Similar to Marathon, but development is driven by Apache instead of Mesosphere
+```json
+{
+    "id": "nginx",
+    "container": {
+      "docker": {
+        "image": "million12/nginx",
+        "network": "BRIDGE",
+        "portMappings": [
+          { "containerPort": 80, "hostPort": 0, "protocol": "tcp"}
+        ],
+        "parameters": [
+            { "key": "volume-driver", "value": "rexray" },
+            { "key": "volume", "value": "nginx-data:/data/www" }
+        ]
+      }
+    },
+    "cpus": 0.2,
+    "mem": 32.0,
+    "instances": 1
+}
+```
 
 ---
 
@@ -80,6 +94,10 @@ Used for job orchestration
 ---
 
 ![fit](https://mesos.github.io/chronos/img/chronos_ui-1.png)
+
+---
+
+# Demo
 
 ---
 
@@ -103,14 +121,14 @@ http://mesos.apache.org/documentation/latest/powered-by-mesos/
 
 https://github.com/mesosphere/playa-mesos
 
+https://github.com/everpeace/vagrant-mesos
+
 ---
 
 # More info
 
 http://mesos.apache.org/
 
-https://github.com/mesosphere/marathon
+https://mesosphere.github.io/marathon/
 
 https://mesos.github.io/chronos/
-
-http://aurora.apache.org/
