@@ -1,5 +1,9 @@
 autoscale: true
 # Introduction to Continuous Integration
+### 2015 Q4 EMC Accreditation
+### Jonas Rosland (@jonasrosland) &
+### Matt Cowger (@mcowger)
+
 
 ---
 
