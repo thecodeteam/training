@@ -18,3 +18,6 @@ Here are direct links to the accreditation course videos on YouTube:
 
 ## Q4
  - [Container Data Persistence presentation](http://kendrickcoleman.com/slides/containerpersistence/#/)
+ - Intro to NoSQL
+ - Intro to Continuous Integration
+ - Container Management - Mesos
