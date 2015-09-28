@@ -198,10 +198,14 @@ If you have problems with your client there are likely two issues.
 If you have a problem when running `docker run` or `docker pull` where it hangs when pulling docker image layers and you are inside the EMC corporate network, it is likely that you are running into SSL certificate errors and trust issues between the Docker daemon and the public Docker Hub/CDN.  For this you must download our SSL certificate and place it inside the container host.
 
 - Open `http://gso.corp.emc.com/installupdatedcerts.aspx` and Download `EMCs SSL Decryption` certificate.
-- Convert the certificate to a PEM file with `openssl x509 -in ~/Downloads/EMC\ SSL.cer -out EMC_SSL.pem`
-- SSH to the container host to place the certificate there by running `docker-machine ssh containerhost`
+- Open the file in a text editor and copy the contents
+- Run `docker-machine ssh containerhost` to SSH into the container host
+- Stop Docker by running `ps ax | grep docker` to find the process ID, and then kill it by running `sudo kill processID`
+- In the Docker container host, create a new file and copy the `EMC SSL.cer` contents into it by running `vi EMC_SSL.cer`, press `i` to be able to insert text, paste the contents you copied above, then press `:wq` to write the file and quit the text editor
+- Convert the certificate to a PEM file with `openssl x509 -in EMC_SSL.cer -out EMC_SSL.pem`
 - Update the CA certificates files to include this certificate with `cat EMC_SSL.pem | sudo tee -a /etc/ssl/certs/ca-certificates.crt`
-- Restart the Docker daemon services with ```sudo /etc/init.d/docker restart```
+- Start the Docker daemon services again with ```sudo /etc/init.d/docker start```
+- Verify that you can still connect to the Docker engine by running `docker version` and then verify that you can download images by doing `docker pull redis`
 
 #### General Troubleshooting
 One way to troubleshoot is to run the Docker daemon manually to see the logs in real-time.  
