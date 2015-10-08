@@ -20,7 +20,6 @@ A single day, heavy duty, partially hands-on introduction to discussions around 
 
 * Basic concepts & drivers behind Agile methods
   * Why Agile - the manifesto
-  * What else is there?
   * Basic mechanics of one style (SCRUM)
 * Source Code Management
   * Why it matters
@@ -36,14 +35,12 @@ A single day, heavy duty, partially hands-on introduction to discussions around 
   * Why they are 'taking over'
   * The 12 Factors
 * Cloud Native Platforms
-  * What you need to run this
-  * The idea of 'services'
+  * Ops Management + Services + Runtime
   * Prescriptive vs. Unstructured
 * Cloud Foundry
   * Base Components
   * Where it runs / how
-  * Developer Experience
-  * Operator Experience
+  * Developer & Operator Experience
   * *Hands On*: `cf push` checked out app
 
 ---
