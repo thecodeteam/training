@@ -6,6 +6,14 @@ A single day, heavy duty, partially hands-on introduction to discussions around 
 
 ---
 
+## Prework
+
+* Read Phoenix Project
+* Install `git`
+* Install `cf`
+
+---
+
 ##Agenda:
 
 ##Part 1:
