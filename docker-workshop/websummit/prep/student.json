@@ -1,0 +1,37 @@
+{
+    "extensions": [
+        {
+            "rexray": {
+                "version": "unstable",
+                "files": {
+                    "config.yml": {
+                        "source": "/Users/kcoleman/Desktop/rexconfig.yml",
+                        "destination": "/etc/rexray/config.yml"
+                    }
+                }
+            }
+        },
+        {
+            "generic": {
+                "copy": {
+                    "/Users/kcoleman/Desktop/dockertraining.sh": "/home/ubuntu/training.sh"
+                },
+                "validOS": [
+                    "ubuntu",
+                    "debian"
+                ]
+            }
+        },
+        {
+            "generic": {
+                "run": [
+                    "sudo bash /home/ubuntu/training.sh"
+                ],
+                "validOS": [
+                    "ubuntu",
+                    "debian"
+                ]
+            }
+        }
+    ]
+}
