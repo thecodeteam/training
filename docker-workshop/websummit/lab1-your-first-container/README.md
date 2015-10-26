@@ -89,29 +89,31 @@ You'll see that `-i` means we'll run this container interactively, and `-t` mean
 
 This will start the container, giving it its own file system, networking etc. and start up a shell for us to rummage around inside the container.
 
+Notice how the prompt should resemble something similar to `root@87f4bb2a8aec:/#` now.  This means you have an interactive session inside of the container.
+
 Now that you're in your container, look around a bit and run some commands, like `ifconfig` and `ls /`. You can even install applications here, so try to run `apt-get update` and then `apt-get install apache2 -y`.
 
 You now have apache running in the container!
 
-To exit the container, there are two options. `CTRL-d` exits the shell and shuts down the container. If you want to keep the container running but detach from it, do `CTRL-p CTRL-q`. You can then re-attach to it by running `docker attach UNIQUEID`.
+To exit the container, there are two options. `CTRL-d` exits the shell and shuts down the container. If you want to keep the container running but detach from it, do `CTRL-p CTRL-q`. You can then re-attach to it by running `docker attach UNIQUEID`.  Following this enter `CTRL-d` or `exit`.
 
 ## Run some simple apps
 
 We will run tomcat which a Java based application server. To do this we use the following command.
 
-```$ docker run -d -p 8888:8080 tomcat:8.0```
+```docker run -d -p 8888:8080 tomcat:8.0```
 
 The image will be downloaded if required and tomcat will be run in a *deamon* mode.
 
 Now run the following command.
 
-```$ docker ps```
+```docker ps```
 
 Which will yield an output that looks something like below (Partial output).
 
 ```
-STATUS              PORTS                    NAMES
-Up 17 seconds       0.0.0.0:8888->8080/tcp   romantic_stallman
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                    NAMES
+9599164804bb        tomcat:8.0          "catalina.sh run"   4 seconds ago       Up 3 seconds        0.0.0.0:8888->8080/tcp   mad_brahmagupta
 ```
 Notice that under the PORTS section the port 8888 of the localhost is forwarded to port 8080 of tomcat running in the container.
 
@@ -121,17 +123,24 @@ Read more about the [docker run](https://docs.docker.com/reference/run/) command
 
 ## Use some command lines (on your own)
 
-1. Check the available command line arguments: `$ docker help`
-2. view available images: `$ docker images`
-3. see all containers: `$ docker ps -a`
-4. start a new container: `$ docker run -tid busybox`
-    - get the container id: `$ docker ps`
-    - run a command from the container: `$ docker exec <id> touch /home/helloworld`
-    - attach to the container: `$ docker attach <id>`
-    - verify the file we created exists & then exit with `CTRL-p CTRL-q`
-    - stop the container: `$ docker stop <id>`
-    - remove the container: `$ docker rm <id>`
-    - verify it's gone: `$ docker ps -a`
+1. Check the available command line arguments: `docker help`
+2. View pulled images: `docker images`
+3. See all running and stopped containers: `docker ps -a`
+4. Start a new `busybox` container in the background with TTY + Interactive + Daemon modes enabled: `docker run -tid busybox`
+    - Refer to container ID that was returned or get the container id: `docker ps`
+    - Run a command from the container: `docker exec <id> touch /home/helloworld`
+    - Attach to the container: `docker attach <id>`
+    - Press enter to get prompt
+    - Verify the file we created exists & then exit with `CTRL-p CTRL-q`
+    - Stop the container: `docker stop <id>`
+    - Remove the container: `docker rm <id>`
+    - Verify it's gone: `docker ps -a`
+
+
+## Congratulations!!
+
+You've created your first container and performed some basic interactive `Docker` management of containers!
+
 
 ## Troubleshooting
 
@@ -151,8 +160,7 @@ Make sure you have the correct environment variables exported as outlined above.
 #### General Troubleshooting
 One way to troubleshoot is to run the Docker daemon manually to see the logs in real-time.  
 
-1. Make to sure SSH to the Boot2Docker image with ```boot2docker ssh```.  
-2. Get the command that we run the Docker daemon with by running ```ps auxfw | grep docker```.  
-3. Stop the Docker daemon with ```/etc/init.d/docker stop```.  
-4. Manually run the Docker daemon with the command you found from ```ps``` which should be something similar to ```/usr/local/bin/docker -d -D -g /var/lib/docker -H unix:// -H tcp://0.0.0.0:2376 --tlsverify --tlscacert=/var/lib/boot2docker/tls/ca.pem --tlscert=/var/lib/boot2docker/tls/server.pem --tlskey=/var/lib/boot2docker/tls/serverkey.pem```.
-5. Make sure to leave this process ```running``` and open another window for other operations.
+1. Get the command that we run the Docker daemon with by running ```ps auxfw | grep docker```.  
+2. Stop the Docker daemon with ```/etc/init.d/docker stop```.  
+3. Manually run the Docker daemon with the command you found from ```ps``` which should be something similar to ```/usr/local/bin/docker -d -D -g /var/lib/docker -H unix:// -H tcp://0.0.0.0:2376 --tlsverify --tlscacert=/var/lib/boot2docker/tls/ca.pem --tlscert=/var/lib/boot2docker/tls/server.pem --tlskey=/var/lib/boot2docker/tls/serverkey.pem``` but with the additional `-D` flag for `debug`.
+4. Make sure to leave this process ```running``` and open another window for other operations.
