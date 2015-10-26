@@ -10,11 +10,7 @@ The workshop is intended for Docker beginners and intermediate users.
 If you're new to Docker and looking for a great introduction, this will is a great opportunity to get a hands-on introduction to the fundamentals of the Docker Platform.
 
 ### Part I: Introduction to the Docker Platform
- - Overview, 15min, [presentation here](http://www.slideshare.net/jonasrosland/docker-and-containers-overview-docker-workshop)
- - Docker ecosystem, 10 min
-    - Network
-    - Storage
-    - Management
+ - Overview & Intro Presentation (20 minutes)
 
 ### Lab I: Run your first container
 

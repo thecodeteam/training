@@ -3,7 +3,7 @@ Lab IV: Persist a container's state and data
 
 ## Description
 
-In this lab you'll learn how to persist data for containers.  Unlike using virtual machines, containers require that data that must be stored (or persisted) outside of the container itself.  A primary reason behind this is that `Docker` containers are not immediately portable between hosts.  So in order to enable portability of the container between hosts, data must be persisted outside of the container.
+In this lab, you'll learn how to persist data for containers.  Unlike using virtual machines, containers require that data that must be stored (or persisted) outside of the container itself.  A primary reason behind this is that `Docker` containers are not immediately portable between hosts.  So in order to enable portability of the container between hosts, data must be persisted outside of the container.
 
 ### Lab setup
 

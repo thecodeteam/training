@@ -3,7 +3,7 @@ Lab III: Create A Swarm Cluster
 
 ## Description
 
-In this lab you'll learn setup a Docker Swarm cluster with the machines you have been provided. Docker Swarm is native clustering for Docker. It allows you create and access a pool of Docker hosts using the full suite of Docker tools. Because Docker Swarm serves the standard Docker API, any tool that already communicates with a Docker daemon can use Swarm to transparently scale to multiple hosts.
+In this lab you'll setup a Docker Swarm cluster with the machines you have been provided. Docker Swarm is native clustering for Docker. It allows you create and access a pool of Docker hosts using the full suite of Docker tools. Because Docker Swarm serves the standard Docker API, any tool that already communicates with a Docker daemon can use Swarm to transparently scale to multiple hosts.
 
 ### Lab setup
 
