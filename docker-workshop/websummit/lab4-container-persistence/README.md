@@ -194,7 +194,7 @@ Next let's ensure we begin talking with `Docker Swarm` again.
 Let's do the same thing as before to prove persistence but let's do it BETWEEN machines using constraints!
 
 ```
-docker run -tid --name hosta -e ‘constraint:node==*a*’ --volume-driver=rexray -v student001a:/student001a busybox
+docker run -tid --name hosta -e constraint:node==*a* --volume-driver=rexray -v student001a:/student001a busybox
 docker ps
 ```
 
@@ -219,7 +219,7 @@ Create a new file inside of the `/student001a` path.
 
 The container has quit. start another one on host `b`
 ```
-docker run -ti --name hostb -e ‘constraint:node==*b*’ --volume-driver=rexray -v student001a:/student001a busybox
+docker run -ti --name hostb -e constraint:node==*b* --volume-driver=rexray -v student001a:/student001a busybox
 ```
 
 Go to the `student001a` directory and verify there is `mynewawesomefile`.
@@ -230,6 +230,6 @@ $ docker volume rm student001
 $ docker volume rm student001a
 ```
 
-## Congatulations!!
+## Congratulations!!
 
 You have created containers with the same persistent volume that enables portability between hosts!

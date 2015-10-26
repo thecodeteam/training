@@ -140,6 +140,6 @@ The `binpack` strategy causes Swarm to optimize for the node which is most packe
 
 The `random` strategy, like it sounds, chooses nodes at random regardless of their available CPU or RAM.
 
-## Congratulation!!
+## Congratulations!!
 
 You've configured a container host cluster using `Docker Swarm`.
