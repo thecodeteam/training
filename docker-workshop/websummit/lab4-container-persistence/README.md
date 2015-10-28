@@ -111,7 +111,7 @@ Flags:
 
 Create a new volume: `rexray volume create --size=5 --volumename="<studentID>"` For the examples, I will be using `student001`. By default, this will create a standard volumetype without any guarantee of IOPS in our AZ.
 ```
-$ rexray volume create --size=10 --volumename="<studentID>"
+$ rexray volume create --size=5 --volumename="<studentID>"
 INFO[0000] Waiting for volume creation to complete
 name: student001
 volumeid: vol-2765e5cb
@@ -144,7 +144,7 @@ Filesystem           1K-blocks      Used Available Use% Mounted on
 /dev/xvdb             16382888     45036  15482608   0% /student001
 ```
 
-Once we are in our container, change directories to the `student001` folder and create a new file
+Once we are in our container, change directories to the `studentID` folder and create a new file
 ```
 / # ls
 bin         dev         etc         home        proc        root        student001  sys         tmp         usr         var
@@ -160,7 +160,7 @@ Create a new container by mounting the same volume:
 docker run -ti --rm --volume-driver=rexray -v <studentID>:/<studentID> busybox
 ```
 
-Now enter `ls /student001` and you will see that our file has persisted. exit the container.
+Now enter `ls /studentID` and you will see that our file has persisted. exit the container.
 
 ## Docker 1.9 New and Enhanced Features for Data Persistence
 Now that we've seen [REX-Ray](https://github.com/emccode/rexray) be used, lets see how we can use Docker to control REX-Ray.

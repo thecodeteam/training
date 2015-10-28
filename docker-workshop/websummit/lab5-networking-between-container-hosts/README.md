@@ -45,7 +45,7 @@ Next, we need to add a few Docker Engine options which are necessary for network
 ```
 $ sudo service docker stop
 $ sudo sed -i '10 a --cluster-advertise='$(curl http://169.254.169.254/latest/meta-data/public-ipv4)':2376' /etc/default/docker
-$ sudo sed -i '10 a --cluster-store=consul://CONSULIP:8500' /etc/default/docker
+$ sudo sed -i '10 a --cluster-store=consul://<host-a-public-IP>:8500' /etc/default/docker
 $ sudo service docker start
 ```
 
@@ -56,12 +56,12 @@ $ docker run -d -p 8500:8500 -h consul progrium/consul -server -bootstrap-expect
 
 Now we can configure our new Swarm agents on each host `a` and `b`:
 ```
-$ docker run -d --restart=always --name swarm-agent-consul swarm:1.0.0-rc1 join --advertise $(curl http://169.254.169.254/latest/meta-data/public-ipv4):2376 consul://<hostaIP>:8500
+$ docker run -d --restart=always --name swarm-agent-consul swarm:1.0.0-rc1 join --advertise $(curl http://169.254.169.254/latest/meta-data/public-ipv4):2376 consul://<host-a-public-IP>:8500
 ```
 
 Start swarm manager on `a`
 ```
-$ docker run -d --restart=always --name swarm-agent-master-consul -p 3376:3376 -v /etc/docker:/etc/docker swarm:1.0.0-rc1 manage --tlsverify --tlscacert=/etc/docker/ca.pem --tlscert=/etc/docker/server.pem --tlskey=/etc/docker/server-key.pem -H tcp://0.0.0.0:3376 --strategy spread consul://<hostaIP>:8500
+$ docker run -d --restart=always --name swarm-agent-master-consul -p 3376:3376 -v /etc/docker:/etc/docker swarm:1.0.0-rc1 manage --tlsverify --tlscacert=/etc/docker/ca.pem --tlscert=/etc/docker/server.pem --tlskey=/etc/docker/server-key.pem -H tcp://0.0.0.0:3376 --strategy spread consul://<host-a-public-IP>:8500
 ```
 
 On Host `a` point the Docker CLI to the new Swarm instance:
