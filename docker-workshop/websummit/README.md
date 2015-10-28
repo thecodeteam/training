@@ -43,6 +43,10 @@ If you're new to Docker and looking for a great introduction, this will is a gre
  - Create volume with Docker Volume commands
  - Demo persistence between host instances
 
-### Lab IV: Networking Between Container Hosts
+### Lab V: Networking Between Container Hosts
 
- - Docker...
+ - Destroy Existing Swarm Setup
+ - Create New Swarm using Consul
+ - Create overlay networks
+ - Attach containers to networks
+ - Verify connectivity between containers
