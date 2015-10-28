@@ -43,7 +43,7 @@ fc30fbbbfc8b01a52c13f110c2af0135
 
 
 ## Configure Swarm Agents
-Each host is going to act as a pool of resources for the cluster. Therefore, a swarm agent must be installed on each host. Create two SSH sessions for your hosts `a` and `b`. Replace `HOSTIP` with the IP address of the host. This can be the PUBLIC IP.
+Each host is going to act as a pool of resources for the cluster. Therefore, a swarm agent must be installed on each host. Create two SSH sessions for your hosts `a` and `b`. Replace `<your token` with the Swarm token from earlier
 
 1.
 ```
@@ -74,13 +74,6 @@ Now that each of our hosts are acting as resources for the pool, we have to have
 
 For this instance, let's use machine `a` as our Swarm Master.
 
-These hosts were provisioned with Docker Machine. By default, Docker Machine installs the Docker Engine with TLS certificates to help encrypt the communication and service. Docker Machine can automatically configure Swarm for you, but there's no fun in that. So we have to take a few extra steps to make this all work.
-
-1. Create a new directory: `mkdir ~/.docker`
-2. Copy `server.pem`: `sudo cp /etc/docker/server.pem ~/.docker/cert.pem`
-3. Copy `server-key.pem` : `sudo cp /etc/docker/server-key.pem ~/.docker/key.pem`
-4. Copy `ca.pem`: `sudo cp /etc/docker/ca.pem ~/.docker/ca.pem`
-
 Now run the Swarm Master container.
 ```
 docker run -d --restart=always --name swarm-agent-master -p 3376:3376 -v /etc/docker:/etc/docker swarm:1.0.0-rc1 manage --tlsverify --tlscacert=/etc/docker/ca.pem --tlscert=/etc/docker/server.pem --tlskey=/etc/docker/server-key.pem -H tcp://0.0.0.0:3376 --strategy spread  token://<your token>
@@ -88,6 +81,14 @@ docker run -d --restart=always --name swarm-agent-master -p 3376:3376 -v /etc/do
 
 Now, do `docker ps`. The output of this is a result of showing every container only on this host. We are going to configure `a`'s' docker engine to point to the swarm master. Replace HOSTIP with the PUBLIC IP.
 
+These hosts were provisioned with Docker Machine. By default, Docker Machine installs Docker Engine with TLS certificates to encrypt the communication and service. Docker Machine can automatically configure Swarm for you, but we are configuring it manually as part of this training, thus we have to take a few extra steps to make this all work.
+
+1. Create a new directory: `mkdir ~/.docker`
+2. Copy `server.pem`: `sudo cp /etc/docker/server.pem ~/.docker/cert.pem`
+3. Copy `server-key.pem` : `sudo cp /etc/docker/server-key.pem ~/.docker/key.pem`
+4. Copy `ca.pem`: `sudo cp /etc/docker/ca.pem ~/.docker/ca.pem`
+
+Setup environment variables to point the Docker CLI to the Swarm Master
 1. `export DOCKER_TLS_VERIFY=1`
 2. `export DOCKER_HOST=tcp://$(curl http://169.254.169.254/latest/meta-data/public-ipv4):3376`
 

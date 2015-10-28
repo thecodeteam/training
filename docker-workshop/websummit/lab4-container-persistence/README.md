@@ -111,7 +111,7 @@ Flags:
 
 Create a new volume: `rexray volume create --size=5 --volumename="<studentID>"` For the examples, I will be using `student001`. By default, this will create a standard volumetype without any guarantee of IOPS in our AZ.
 ```
-$ rexray volume create --size=10 --volumename="student001"
+$ rexray volume create --size=10 --volumename="<studentID>"
 INFO[0000] Waiting for volume creation to complete
 name: student001
 volumeid: vol-2765e5cb
@@ -132,7 +132,7 @@ Let's make sure that you are have unexported the `Docker Swarm` configuration co
 
 Now it's time to use this volume inside of a docker container:
 ```
-docker run -ti --rm --name temp --volume-driver=rexray -v student001:/student001 busybox
+docker run -ti --rm --name temp --volume-driver=rexray -v <studentID>:/<studentID> busybox
 ```
 
 Notice how we have added a `--rm` flag here.  This means the container itself is completely temporary, and removed immediately after the container is stopped.  All of our data that resides in `/student001` will however persist after the container lifetime.
@@ -153,11 +153,11 @@ bin         dev         etc         home        proc        root        student0
 /student001 # touch hellopersistence
 ```
 
-Exit the container with `control+d`. At this point, the container no longer exists.
+Exit the container with `ctrl+d`. At this point, the container no longer exists.
 
 Create a new container by mounting the same volume:
 ```
-docker run -ti --rm --volume-driver=rexray -v student001:/student001 busybox
+docker run -ti --rm --volume-driver=rexray -v <studentID>:/<studentID> busybox
 ```
 
 Now enter `ls /student001` and you will see that our file has persisted. exit the container.
@@ -167,7 +167,7 @@ Now that we've seen [REX-Ray](https://github.com/emccode/rexray) be used, lets s
 
 Docker can now control volumes and the volume-driver. Instead of creating volumes directly from REX-Ray, we can create them with Docker:
 ```
-docker volume create --driver=rexray --name=student001a --opt=volumetype=io1 --opt=iops=100 --opt=size=10
+$ docker volume create --driver=rexray --name=<studentID>a --opt=volumetype=io1 --opt=iops=100 --opt=size=10
 ```
 
 This command will take a few seconds, but the output will be the name of the volume that has been created. In this case, it will be `student001a`.
@@ -183,25 +183,26 @@ local               f3622f5cd30063764da8ada3680c4d4bd07409188e34333edc435069fc52
 local               91886bdf427bcc583aad2aa1e0a68b54c532a81ccb5b0d317b70204cb7da7836
 ```
 
-Note: There is currently a bug in `Docker Swarm`, so we must switch to the next container host and also enable the same volume.  Go to the `b` host and run the following command `docker volume create --driver=rexray --name=student001a`.
+**Note: There is currently a bug in `Docker Swarm`, so we must switch to the next container host and also enable the same volume.  Go to the `b` host and run the following command `docker volume create --driver=rexray --name=<studentID>a`.**
 
 Next let's ensure we begin talking with `Docker Swarm` again.
 
-1. `export DOCKER_TLS_VERIFY=1`
-2. `export DOCKER_HOST=tcp://$(curl http://169.254.169.254/latest/meta-data/public-ipv4):3376`
+1. `$ export DOCKER_TLS_VERIFY=1`
+2. `$ export DOCKER_HOST=tcp://$(curl http://169.254.169.254/latest/meta-data/public-ipv4):3376`
 
 
 Let's do the same thing as before to prove persistence but let's do it BETWEEN machines using constraints!
 
 ```
-docker run -tid --name hosta -e constraint:node==*a* --volume-driver=rexray -v student001a:/student001a busybox
-docker ps
+$ docker run -tid --name hosta -e constraint:node==*a* --volume-driver=rexray -v <studentID>a:/<studentID>a busybox
+
+$ docker ps
 ```
 
-`docker ps` should show the name as the following `student001a/hosta`.
+`docker ps` should show the name as the following `<studentID>a/hosta`.
 
 
-Attach to the host with `docker attach hosta` and verify that the volume is mounted as expected.  Notice how `/dev/xvdb` is mounted to `/student001a`
+Attach to the host with `$ docker attach hosta` and verify that the volume is mounted as expected.  Notice how `/dev/xvdb` is mounted to `/<studentID>a`
 
 ```
 / # df /student001a/
@@ -210,7 +211,7 @@ Filesystem           1K-blocks      Used Available Use% Mounted on
 ```
 
 
-Create a new file inside of the `/student001a` path.
+Create a new file inside of the `/<studentID>a` path.
 ```
 / # cd /student001a
 /student001a # touch mynewawesomefile
@@ -219,15 +220,17 @@ Create a new file inside of the `/student001a` path.
 
 The container has quit. start another one on host `b`
 ```
-docker run -ti --name hostb -e constraint:node==*b* --volume-driver=rexray -v student001a:/student001a busybox
+$ docker run -ti --name hostb -e constraint:node==*b* --volume-driver=rexray -v <studentID>a:/<studentID>a busybox
 ```
 
-Go to the `student001a` directory and verify there is `mynewawesomefile`.
+Go to the `<studentID>a` directory and verify there is `mynewawesomefile`.
 
 Exit out a do a little clean up.
 ```
-$ docker volume rm student001
-$ docker volume rm student001a
+$ docker rm hosta
+$ docker rm hostb
+$ docker volume rm <studentID>
+$ docker volume rm <studentID>a
 ```
 
 ## Congratulations!!
