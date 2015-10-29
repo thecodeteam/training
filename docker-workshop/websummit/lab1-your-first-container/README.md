@@ -22,8 +22,9 @@ SSH into host `a` using the public IP address provided.
 Now that you have a container host there are several things you can do. If you just run the command `docker` you'll get a list of all the commands you can issue.
 
 First off we want to have a look at the Docker installation information, so run:
-
-`docker info`
+```
+$ docker info
+```
 
 This should give you an output similar to this:
 
@@ -56,8 +57,9 @@ The second command we'll look at is searching for images that we find interestin
 The [Docker hub](https://hub.docker.com) currently has approximately **75000** images available for everyone to use freely.
 
 Try a search for Sensu, a [really cool monitoring solution](http://sensuapp.org):
-
-`docker search sensu`
+```
+$ docker search sensu
+```
 
 You should get a list of Docker images that have been published and shared by the community, like this:
 
@@ -72,18 +74,21 @@ sstarcher/sensu-docker                                                          
 Try some other searches, like for redis, apache, nginx, mysql, postgresql, you name it, try to see if there are Docker images out there. Make note though that currently there are only linux applications and services out there. If you find an application or service that's not on the Docker hub, perhaps you could create one and be the first!
 
 Now let's try to download an image using the `docker pull` command:
-
-`docker pull ubuntu`
+```
+$ docker pull ubuntu
+```
 
 You'll see that Docker starts downloading a Docker image, this specific one is a base Ubuntu image. We'll try other images with more applications later.
 
 When download is complete, your "Hello World" with Docker command looks something like this:
-
-`docker run ubuntu echo hello world`
+```
+$ docker run ubuntu echo hello world
+```
 
 You can run other commands or invoke a bash shell like this:
-
-`docker run -i -t ubuntu /bin/bash`
+```
+$ docker run -i -t ubuntu /bin/bash
+```
 
 You'll see that `-i` means we'll run this container interactively, and `-t` means we're attaching a pseudo-TTY to it (essentially attaching a terminal), then giving Docker the name of the image we want to run, and a command within that image.
 
@@ -101,13 +106,17 @@ To exit the container, there are two options. `CTRL-d` exits the shell and shuts
 
 We will run tomcat which a Java based application server. To do this we use the following command.
 
-```docker run -d -p 8888:8080 tomcat:8.0```
+```
+$ docker run -d -p 8888:8080 tomcat:8.0
+```
 
 The image will be downloaded if required and tomcat will be run in a *deamon* mode.
 
 Now run the following command.
 
-```docker ps```
+```
+$ docker ps
+```
 
 Which will yield an output that looks something like below (Partial output).
 

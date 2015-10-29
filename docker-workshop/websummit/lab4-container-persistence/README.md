@@ -126,16 +126,14 @@ attachments: []
 
 Let's make sure that you are have unexported the `Docker Swarm` configuration commands so you are addressing a `Docker` engine directly.
 
-1. `unset DOCKER_TLS_VERIFY`
-2. `unset DOCKER_HOST`
+1. `$ unset DOCKER_TLS_VERIFY`
+2. `$ unset DOCKER_HOST`
 
 
 Now it's time to use this volume inside of a docker container:
 ```
-docker run -ti --rm --name temp --volume-driver=rexray -v <studentID>:/<studentID> busybox
+$ docker run -ti --name temp --volume-driver=rexray -v <studentID>:/<studentID> busybox
 ```
-
-Notice how we have added a `--rm` flag here.  This means the container itself is completely temporary, and removed immediately after the container is stopped.  All of our data that resides in `/student001` will however persist after the container lifetime.
 
 Once we are in our container, let's validate that the external volume is mounted as expected.  The following path shows the `/dev/xvdb` volume mounted to `/stend001/`.
 ```
@@ -153,14 +151,19 @@ bin         dev         etc         home        proc        root        student0
 /student001 # touch hellopersistence
 ```
 
-Exit the container with `ctrl+d`. At this point, the container no longer exists.
+Exit the container with `ctrl+d`. All of our data that resides in `/studentID` will persist after the container lifetime. To prove this, delete the container:
+```
+$ docker rm temp
+```
 
 Create a new container by mounting the same volume:
 ```
-docker run -ti --rm --volume-driver=rexray -v <studentID>:/<studentID> busybox
+$ docker run -ti --rm --volume-driver=rexray -v <studentID>:/<studentID> busybox
 ```
 
-Now enter `ls /studentID` and you will see that our file has persisted. exit the container.
+Now enter `ls /studentID` and you will see that our file has persisted. exit the container with `ctrl+d`.
+
+**Notice how we have added a `--rm` flag here. This means the container itself is completely temporary, and removed immediately after the container is stopped. A quick "gotcha" is that this will also remove the persisted volume. Use this flag with extreme caution.**
 
 ## Docker 1.9 New and Enhanced Features for Data Persistence
 Now that we've seen [REX-Ray](https://github.com/emccode/rexray) be used, lets see how we can use Docker to control REX-Ray.
@@ -229,7 +232,6 @@ Exit out a do a little clean up.
 ```
 $ docker rm hosta
 $ docker rm hostb
-$ docker volume rm <studentID>
 $ docker volume rm <studentID>a
 ```
 
