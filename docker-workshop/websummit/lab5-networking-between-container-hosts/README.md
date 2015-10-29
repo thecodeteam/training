@@ -154,6 +154,69 @@ lo        Link encap:Local Loopback
 ```
 
 
+## Bringing it all together
+
+The combination of persistent storage and overlay networks brings some exciting new ground to Docker use cases. In this section, we will quickly see how we can move containers and still persist data.
+
+On host `a`:
+```
+$ unset DOCKER_TLS_VERIFY
+$ unset DOCKER_HOST
+
+$ docker volume create --driver=rexray --name=<studentID>b --opt=volumetype=io1 --opt=iops=100 --opt=size=10 
+
+$ export DOCKER_TLS_VERIFY=1
+$ export DOCKER_HOST=tcp://$(curl http://169.254.169.254/latest/meta-data/public-ipv4):3376
+
+$ docker network create -d overlay netstore
+
+$ docker run -d --name="long-running-persist" --net="netstore" --volume-driver=rexray -v <studentID>b:/<studentID>b --env="constraint:node==*a*" busybox top
+```
+
+On host `b`:
+```
+$ docker volume create --driver=rexray --name=<studentID>b
+
+$ mkdir ~/.docker
+$ sudo cp /etc/docker/server.pem ~/.docker/cert.pem
+$ sudo cp /etc/docker/server-key.pem ~/.docker/key.pem
+$ sudo cp /etc/docker/ca.pem ~/.docker/ca.pem
+
+$ export DOCKER_TLS_VERIFY=1
+$ export DOCKER_HOST=tcp://<host-a-public-IP>:3376
+
+$ docker run -it --rm --net="netstore" --env="constraint:node==*b*" busybox ping long-running-persist
+```
+
+As expected, we should see pings start hitting.
+
+Go back to host `a` and perform the following:
+```
+$ docker exec long-running-persist touch /<studentID>b/persist
+
+$ docker stop long-running-persist
+
+$ docker rm long-running-persist
+```
+
+If you switch back to `b` you will see the pings have stopped. Let's start the container again with a few different flags, this time so we can see the file persistence. on host `a`:
+```
+$ docker run -tid --name="long-running-persist" --net="netstore" --volume-driver=rexray -v <studentID>b:/<studentID>b --env="constraint:node==*b*" busybox
+```
+
+Look at host `b` to see the pings are alive once again even though the container is running on host `b` instead of host `a`. Back on host `a`:
+```
+$ docker exec long-running-persist ls /<studentID>b
+```
+
+and we will see our file there. Awesome!
+
+Clean-up:
+```
+$ docker stop long-running-persist 
+$ docker volume rm <studentID>b
+```
+
 ## Congratulations!!
 
 You've configured two containers on different hosts to talk to each other using overlay networking!
