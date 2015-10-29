@@ -89,8 +89,9 @@ These hosts were provisioned with Docker Machine. By default, Docker Machine ins
 4. Copy `ca.pem`: `sudo cp /etc/docker/ca.pem ~/.docker/ca.pem`
 
 Setup environment variables to point the Docker CLI to the Swarm Master
-1. `export DOCKER_TLS_VERIFY=1`
-2. `export DOCKER_HOST=tcp://$(curl http://169.254.169.254/latest/meta-data/public-ipv4):3376`
+
+1. `$ export DOCKER_TLS_VERIFY=1`
+2. `$ export DOCKER_HOST=tcp://$(curl http://169.254.169.254/latest/meta-data/public-ipv4):3376`
 
 Now do `docker ps` again. What happened? We can see that there are now no containers running (unless you had containers other than Swarm previously running).
 

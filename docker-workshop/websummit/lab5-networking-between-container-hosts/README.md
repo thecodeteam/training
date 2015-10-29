@@ -44,7 +44,7 @@ $ docker rm swarm-agent-master
 Next, we need to add a few Docker Engine options which are necessary for networking to function. Perform these functions on both hosts `a` and `b`:
 ```
 $ sudo service docker stop
-$ sudo sed -i '10 a --cluster-advertise='$(curl http://169.254.169.254/latest/meta-data/public-ipv4)':2376' /etc/default/docker
+$ sudo sed -i '10 a --cluster-advertise=eth0:2376' /etc/default/docker
 $ sudo sed -i '10 a --cluster-store=consul://<host-a-public-IP>:8500' /etc/default/docker
 $ sudo service docker start
 ```
@@ -108,6 +108,49 @@ docker run -d --name="long-running" --net="multihost" --env="constraint:node==*a
 Pin the second container to host `b` and ping `long-running` container:
 ```
 docker run -it --rm --net="multihost" --env="constraint:node==*b*" busybox ping long-running
+```
+
+## Understanding Networking Further
+
+To get a better grasp on the networking, lets create another network and spin up an Ubuntu container shell:
+
+```
+$ docker network create -d overlay testnetwork
+
+$ docker run -i -t --net="testnetwork" ubuntu /bin/bash
+```
+
+From here we can do an `ifconfig` and see that the `eth0` adapter is given a private IP address on the `10.0.1.0/24` network. This will prove that networking can be very extensive within a single Docker Swarm instance.
+
+```
+student001a@student001a:~/compose$ docker run -i -t --net="multi" ubuntu /bin/bash
+root@3cdff88af090:/# ifconfig
+eth0      Link encap:Ethernet  HWaddr 02:42:0a:00:01:02
+          inet addr:10.0.1.2  Bcast:0.0.0.0  Mask:255.255.255.0
+          inet6 addr: fe80::42:aff:fe00:102/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1450  Metric:1
+          RX packets:11 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:6 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:926 (926.0 B)  TX bytes:508 (508.0 B)
+
+eth1      Link encap:Ethernet  HWaddr 02:42:ac:12:00:02
+          inet addr:172.18.0.2  Bcast:0.0.0.0  Mask:255.255.0.0
+          inet6 addr: fe80::42:acff:fe12:2/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:6 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:6 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:508 (508.0 B)  TX bytes:508 (508.0 B)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
 ```
 
 
