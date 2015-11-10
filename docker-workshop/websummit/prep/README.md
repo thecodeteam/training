@@ -5,8 +5,6 @@ Using [Docker Machine with the experimental EMC {code} extension framework](http
 
 #### For US-East-1 (private AMI using Ubuntu 14.04.03 with Kernel 3.19-30)
 ```
-$ docker-machine -D create --driver amazonec2 --amazonec2-access-key <access-key> --amazonec2-secret-key <secret-key> --amazonec2-vpc-id <vpc-id> --amazonec2-zone "b" --amazonec2-ami ami-f6e6979c --engine-install-url "https://test.docker.com" -extension /Users/kcoleman/Desktop/student-consul.json student001-consul
-
 $ docker-machine -D create --driver amazonec2 --amazonec2-access-key <access-key> --amazonec2-secret-key <secret-key> --amazonec2-vpc-id <vpc-id> --amazonec2-zone "b" --amazonec2-ami ami-f6e6979c --engine-install-url "https://test.docker.com" --extension /Users/kcoleman/Desktop/student.json student001a
 
 $ docker-machine -D create --driver amazonec2 --amazonec2-access-key <access-key> --amazonec2-secret-key <secret-key> --amazonec2-vpc-id <vpc-id> --amazonec2-zone "b" --amazonec2-ami ami-f6e6979c --engine-install-url "https://test.docker.com" --extension /Users/kcoleman/Desktop/student.json student001b
