@@ -9,6 +9,8 @@ The workshop is intended for Docker beginners and intermediate users.
 
 If you're new to Docker and looking for a great introduction, this will is a great opportunity to get a hands-on introduction to the fundamentals of the Docker Platform.
 
+To get started on your own outside the classroom, follow the directions specified in [/prep/readme](https://github.com/emccode/training/blob/master/docker-workshop/websummit/prep/README.md). The slides are available at [Docker 1.9 Workshop](http://www.slideshare.net/EMCCODE/docker-19-workshop).
+
 ### Part I: Introduction to the Docker Platform
  - Overview & Intro Presentation (20 minutes)
 
