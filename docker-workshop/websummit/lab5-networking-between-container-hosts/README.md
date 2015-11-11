@@ -7,9 +7,9 @@ In this lab, you'll learn how to have containers talk to each other using overla
 
 ### Lab setup
 
-Each participant has been handed a piece of paper with two machines `student00Xa` and `student00Xb` with their associated IP addresses. Each machine has been provisioned by Docker Machine with Docker 1.9 and REX-Ray 0.2 installed for use. The SSH password for each host is the host name. ie. Host `student001a`'s password is `student001a` 
+Each participant has been handed a piece of paper with two machines `student00Xa` and `student00Xb` with their associated IP addresses. Each machine has been provisioned by Docker Machine with Docker 1.9 and REX-Ray 0.2 installed for use. The SSH password for each host is the host name. ie. Host `student001a`'s password is `student001a`
 
-**NOTE:** `v1.0.0-rc1` is going to be used for Swarm as of this writing to allow libnetwork to properly function.
+**NOTE:** `v1.0.0` is going to be used for Swarm as of this writing to allow libnetwork to properly function.
 
 #### Mac/Linux
 Use Terminal
@@ -56,12 +56,12 @@ $ docker run -d -p 8500:8500 -h consul progrium/consul -server -bootstrap-expect
 
 Now we can configure our new Swarm agents on each host `a` and `b`:
 ```
-$ docker run -d --restart=always --name swarm-agent-consul swarm:1.0.0-rc1 join --advertise $(curl http://169.254.169.254/latest/meta-data/public-ipv4):2376 consul://<host-a-public-IP>:8500
+$ docker run -d --restart=always --name swarm-agent-consul swarm:1.0.0 join --advertise $(curl http://169.254.169.254/latest/meta-data/public-ipv4):2376 consul://<host-a-public-IP>:8500
 ```
 
 Start swarm manager on `a`
 ```
-$ docker run -d --restart=always --name swarm-agent-master-consul -p 3376:3376 -v /etc/docker:/etc/docker swarm:1.0.0-rc1 manage --tlsverify --tlscacert=/etc/docker/ca.pem --tlscert=/etc/docker/server.pem --tlskey=/etc/docker/server-key.pem -H tcp://0.0.0.0:3376 --strategy spread consul://<host-a-public-IP>:8500
+$ docker run -d --restart=always --name swarm-agent-master-consul -p 3376:3376 -v /etc/docker:/etc/docker swarm:1.0.0 manage --tlsverify --tlscacert=/etc/docker/ca.pem --tlscert=/etc/docker/server.pem --tlskey=/etc/docker/server-key.pem -H tcp://0.0.0.0:3376 --strategy spread consul://<host-a-public-IP>:8500
 ```
 
 On Host `a` point the Docker CLI to the new Swarm instance:
@@ -160,61 +160,41 @@ The combination of persistent storage and overlay networks brings some exciting 
 
 On host `a`:
 ```
-$ unset DOCKER_TLS_VERIFY
-$ unset DOCKER_HOST
-
-$ docker volume create --driver=rexray --name=<studentID>b --opt=volumetype=io1 --opt=iops=100 --opt=size=10 
-
-$ export DOCKER_TLS_VERIFY=1
-$ export DOCKER_HOST=tcp://$(curl http://169.254.169.254/latest/meta-data/public-ipv4):3376
-
 $ docker network create -d overlay netstore
 
-$ docker run -d --name="long-running-persist" --net="netstore" --volume-driver=rexray -v <studentID>b:/<studentID>b --env="constraint:node==*a*" busybox top
-```
-
-On host `b`:
-```
-$ docker volume create --driver=rexray --name=<studentID>b
-
-$ mkdir ~/.docker
-$ sudo cp /etc/docker/server.pem ~/.docker/cert.pem
-$ sudo cp /etc/docker/server-key.pem ~/.docker/key.pem
-$ sudo cp /etc/docker/ca.pem ~/.docker/ca.pem
-
-$ export DOCKER_TLS_VERIFY=1
-$ export DOCKER_HOST=tcp://<host-a-public-IP>:3376
+$ docker run -d --name="long-running-persist" --net="netstore" --volume-driver=rexray -v test3:/test --env="constraint:node==*a*" busybox top
 
 $ docker run -it --rm --net="netstore" --env="constraint:node==*b*" busybox ping long-running-persist
 ```
 
-As expected, we should see pings start hitting.
+As expected, we should see pings start hitting with containers on different hosts.
 
-Go back to host `a` and perform the following:
+Now perform the following from 'a':
 ```
-$ docker exec long-running-persist touch /<studentID>b/persist
+$ docker exec long-running-persist touch /test/persist
 
 $ docker stop long-running-persist
 
 $ docker rm long-running-persist
 ```
 
-If you switch back to `b` you will see the pings have stopped. Let's start the container again with a few different flags, this time so we can see the file persistence. on host `a`:
+Let's start the container again with a few different flags, this time so we can see the file persistence. on host `a`:
 ```
-$ docker run -tid --name="long-running-persist" --net="netstore" --volume-driver=rexray -v <studentID>b:/<studentID>b --env="constraint:node==*b*" busybox
-```
-
-Look at host `b` to see the pings are alive once again even though the container is running on host `b` instead of host `a`. Back on host `a`:
-```
-$ docker exec long-running-persist ls /<studentID>b
+$ docker run -tid --name="long-running-persist" --net="netstore" --volume-driver=rexray -v test3:/test --env="constraint:node==*b*" busybox
 ```
 
-and we will see our file there. Awesome!
+Now the persisitent container is running from `b`, next thing is to ensure the files are present and it is still able to ping:
+```
+$ docker exec long-running-persist ls /test
+$ docker run -it --rm --net="netstore" --env="constraint:node==*b*" busybox ping long-running-persist
+```
+
+and we will see our files there. Awesome!
 
 Clean-up:
 ```
-$ docker stop long-running-persist 
-$ docker volume rm <studentID>b
+$ docker stop long-running-persist
+$ docker volume rm test3
 ```
 
 ## Congratulations!!
