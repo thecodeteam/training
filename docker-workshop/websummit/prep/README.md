@@ -14,7 +14,7 @@ The `docker-machine` AWS security group should have the following ports open
 | TCP      | 3376       |
 | TCP      | 80         |
 | TCP      | 8080       |
-| TCP7     | 946        |
+| TCP      | 7946       |
 | TCP      | 5000       |
 | TCP      | 2376       |
 | TCP      | 7946       |
