@@ -5,7 +5,26 @@ If you are in a classroom environment, you will be given two machines listed as 
 
 If you are doing this workshop on your own, you will need to deploy the hosts on your own. Download `rexconfig.yml`, `student.json`, and `dockertraining.sh` to a local folder.
 
-Edit `rexconfig.yml` with your AWS ACCESS & SECRET KEYS. Edit `student.json` to make sure `dockertraining.sh` is in an available directory
+Edit `rexconfig.yml` with your AWS ACCESS & SECRET KEYS. Edit `student.json` to make sure `dockertraining.sh` is in an available directory. 
+
+The `docker-machine` AWS security group should have the following ports open
+
+| Protocol | Port Range
+| ---------|:----------:|
+| TCP      | 3376       |
+| TCP      | 80         |
+| TCP      | 8080       |
+| TCP7     | 946        |
+| TCP      | 5000       |
+| TCP      | 2376       |
+| TCP      | 7946       |
+| TCP      | 2375       |
+| UDP      | 4789       |
+| TCP      | 443        |
+| TCP      | 8888       |
+| TCP      | 22         |
+| TCP      | 3375       |
+| TCP      | 8500       |
 
 Using [Docker Machine with the experimental EMC {code} extension framework](http://blog.emccode.com/2015/09/26/make-docker-machine-do-anything-with-our-experimental-extensions/) deploy a host. Each student needs 2 hosts. 
 
