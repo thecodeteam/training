@@ -5,7 +5,7 @@ If you are in a classroom environment, you will be given two machines listed as 
 
 If you are doing this workshop on your own, you will need to deploy the hosts on your own. Download `rexconfig.yml`, `student.json`, and `dockertraining.sh` to a local folder.
 
-Edit `rexconfig.yml` with your AWS ACCESS & SECRET KEYS. Edit `student.json` to make sure `dockertraining.sh` is in an available directory. 
+Edit `rexconfig.yml` with your AWS ACCESS & SECRET KEYS. Edit `student.json` to make sure `rexconfig.yml` and `dockertraining.sh` are in an available directory.
 
 The `docker-machine` AWS security group should have the following ports open
 
@@ -26,7 +26,7 @@ The `docker-machine` AWS security group should have the following ports open
 | TCP      | 3375       |
 | TCP      | 8500       |
 
-Using [Docker Machine with the experimental EMC {code} extension framework](http://blog.emccode.com/2015/09/26/make-docker-machine-do-anything-with-our-experimental-extensions/) deploy a host. Each student needs 2 hosts. 
+Using [Docker Machine with the experimental EMC {code} extension framework](http://blog.emccode.com/2015/09/26/make-docker-machine-do-anything-with-our-experimental-extensions/) deploy a host. Each student needs 2 hosts.
 
 Download this unsupported binary and make it executable (example for Mac OS X):
 ```
@@ -56,8 +56,8 @@ Docker 1.9 Networking Requires a kernel version of 3.16 or greater.
 | Region             | AMI-ID           
 | -------------------|:------------:|
 | US-East-1          | ami-f6e6979c |
-| US-West-2          | ami-d79284b6 | 
-| US-West-1          | ami-fe2c429e | 
+| US-West-2          | ami-d79284b6 |
+| US-West-1          | ami-fe2c429e |
 | AP-Northeast-1     | ami-2c547542 |
-| SA-East-1          | ami-a0e258cc | 
-| EU-West-1          | ami-0ab16e79 | 
+| SA-East-1          | ami-a0e258cc |
+| EU-West-1          | ami-0ab16e79 |

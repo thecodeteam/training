@@ -119,7 +119,7 @@
 
 # Lab I: Run Your First Container
 
-[https://github.com/emccode/training/tree/master/docker-workshop/websummit](https://github.com/emccode/training/tree/master/docker-workshop/websummit)
+[https://github.com/emccode/training/tree/master/docker-workshops/docker-storage-networking/](https://github.com/emccode/training/tree/master/docker-workshops/docker-storage-networking/)
 
 In this lab you'll learn use Docker, how to search for Docker images on Docker hub, and how to run your images and connect to the applications inside them.
 
@@ -148,7 +148,7 @@ In this lab you'll learn use Docker, how to search for Docker images on Docker h
 
 # Lab II: Create A Compose File
 
-[https://github.com/emccode/training/tree/master/docker-workshop/websummit](https://github.com/emccode/training/tree/master/docker-workshop/websummit)
+[https://github.com/emccode/training/tree/master/docker-workshops/docker-storage-networking/](https://github.com/emccode/training/tree/master/docker-workshops/docker-storage-networking/)
 
 Programmatically deploy an application with code and use a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Compose is a tool for defining and running multi-container applications.
 
@@ -164,7 +164,7 @@ Programmatically deploy an application with code and use a Dockerfile. A Dockerf
 
 # Lab III: Create A Swarm Cluster
 
-[https://github.com/emccode/training/tree/master/docker-workshop/websummit](https://github.com/emccode/training/tree/master/docker-workshop/websummit)
+[https://github.com/emccode/training/tree/master/docker-workshops/docker-storage-networking/](https://github.com/emccode/training/tree/master/docker-workshops/docker-storage-networking/)
 
 In this lab you'll setup a Docker Swarm cluster. Docker Swarm serves the standard Docker API, any tool that already communicates with a Docker daemon can use Swarm to transparently scale to multiple hosts.
 
@@ -263,7 +263,7 @@ a volume plugin which is written in Go and provides advanced storage functionali
 
 # Lab IV: Container Persistence
 
-[https://github.com/emccode/training/tree/master/docker-workshop/websummit](https://github.com/emccode/training/tree/master/docker-workshop/websummit)
+[https://github.com/emccode/training/tree/master/docker-workshops/docker-storage-networking/](https://github.com/emccode/training/tree/master/docker-workshops/docker-storage-networking/)
 
 Unlike using virtual machines, containers require that data that must be stored (or persisted) outside of the container itself.  A primary reason behind this is that `Docker` containers are not immediately portable between hosts.  Data must be persisted outside of the container.
 
