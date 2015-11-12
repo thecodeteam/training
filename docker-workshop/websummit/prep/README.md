@@ -38,9 +38,9 @@ Use this binary to provision your hosts for the workshop:
 
 #### For US-East-1 (default) (AMI using Ubuntu 14.04.03 with Kernel 3.19-30)
 ```
-$ docker-machine -D create --driver amazonec2 --amazonec2-access-key <access-key> --amazonec2-secret-key <secret-key> --amazonec2-vpc-id <vpc-id> --amazonec2-zone "b" --amazonec2-ami ami-f6e6979c --engine-install-url "https://test.docker.com" --extension /Users/kcoleman/Desktop/student.json student001a
+$ docker-machine -D create --driver amazonec2 --amazonec2-access-key <access-key> --amazonec2-secret-key <secret-key> --amazonec2-vpc-id <vpc-id> --amazonec2-zone "b" --amazonec2-ami ami-f6e6979c --engine-install-url "https://get.docker.com" --extension /Users/kcoleman/Desktop/student.json student001a
 
-$ docker-machine -D create --driver amazonec2 --amazonec2-access-key <access-key> --amazonec2-secret-key <secret-key> --amazonec2-vpc-id <vpc-id> --amazonec2-zone "b" --amazonec2-ami ami-f6e6979c --engine-install-url "https://test.docker.com" --extension /Users/kcoleman/Desktop/student.json student001b
+$ docker-machine -D create --driver amazonec2 --amazonec2-access-key <access-key> --amazonec2-secret-key <secret-key> --amazonec2-vpc-id <vpc-id> --amazonec2-zone "b" --amazonec2-ami ami-f6e6979c --engine-install-url "https://get.docker.com" --extension /Users/kcoleman/Desktop/student.json student001b
 ```
 
 #### For EU-West-1 (AMI using Ubuntu 14.04.03 with Kernel 3.19-30)

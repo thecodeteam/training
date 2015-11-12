@@ -1,20 +1,44 @@
 {
     "extensions": [
         {
-            "rexray": {
-                "version": "unstable",
-                "files": {
-                    "config.yml": {
-                        "source": "/Users/kcoleman/Desktop/rexconfig.yml",
-                        "destination": "/etc/rexray/config.yml"
-                    }
-                }
+            "generic": {
+              "run": [
+                  "wget https://dl.bintray.com/akutz/rexray/unstable/0.3.0-dev+11/rexray-Linux-x86_64-0.3.0-dev+11.tar.gz",
+                  "tar -zxvf rexray-Linux-x86_64-0.3.0-dev+11.tar.gz",
+                  "sudo mv rexray /usr/bin/.",
+                  "sudo rexray install"
+              ],
+              "validOS": [
+                  "ubuntu",
+                  "debian"
+              ]
+            }
+        },
+        {
+            "generic": {
+              "copy": {
+                "/Users/clintonkitson/Repos/training/docker-workshop/websummit/prep/rexconfig.yml":"/etc/rexray/config.yml"
+              }
+            }
+        },
+        {
+            "generic": {
+              "run": [
+                "GROUP=`hostname | sed 's/[ab]//'` && sudo sed -i s/groupName/$GROUP/g /etc/rexray/config.yml"
+              ]
+            }
+        },
+        {
+            "generic": {
+              "run": [
+                "sudo rexray start"
+              ]
             }
         },
         {
             "generic": {
                 "copy": {
-                    "/Users/kcoleman/Desktop/dockertraining.sh": "/home/ubuntu/training.sh"
+                    "/Users/clintonkitson/Repos/training/docker-workshop/websummit/prep/dockertraining.sh": "/tmp/training.sh"
                 },
                 "validOS": [
                     "ubuntu",
@@ -25,7 +49,7 @@
         {
             "generic": {
                 "run": [
-                    "sudo bash /home/ubuntu/training.sh"
+                    "sudo bash /tmp/training.sh"
                 ],
                 "validOS": [
                     "ubuntu",

@@ -22,49 +22,37 @@ Use PuTTy
 Swarm uses a distributed key:value pair to cluster hosts together. The first step to creating a swarm on your network is to pull the Docker Swarm image. Then, using Docker, you configure the swarm manager and all the nodes to run Docker Swarm.
 
 1. SSH into your `a` machine
-2. `docker run --rm swarm:1.0.0-rc1 create` will use v1.0.0-rc1 of Swarm to create a new unique ID.
+2. `docker run --rm swarm:1.0.0 create` will use v1.0.0 of Swarm to create a new unique ID.
 ```
-student001a@student001a:~$ docker run --rm swarm:1.0.0-rc1 create
-Unable to find image 'swarm:1.0.0-rc1' locally
-1.0.0-rc1: Pulling from library/swarm
-c00617e6775d: Pull complete
-ae8881fb7fc2: Pull complete
-60765fa276de: Pull complete
-e949523cc6f8: Pull complete
-0f7a6120cca6: Pull complete
-81a93e819003: Pull complete
-861c28a37cc7: Pull complete
-7a35ac3c7a9f: Pull complete
-Digest: sha256:1034634d03c21e9a463a820dc2d5d1a17ffb7c55d79eb544006ead60128982c5
-Status: Downloaded newer image for swarm:1.0.0-rc1
-fc30fbbbfc8b01a52c13f110c2af0135
+student001a@student001a:~$ docker run --rm swarm:1.0.0 create
+Unable to find image 'swarm:1.0.0' locally
+1.0.0: Pulling from library/swarm
+2bc79aec8ea0: Pull complete
+dc2fb86a875a: Pull complete
+435e648d0f23: Pull complete
+e16042a92d05: Pull complete
+045bd7b00b5b: Pull complete
+3caea1253d76: Pull complete
+2b4c55187a27: Pull complete
+6b40fe7724bd: Pull complete
+Digest: sha256:989dd783c2a2e6decd3b60f52a8a99b81a2a7ff24c8b3fd7cb4b8bd699e61f6b
+Status: Downloaded newer image for swarm:1.0.0
+f29ab346337368c83f4087d21900b75d
 ```
-3. Save that Token/Unique ID on the last line. (ie. `fc30fbbbfc8b01a52c13f110c2af0135`).
+3. Save that Token/Unique ID on the last line. (ie. `f29ab346337368c83f4087d21900b75d`).
 
 
 ## Configure Swarm Agents
-Each host is going to act as a pool of resources for the cluster. Therefore, a swarm agent must be installed on each host. Create two SSH sessions for your hosts `a` and `b`. Replace `<your token` with the Swarm token from earlier
+Each host is going to act as a pool of resources for the cluster. Therefore, a swarm agent must be installed on each host. Create two SSH sessions for your hosts `a` and `b`. Replace `<your token>` with the Swarm token from earlier
 
 1.
 ```
-docker run -d --restart=always --name swarm-agent swarm:1.0.0-rc1 join --advertise $(curl http://169.254.169.254/latest/meta-data/public-ipv4):2376 token://<your token>
+docker run -d --restart=always --name swarm-agent swarm:1.0.0 join --advertise $(curl http://169.254.169.254/latest/meta-data/public-ipv4):2376 token://<your token>
 
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                Dload  Upload   Total   Spent    Left  Speed
-100    14  100    14    0     0   3880      0 --:--:-- --:--:-- --:--:--  4666
-Unable to find image 'swarm:1.0.0-rc1' locally
-1.0.0-rc1: Pulling from library/swarm
-c00617e6775d: Pull complete
-ae8881fb7fc2: Pull complete
-60765fa276de: Pull complete
-e949523cc6f8: Pull complete
-0f7a6120cca6: Pull complete
-81a93e819003: Pull complete
-861c28a37cc7: Pull complete
-7a35ac3c7a9f: Pull complete
-Digest: sha256:1034634d03c21e9a463a820dc2d5d1a17ffb7c55d79eb544006ead60128982c5
-Status: Downloaded newer image for swarm:1.0.0-rc1
-37403ac0b94a9d6da824bc37bfc0ff6d256f9296cdf43b69c45efe0aba677853
+100    12  100    12    0     0   3524      0 --:--:-- --:--:-- --:--:--  4000
+e8017015d72df0638892ec48687b4255f9e887ed1768fc5f25bd18ce73dd0e03
 ```
 
 Once that is done on both machines, perform a `docker ps` to verify the container is running.
@@ -76,7 +64,7 @@ For this instance, let's use machine `a` as our Swarm Master.
 
 Now run the Swarm Master container.
 ```
-docker run -d --restart=always --name swarm-agent-master -p 3376:3376 -v /etc/docker:/etc/docker swarm:1.0.0-rc1 manage --tlsverify --tlscacert=/etc/docker/ca.pem --tlscert=/etc/docker/server.pem --tlskey=/etc/docker/server-key.pem -H tcp://0.0.0.0:3376 --strategy spread  token://<your token>
+docker run -d --restart=always --name swarm-agent-master -p 3376:3376 -v /etc/docker:/etc/docker swarm:1.0.0 manage --tlsverify --tlscacert=/etc/docker/ca.pem --tlscert=/etc/docker/server.pem --tlskey=/etc/docker/server-key.pem -H tcp://0.0.0.0:3376 --strategy spread  token://<your token>
 ```
 
 Now, do `docker ps`. The output of this is a result of showing every container only on this host. We are going to configure `a`'s' docker engine to point to the swarm master. Replace HOSTIP with the PUBLIC IP.
@@ -90,33 +78,33 @@ These hosts were provisioned with Docker Machine. By default, Docker Machine ins
 
 Setup environment variables to point the Docker CLI to the Swarm Master
 
-1. `$ export DOCKER_TLS_VERIFY=1`
-2. `$ export DOCKER_HOST=tcp://$(curl http://169.254.169.254/latest/meta-data/public-ipv4):3376`
+1. `export DOCKER_TLS_VERIFY=1`
+2. `export DOCKER_HOST=tcp://$(curl http://169.254.169.254/latest/meta-data/public-ipv4):3376`
 
 Now do `docker ps` again. What happened? We can see that there are now no containers running (unless you had containers other than Swarm previously running).
 
 Run `docker info` and you will see something different than before
 ```
 student001a@student001a:~$ docker info
-Containers: 3
-Images: 2
+Containers: 8
+Images: 8
 Role: primary
 Strategy: spread
-Filters: affinity, health, constraint, port, dependency
+Filters: health, port, dependency, affinity, constraint
 Nodes: 2
- student001a: 52.23.240.157:2376
-  └ Containers: 2
+ student012a: 54.174.23.28:2376
+  └ Containers: 7
   └ Reserved CPUs: 0 / 1
-  └ Reserved Memory: 0 B / 1.018 GiB
-  └ Labels: executiondriver=native-0.2, kernelversion=3.13.0-66-generic, operatingsystem=Ubuntu 14.04.2 LTS, provider=amazonec2, storagedriver=aufs
- student001b: 54.210.131.5:2376
+  └ Reserved Memory: 0 B / 1.017 GiB
+  └ Labels: executiondriver=native-0.2, kernelversion=3.19.0-30-generic, operatingsystem=Ubuntu 14.04.3 LTS, provider=amazonec2, storagedriver=aufs
+ student012b: 54.173.131.60:2376
   └ Containers: 1
   └ Reserved CPUs: 0 / 1
-  └ Reserved Memory: 0 B / 1.018 GiB
-  └ Labels: executiondriver=native-0.2, kernelversion=3.13.0-66-generic, operatingsystem=Ubuntu 14.04.2 LTS, provider=amazonec2, storagedriver=aufs
+  └ Reserved Memory: 0 B / 1.017 GiB
+  └ Labels: executiondriver=native-0.2, kernelversion=3.19.0-30-generic, operatingsystem=Ubuntu 14.04.3 LTS, provider=amazonec2, storagedriver=aufs
 CPUs: 2
-Total Memory: 2.035 GiB
-Name: fbaaf410cc01
+Total Memory: 2.033 GiB
+Name: 6ebfc1be0989
 ```
 
 ## Using Docker with Swarm
