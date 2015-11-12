@@ -17,7 +17,7 @@
         {
             "generic": {
               "copy": {
-                "/Users/clintonkitson/Repos/training/docker-workshop/websummit/prep/rexconfig.yml":"/etc/rexray/config.yml"
+                "/Users/clintonkitson/Repos/training/docker-workshops/docker-storage-networking//prep/rexconfig.yml":"/etc/rexray/config.yml"
               }
             }
         },
@@ -38,7 +38,7 @@
         {
             "generic": {
                 "copy": {
-                    "/Users/clintonkitson/Repos/training/docker-workshop/websummit/prep/dockertraining.sh": "/tmp/training.sh"
+                    "/Users/clintonkitson/Repos/training/docker-workshops/docker-storage-networking//prep/dockertraining.sh": "/tmp/training.sh"
                 },
                 "validOS": [
                     "ubuntu",
