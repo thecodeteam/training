@@ -23,7 +23,7 @@ Before we begin, we have to install Docker Compose. As of this writing, the late
 
 ```
 $ sudo -s
-$ curl -L https://github.com/docker/compose/releases/download/1.5.0rc2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+$ curl -L https://github.com/docker/compose/releases/download/1.5.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 $ chmod +x /usr/local/bin/docker-compose
 $ exit
 ```
