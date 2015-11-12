@@ -32,19 +32,20 @@ This should give you an output similar to this:
 $ docker info
 Containers: 0
 Images: 0
+Server Version: 1.9.0
 Storage Driver: aufs
  Root Dir: /var/lib/docker/aufs
  Backing Filesystem: extfs
  Dirs: 0
- Dirperm1 Supported: false
+ Dirperm1 Supported: true
 Execution Driver: native-0.2
 Logging Driver: json-file
-Kernel Version: 3.13.0-65-generic
-Operating System: Ubuntu 14.04.2 LTS
+Kernel Version: 3.19.0-30-generic
+Operating System: Ubuntu 14.04.3 LTS
 CPUs: 1
-Total Memory: 992.5 MiB
-Name: student003
-ID: DLZJ:LWWG:7VM2:YPHW:F67R:GAR2:76WK:L35Q:SQM6:A442:2OSG:L2JI
+Total Memory: 991.6 MiB
+Name: student012a
+ID: 4PQN:XIMG:AMDW:R3UV:T7PX:ZSVJ:6XGC:CBXS:J3KF:4WZX:QXPK:HZBT
 WARNING: No swap limit support
 Labels:
  provider=amazonec2
