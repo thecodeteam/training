@@ -215,3 +215,11 @@ One way to troubleshoot is to run the Docker daemon manually to see the logs in 
 3. Stop the Docker daemon with ```/etc/init.d/docker stop```.  
 4. Manually run the Docker daemon with the command you found from ```ps``` which should be something similar to ```/usr/local/bin/docker -d -D -g /var/lib/docker -H unix:// -H tcp://0.0.0.0:2376 --tlsverify --tlscacert=/var/lib/boot2docker/tls/ca.pem --tlscert=/var/lib/boot2docker/tls/server.pem --tlskey=/var/lib/boot2docker/tls/serverkey.pem```.
 5. Make sure to leave this process ```running``` and open another window for other operations.
+
+
+If docker-machine is hung on "starting vm..." and you're on a Mac, it might be due to a conflict with Kitematic (if you have it installed). Steps to resolve:
+
+1. Ctrl+C out of it.
+2. Delete the new machine ```docker-machine rm containerhost```
+3. Restart the virtualbox interface ```sudo ifconfig vboxnet0 down``` and then ```sudo ifconfig vboxnet0 up```
+4. Lastly recreate it again: ```docker-machine create --driver virtualbox containerhost```

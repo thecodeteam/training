@@ -1,4 +1,4 @@
-# Docker Workshop
+# Docker Platform Introduction Workshop
 
 A full-day workshop that gives you enough information to start planning to run Docker containers in your own organization.
 
