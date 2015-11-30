@@ -223,7 +223,28 @@ For this reason, timeboxing depends on the prioritization of deliverables to ens
 
 ---
 
-#Agile Roles
+#Agile 'Howto'
+
+---
+
+# Backlog
+
+The Product Owner is responsible for creating a list of things he/she wants done, called a backlog.  They have exclusive rights to prioritize this backlog of work.
+
+---
+
+As an end user, I want an app that:
+
+* grabs images from twitter
+* filters by hash tag
+
+---
+
+As an ops manager, I want that app to:
+
+
+* catalog the images in a database so that they can be queried quickly
+* log to a web service so that I can evaluate problems easily.
 
 ---
 
@@ -251,3 +272,39 @@ Based on the demo the Product Owner determines what to build next
 Serves as a facilitator for both the Product Owner and the team
 
 He or she has no management authority within the team and may never commit to work on behalf of the team
+
+---
+
+# Sprint Planning Meeting
+
+* Timeboxed to 4 hrs
+* This meeting is a _conversation_ between the Product Owner and the team
+* The team has the power to push back and voice concerns or impediments
+* Definition of 'done'
+
+---
+
+## At this point, the Product Owner is typically asked to leave while the team decomposes the sprint backlog items into tasks
+
+---
+
+## While the Product Owner is asked to leave so that the team can candidly discuss the work, he or she is still expected to be “on call” to answer questions
+
+---
+
+# Story Pointing
+###The general characteristics of story points include:
+
+* Story points represent the total amount of work required to fully implement a user story
+* The stories are estimated independently by team members and the team drives toward a consensus opinion
+
+---
+
+# Story Pointing (cont)
+
+* If a user story is too large to be implemented in one iteration it needs to be broken down into two or more smaller stories
+* Many of the estimating models are designed as games that are interesting and engaging for the project team
+
+---
+
+

@@ -1,6 +1,6 @@
 #DevOps Agile Geek Week
 
->Software does not scale. Software teams do not scale. Architecture should be as much about enabling small teams to work on small components as the technical requirements of the software.
+>Software & Infra do not scale. Software & Infra teams do not scale. Architecture should be as much about enabling small teams to work on small components as the technical requirements of the software.
 
 ^ Open this presentation with [Deckset](http://www.decksetapp.com/)
 

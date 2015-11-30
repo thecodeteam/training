@@ -34,7 +34,7 @@ Participants should:
 
 * *Tools*
 
- - [Git](https://help.github.com/articles/set-up-git/): Install it from homebrew or github - doesn't matter.
+ - [Git](https://help.github.com/articles/set-up-git/): Install it from homebrew or github - doesn't matter.  You also need to[ setup a github account.](https://github.com/join)
  - [CloudFoundry CLI](http://docs.cloudfoundry.org/devguide/installcf/) - install it from CloudFoundry.org or homebrew.
  - [Slack](http://slack.com) - we'll invite you.
  - [Trello](http://trello.com) - sign up for an account.
