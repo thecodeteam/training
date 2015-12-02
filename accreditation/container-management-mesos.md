@@ -41,7 +41,7 @@ Web UI for viewing cluster state
 
 ---
 
-![fit](images/mesos.png)
+![fit](https://raw.githubusercontent.com/emccode/training/master/accreditation/images/mesos.png)
 
 ---
 
@@ -121,7 +121,7 @@ http://mesos.apache.org/documentation/latest/powered-by-mesos/
 
 https://github.com/mesosphere/playa-mesos
 
-https://github.com/everpeace/vagrant-mesos
+https://github.com/jonasrosland/vagrant-mesos
 
 ---
 
