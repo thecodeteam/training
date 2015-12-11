@@ -36,6 +36,10 @@ The answer is as always “it depends”
 
 ---
 
+![fit](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/CoreOS_Architecture_Diagram.svg/2000px-CoreOS_Architecture_Diagram.svg.png)
+
+---
+
 # [CoreOS - Tectonic](https://tectonic.com/)
  - A joint venture by CoreOS and Google
  (Google Ventures is also an investor in CoreOS)
@@ -137,3 +141,4 @@ The answer is as always “it depends”
  - [Container management and CoreOS accreditation module](https://www.youtube.com/watch?v=-aQOGsHm_bo&index=8&list=PLbssOJyyvHuWiBQAg9EFWH570timj2fxt)
  - [Mesos accreditation module](https://www.youtube.com/watch?v=TkLPr3GexZU&list=PLbssOJyyvHuWiBQAg9EFWH570timj2fxt&index=6)
  - [Kubernetes accreditation module](https://www.youtube.com/watch?v=qCxYjq7EBHc&index=7&list=PLbssOJyyvHuWiBQAg9EFWH570timj2fxt)
+ - Microservices and Service Discovery accreditation module
