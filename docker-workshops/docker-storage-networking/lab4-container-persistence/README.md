@@ -137,7 +137,7 @@ $ docker run -ti --name temp --volume-driver=rexray -v <volName>:/test busybox
 
 Once we are in our container, let's validate that the external volume is mounted as expected.  The following path shows the `/dev/xvdb` volume mounted to `/test`.
 ```
-/ # df /student001
+/ # df /test
 Filesystem           1K-blocks      Used Available Use% Mounted on
 /dev/xvdb             16382888     45036  15482608   0% /test
 ```
@@ -204,7 +204,7 @@ $ docker ps
 Attach to the host with `$ docker attach hosta` and verify that the volume is mounted as expected.  Notice how `/dev/xvdb` is mounted to `/test`
 
 ```
-/ # df /student001a/
+/ # df /test
 Filesystem           1K-blocks      Used Available Use% Mounted on
 /dev/xvdb             10190136     23028   9626436   0% /test
 ```
