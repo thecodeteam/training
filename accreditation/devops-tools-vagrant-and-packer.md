@@ -29,119 +29,106 @@ Creates Open Source software like:
 
 ---
 
+# Vagrant
+
+Create and configure lightweight, reproducible, and portable development environments.
+
+Boot up entire configured systems in minutes.
+
+Run them anywhere!
+
+---
+
+# Vagrant will change how you work
+
+Install Vagrant on Windows, OS X or Linux
+
+Create a single file to describe the type of machine you want
+
+Run a single command
+
+---
+
+# Vagrantfile
+
+```
+Vagrant.configure("2") do |config|
+  config.vm.box = "hashicorp/precise32"
+end
+```
+
+---
+
+# Run Vagrant
+
+```
+vagrant up
+```
+
+---
+
+# Demo!
+
+---
+
+# Three-node ScaleIO cluster demo!
+
+```
+git clone https://github.com/jonasrosland/vagrant-scaleio
+cd vagrant-scaleio
+vagrant up
+```
+
+---
+
 ![fit](https://d23f6h5jpj26xu.cloudfront.net/mitchellh_24702982422030_small.png)
 
 ---
 
-## Manage a cluster of Linux containers as a single system to accelerate Dev and simplify Ops
+# Packer
+
+### A tool for creating identical machine images for multiple platforms from a single source configuration
 
 ---
 
-![130%](images/kubernetes-graph-01.png)
+# Packer
+
+Packer is easy to use and automates the creation of any type of machine image
+
+Embraces modern configuration management
+
+Encouraging you to use automated scripts to install and configure everything
+
+Packer brings machine images into the modern age, unlocking untapped potential and opening new opportunities
+
+![right,50%](https://packer.io/assets/images/screenshots/vmware_and_virtualbox-bdcc1aa6.png)
 
 ---
 
-# What is it?
+# Packer images
 
-An open source container orchestration system
+Build images for Amazon EC2, DigitalOcean, Google Compute Engine, QEMU, VirtualBox, VMware, and more
 
-Runs Docker containers
+Support for more platforms is on the way, and anyone can add new platforms via plugins
 
-Supports multiple cloud and bare-metal deployments
-
-Made to manage **applications**, not machines
+![right,130%](https://packer.io/assets/images/screenshots/works_with-a1a499d3.png)
 
 ---
 
-# Kubernetes concepts
+# Packer benefits
+
+Use it in a continuous delivery pipeline
+
+Parity between dev and prod - all images are the same
+
+Create demos and appliances
 
 ---
 
-# Container
+# For more information
 
-Sealed application package (Docker)
+haschicorp.com
 
-![inline](https://d3oypxn00j2a10.cloudfront.net/0.19.1/images/pages/brand_guidelines/small_v.png)
+vagrantup.com
 
----
-
-# Clusters
-
-The compute resources on top of which your containers are built
-
-Kubernetes can run anywhere!
-
-![inline](images/kubernetes-install.png)
-
----
-
-# Pods
-
-Small group of Docker containers that work together
-
-The smallest deployable unit that can be created, scheduled, and managed with Kubernetes
-
-Example: web server and a content syncer
-
-![inline](http://upload.wikimedia.org/wikipedia/commons/5/5b/NCI_peas_in_pod.jpg)
-
----
-
-# Replication controllers
-
-Ensures that a specified number of pods are running at any given time
-
-Creates or kills pods as required
-
-If you want to have 4 copies of something running, that's the desired state
-
-The RCs always make sure to get to the desired state
-
----
-
-# Services
-
-A set of pods that work together
-
-Example: load-balanced backends
-
----
-
-# Labels
-
-Used to organize and select groups of objects based on **key:value** pairs.
-
-Examples:
-```
-role: frontend
-vs
-role: backend
-```
-
----
-
-# So to put it all together
-
-Containers run on clusters
-
-Pods are containers that work together
-
-Services are pods that work together
-
-Labels are used to organize services
-
----
-
-![fit](images/Kubernetes overview.001.png)
-
----
-
-![fit](images/Kubernetes overview.002.png)
-
----
-
-![fit](images/Kubernetes overview.003.png)
-
----
-
-![fit](images/Kubernetes overview.004.png)
+packer.io

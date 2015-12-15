@@ -156,9 +156,9 @@ Notice that under the PORTS section the port 8888 of the localhost is forwarded 
 
 You can run your apps by pointing your browser to ```localhost:8888``` or you can just verify using the following curl commands.
 
-```curl -L $(boot2docker ip 2>/dev/null):8888```
+```curl -L $(docker-machine ip containerhost 2>/dev/null):8888```
 
-```curl -L $(boot2docker ip 2>/dev/null):8888/examples```
+```curl -L $(docker-machine ip containerhost 2>/dev/null):8888/examples```
 
 ## Build your own container
 
@@ -210,7 +210,7 @@ If you have a problem when running `docker run` or `docker pull` where it hangs 
 #### General Troubleshooting
 One way to troubleshoot is to run the Docker daemon manually to see the logs in real-time.  
 
-1. Make to sure SSH to the Boot2Docker image with ```boot2docker ssh```.  
+1. Make to sure SSH to the container host with ```docker-machine ssh containerhost```.
 2. Get the command that we run the Docker daemon with by running ```ps auxfw | grep docker```.  
 3. Stop the Docker daemon with ```/etc/init.d/docker stop```.  
 4. Manually run the Docker daemon with the command you found from ```ps``` which should be something similar to ```/usr/local/bin/docker -d -D -g /var/lib/docker -H unix:// -H tcp://0.0.0.0:2376 --tlsverify --tlscacert=/var/lib/boot2docker/tls/ca.pem --tlscert=/var/lib/boot2docker/tls/server.pem --tlskey=/var/lib/boot2docker/tls/serverkey.pem```.

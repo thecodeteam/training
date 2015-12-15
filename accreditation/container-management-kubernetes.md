@@ -19,7 +19,14 @@
 
 ---
 
-![130%](images/kubernetes-graph-01.png)
+# Why do you need a container manager?
+
+Similar to why you would need a manager for
+ - Windows and Windows apps
+ - Linux and Linux apps
+ - VMware and Virtual Machines
+
+Containers are a simple way of packaging apps
 
 ---
 
@@ -32,6 +39,12 @@ Runs Docker containers
 Supports multiple cloud and bare-metal deployments
 
 Made to manage **applications**, not machines
+
+Automatic placement of containers (similar to VMware DRS)
+
+---
+
+![130%](images/kubernetes-graph-01.png)
 
 ---
 
@@ -127,3 +140,13 @@ Labels are used to organize services
 ---
 
 ![fit](images/Kubernetes overview.004.png)
+
+---
+
+# For more information:
+
+http://kubernetes.io
+
+https://github.com/googlecloudplatform/kubernetes
+
+https://www.digitalocean.com/community/tutorials/an-introduction-to-kubernetes
