@@ -20,19 +20,26 @@ A single day, heavy duty, partially hands-on introduction to discussions around 
 
 # Day 1
 
+---
+
 ##Part 0:
 * Definititions & Why
     * DevOps?
     * Agile?
     * Cloud Native?
+
 ##Part 1
 * Basic concepts & drivers behind Agile methods
   * Why Agile - the manifesto
   * Basic mechanics of one style (SCRUM)
+
+---
+  
 ##Part 2
 * Cloud Native Applications
   * Why they are 'taking over'
   * The 12 Factors
+
 ##Part 3
 * Cloud Native Platforms
   * Ops Management + Services + Runtime
@@ -40,7 +47,11 @@ A single day, heavy duty, partially hands-on introduction to discussions around 
 
 ---
 
-##Part 2
+#Day 2
+
+---
+
+##Part 1
 
 * Source Code Management
   * Why it matters
@@ -54,13 +65,16 @@ A single day, heavy duty, partially hands-on introduction to discussions around 
   * *Hands On*: `cf push` checked out app
 
 ---
-
-##Part 3
+##Part 2
 
 What can we sell?
 
-* DevOps Transformation Services (Bart Driscoll)
-* Project Bravo
+* DevOps Transformation Services
+* Neutrino & Project Bravo
 * DSSD
 * ECS & Rubicon
-* vCloud Air
+* vCloud Air / Virtustream
+
+---
+
+# Role Play Scenarios
