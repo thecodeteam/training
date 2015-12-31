@@ -16,27 +16,37 @@ A single day, heavy duty, partially hands-on introduction to discussions around 
 
 ##Agenda:
 
-##Part 1:
+---
 
+# Day 1
+
+##Part 0:
+* Definititions & Why
+    * DevOps?
+    * Agile?
+    * Cloud Native?
+##Part 1
 * Basic concepts & drivers behind Agile methods
   * Why Agile - the manifesto
   * Basic mechanics of one style (SCRUM)
-* Source Code Management
-  * Why it matters
-  * Infrastructure as Code
-  * Basics of `git`:  `checkout`, forking, `commit`, `push`, pull requests
-  * *Hands On*: `clone`, edit, `commit` a repo.
+##Part 2
+* Cloud Native Applications
+  * Why they are 'taking over'
+  * The 12 Factors
+##Part 3
+* Cloud Native Platforms
+  * Ops Management + Services + Runtime
+  * Prescriptive vs. Unstructured
 
 ---
 
 ##Part 2
 
-* Cloud Native Applications
-  * Why they are 'taking over'
-  * The 12 Factors
-* Cloud Native Platforms
-  * Ops Management + Services + Runtime
-  * Prescriptive vs. Unstructured
+* Source Code Management
+  * Why it matters
+  * Infrastructure as Code
+  * Basics of `git`:  `checkout`, forking, `commit`, `push`, pull requests
+  * *Hands On*: `clone`, edit, `commit` a repo.
 * Cloud Foundry
   * Base Components
   * Where it runs / how

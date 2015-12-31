@@ -1,6 +1,6 @@
 class: center, middle
 
-# Q4 Accreditation Training
+# Q1 Accreditation Training
 ## Object Storage Basics
 
 matt cowger (@mcowger) &
