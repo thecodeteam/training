@@ -8,9 +8,11 @@ A single day, heavy duty, partially hands-on introduction to discussions around 
 
 ## Prework
 
-* Read Phoenix Project
-* Install `git`
-* Install `cf`
+(this is real prework - we will reference this stuff often, and you *will* fall behind)
+
+* Read The Phoenix Project, by Gene Kim
+* Install `git`: [Windows](https://git-scm.com/download/win) & [Mac](https://git-scm.com/download/mac)
+* Install `cf cli` [Windows](https://cli.run.pivotal.io/stable?release=windows64&source=github) & [Mac](https://cli.run.pivotal.io/stable?release=macosx64&source=github)
 
 ---
 
