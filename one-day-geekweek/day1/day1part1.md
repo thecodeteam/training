@@ -250,3 +250,17 @@ He or she has no management authority within the team and may never commit to wo
 * Definition of 'done'
 
 ---
+
+# Sprint Planning Meeting
+
+* Product owner leaves the room
+* Team determines task breakdown and assignments
+
+---
+
+# Stand Ups
+
+* Daily meeting to answer:
+  * What i did yesterday
+  * What i plan to do today
+  * Anything preventing me from doing that (blockers)
