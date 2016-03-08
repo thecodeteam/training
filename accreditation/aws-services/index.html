@@ -57,6 +57,8 @@ class: middle
 * Discounts for committments (reserved instances)
 * Basis for many other services
 * EBS Volumes vs. Instance Volumes
+
+Similar tools: Google Compute, vCloud Air
 ]
 
 ---
@@ -75,6 +77,8 @@ class: middle
 * Docker compatible
 ]
 
+Similar tools: Docker Swarm, Tutum
+
 ---
 
 .left-column[
@@ -88,6 +92,8 @@ class: middle
 * Built on EC2, inherits pricing
 * Deploys Entire Stacks, including applications
 * Most Similar to Cloud Foundry or Heroku
+
+Similar tools: Google App Engine, Cloud Foundry, Heroku
 ]
 
 ---
@@ -110,6 +116,8 @@ class: middle
 * Supports Java, Node.js & Python
 * Very cheap for startups
 * Enforces statelessness (12 factors)
+
+Similar tools: None
 ]
 
 ---
@@ -125,6 +133,9 @@ class: middle
 * Fine grained control of subnets, DHCP, routing, etc.
 * Supports 2 way NAT, and even site to site VPN connections
 * VPN: Treat AWS like its on-prem (sorta)
+* Included in EC2 pricing
+
+Similar tools: Rackspace Virtual Networks, vCloud Air Networks, VMware NSX
 ]
 
 ---
@@ -143,6 +154,10 @@ class: middle
 * Basic health checks, or Advanced health checks
 * Automatic Scaling
 * SSL Offload
+* Priced on requests
+
+Similar tools: F5, BigIP
+
 ]
 
 ---
@@ -160,6 +175,10 @@ class: middle
 * Dedicated network connection to AWS
 * Locationa and region specific
 * Supported with certain cross connect scenarios
+* Priced based on connection
+
+Similar tools: Metro Ethernet
+
 ]
 
 ---
@@ -181,9 +200,210 @@ class: middle
   * Redirect based on location
 * Availability Monitoring
   * Redirect based on availability (maybe to an ELB?)
+* Priced per request
+
+Similar tools: Google Domains, CloudFlare, Neustar
+
 ]
 
 ---
+
+.left-column[
+  ### Storage/ CDN
+  ###### S3/Glacier
+
+  
+
+]
+.right-column[
+##Route 53: "Object Storage for Rent (Cheap!)"
+* (S)imple (S)torage (S)ervice
+* As cheap as 
+* Full Redudancy, Reduced Redundancy, Infrequent Access
+* Priced Per GB: $.007 to $.03 /GB
+* Glacier Archive
+  * Very cheap, very slow.
+  * Can be expensive to recover from
+
+Similar tools: Google Cloud Storage, EMC EOS2, vCloud Air Object Store
+
+]	
+---
+
+
+.left-column[
+  ### Storage/ CDN
+  ###### S3/Glacier
+  ###### CloudFront
+
+]
+.right-column[
+##CloundFront: "Content Delivery for Rent"
+* Content Delivery Network using Amazon's networks & datacenters
+* Uses content from S3 buckets
+* Priced per request
+
+Similar tools: CloudFlare, Akamai, Limelight
+
+]
+	
+---
+
+.left-column[
+  ### Storage/ CDN
+  ###### S3/Glacier
+  ###### CloudFront
+  ###### Elastic Filesystem
+
+]
+.right-column[
+##EFS: "Resilient Filesystem for Rent"
+* Distributed, highly reslient filesystem available to EC2 systems
+* Accessed via NFS from clients
+* Thus far, not very high performance
+* Fully redudant
+* Priced at $0.30/GB
+
+Similar tools: Lustre, GPFS
+	
+]
+---
+
+.left-column[
+  ### Storage/ CDN
+  ###### S3/Glacier
+  ###### CloudFront
+  ###### Elastic Filesystem
+  ###### Snowball
+
+]
+.right-column[
+##Snowball: "Never Underestimate the Bandwidth of a Station Wagon"
+* Hardened, managed & secure method to import and export data
+* 50TB box
+* Sent via snail mail
+
+<img src="https://media.amazonwebservices.com/blog/2015/ie_sb_device_4.png" width=30%>
+	
+Similar tools: None
+]
+---
+
+.left-column[
+  ### Storage/ CDN
+  ###### S3/Glacier
+  ###### CloudFront
+  ###### Elastic Filesystem
+  ###### Snowball
+  ###### Storage Gateway
+
+]
+.right-column[
+##Storage Gateway: "CloudArray, but for Rent"
+* Treat object store like iSCSI
+* Deployed as a VM
+* Billed based on S3 usage
+* Can also act as a Virtual Tape Library
+	
+Similar tools: CloudArray, Nasuni
+]
+
+---
+
+.left-column[
+  ### Database
+  ###### RDS
+
+]
+.right-column[
+##RDS: "Database as a Service"
+* Standard relational databases in managed form
+* Multiple Supported Databases:
+	* MySQL
+	* Oracle
+	* Postgres
+	* MSSQL
+	* Aurora (Amazon's MySQL equivalent)
+	* MariaDB
+* Priced based on instance size and database type
+* License included
+* Can be deployed as replicated Multi-AZ deployment
+	
+	
+Similar tools: Oracle, vCloud Air DB as a Service, MySQL
+]
+
+---
+
+.left-column[
+  ### Database
+  ###### RDS
+  ###### DynamoDB
+
+]
+.right-column[
+##DynamoDB: "NoSQL for Rent"
+* NoSQL document database
+* Managed service
+* Very similar to MongoDB or Cassandra
+* Highly durable
+* Simple to use 
+* Priced by transactions/sec and data stored.
+	* small systems effectively free
+* Can be difficult to access outside of Amazon
+	
+	
+Similar tools: MongoDB, Cassandra
+
+]
+
+---
+
+
+.left-column[
+  ### Database
+  ###### RDS
+  ###### DynamoDB
+  ###### ElastiCache
+
+]
+.right-column[
+##Elasticache: "Key Value store for Rent"
+* High Performance Caching Layer
+* Key Value based
+* 100% In Memory
+* Based on Redis or Memcached
+* Supports snapshotting & replication
+	
+Similar tools: Redis, Memcached
+
+]
+
+---
+
+
+
+.left-column[
+  ### Database
+  ###### RDS
+  ###### DynamoDB
+  ###### ElastiCache
+  ###### Redshift
+
+]
+.right-column[
+##Redshift: "Data Warehouse for Rent"
+* Data warehouse solutions
+* Desgiedn for massive scale
+* Great for Analytics
+* Not far from Hadoop as a Service
+* Priced on instance type and data stored
+	
+Similar tools: Apache Pig, IBM Netezza, Exadata, Azure SQL Warehouse
+
+]
+
+
 
 
     </textarea>
