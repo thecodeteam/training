@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Agenda</title>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="basestyle.css">
+  </head>
+  <body>
+
+    <textarea id="source">
+
+class: center, middle
+
+# AWS Services
+## Q2 2016 Accreditation Training
+
+---
+
+class: center, middle
+
+####Matt Cowger, EMC dotnext, @mcowger
+![](https://pbs.twimg.com/profile_images/513460490006048768/gyngPwgT_200x200.jpeg)
+####Jonas Rosland, EMC{CODE}, @jonasrosland
+![](https://pbs.twimg.com/profile_images/445673277705314305/UnHCV6Xo_200x200.jpeg)
+
+---
+
+class: center, middle
+
+##What Do All Those AWS Services Do?
+<img width=50% src="https://upload.wikimedia.org/wikipedia/commons/1/1d/AmazonWebservices_Logo.svg">
+
+---
+
+class: middle
+
+##Groupings
+* Compute
+* Network
+* Storage/CDN
+* Database
+* App Services
+* Deploy/Mgmt
+* Analytics
+
+---
+
+.left-column[
+  ### Compute
+  ###### EC2
+]
+.right-column[
+## EC2: "VMs For Rent"
+* Many Sizes Available
+* $.006/hr to $6.820/hr
+* Check out the options: http://www.ec2instances.info
+* Discounts for committments (reserved instances)
+* Basis for many other services
+* EBS Volumes vs. Instance Volumes
+]
+
+---
+
+.left-column[
+  ### Compute
+  ###### EC2
+  ###### EC2 Container
+
+]
+.right-column[
+##EC2 Container: "Docker For Rent"
+* Built on EC2, inherits pricing
+* $.006/hr to $6.820/hr
+* Manages container placement & availability
+* Docker compatible
+]
+
+---
+
+.left-column[
+  ### Compute
+  ###### EC2
+  ###### EC2 Container
+  ###### Elastic Beanstalk
+]
+.right-column[
+##EC2 EBS: "PaaS For Rent"
+* Built on EC2, inherits pricing
+* Deploys Entire Stacks, including applications
+* Most Similar to Cloud Foundry or Heroku
+]
+
+---
+
+.left-column[
+  ### Compute
+  ###### EC2
+  ###### EC2 Container
+  ###### Elastic Beanstalk
+  ###### Lambda
+]
+.right-column[
+##EC2 Lambda: "CPU Time For Rent"
+* "Serverless" Infrastructure
+* Runs code only when triggered
+* Container based (but invisible)
+* Massively Scalable
+* Billed by CPU ($.20 / million requests) in 100ms increments
+* Triggered by API call, Message Queue, Time-of-Day, etc.
+* Supports Java, Node.js & Python
+* Very cheap for startups
+* Enforces statelessness (12 factors)
+]
+
+---
+
+.left-column[
+  ### Network
+  ###### VPC
+
+]
+.right-column[
+##VPC: "Virtual Network for Rent"
+* Allows you to control networking to your EC2 instances
+* Fine grained control of subnets, DHCP, routing, etc.
+* Supports 2 way NAT, and even site to site VPN connections
+* VPN: Treat AWS like its on-prem (sorta)
+]
+
+---
+
+.left-column[
+  ### Network
+  ###### VPC
+  ###### ELB
+  
+
+]
+.right-column[
+##ELB: "Load Balancer for Rent"
+* Allows for web scale load balancing
+* Multiple options for HTTP, TCP, UDP
+* Basic health checks, or Advanced health checks
+* Automatic Scaling
+* SSL Offload
+]
+
+---
+
+.left-column[
+  ### Network
+  ###### VPC
+  ###### ELB
+  ###### Direct Connect
+  
+
+]
+.right-column[
+##Direct Connect: "AWS, without the Internet"
+* Dedicated network connection to AWS
+* Locationa and region specific
+* Supported with certain cross connect scenarios
+]
+
+---
+
+.left-column[
+  ### Network
+  ###### VPC
+  ###### ELB
+  ###### Direct Connect
+  ###### Route 53
+  
+
+]
+.right-column[
+##Route 53: "DNS for Rent"
+* Highly Resilient DNS Services
+* Registrar and Server Services
+* Traffic Management Services
+  * Redirect based on location
+* Availability Monitoring
+  * Redirect based on availability (maybe to an ELB?)
+]
+
+---
+
+
+    </textarea>
+
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
