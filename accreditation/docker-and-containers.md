@@ -20,7 +20,7 @@ Deployed to a single server
 
 ---
 
-![fit](http://cantina.co/wp-content/uploads/2013/08/monolithic.jpg)
+![fit](https://cantina.co/images/blog/2013-08-23-scaling-your-app-with-message-oriented-decoupled-architecture/monolithic.jpg)
 
 ---
 
@@ -28,7 +28,7 @@ Deployed to a single server
 
 ---
 
-![fit](http://cantina.co/wp-content/uploads/2013/08/swimlanes.jpg)
+![fit](https://cantina.co/images/blog/2013-08-23-scaling-your-app-with-message-oriented-decoupled-architecture/swimlanes.jpg)
 
 ---
 
@@ -44,7 +44,7 @@ Deployed to a multitude of servers
 
 ---
 
-![fit](http://cantina.co/wp-content/uploads/2013/08/SOA.jpg)
+![fit](https://cantina.co/images/blog/2013-08-23-scaling-your-app-with-message-oriented-decoupled-architecture/SOA.jpg)
 
 ---
 

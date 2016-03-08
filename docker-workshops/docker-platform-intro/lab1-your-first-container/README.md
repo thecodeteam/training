@@ -200,7 +200,7 @@ If you have a problem when running `docker run` or `docker pull` where it hangs 
 - Open `http://gso.corp.emc.com/installupdatedcerts.aspx` and Download `EMCs SSL Decryption` certificate.
 - Open the file in a text editor and copy the contents
 - Run `docker-machine ssh containerhost` to SSH into the container host
-- Stop Docker by running `ps ax | grep docker` to find the process ID, and then kill it by running `sudo kill processID`
+- Stop Docker by running `sudo /etc/init.d/docker stop`
 - In the Docker container host, create a new file and copy the `EMC SSL.cer` contents into it by running `vi EMC_SSL.cer`, press `i` to be able to insert text, paste the contents you copied above, then press `:wq` to write the file and quit the text editor
 - Convert the certificate to a PEM file with `openssl x509 -in EMC_SSL.cer -out EMC_SSL.pem`
 - Update the CA certificates files to include this certificate with `cat EMC_SSL.pem | sudo tee -a /etc/ssl/certs/ca-certificates.crt`
