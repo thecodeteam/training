@@ -39,9 +39,9 @@ class: middle
 * Network
 * Storage/CDN
 * Database
-* App Services
-* Deploy/Mgmt
 * Analytics
+* App Services
+* Enterprise
 
 ---
 
@@ -375,8 +375,6 @@ Similar tools: Redis, Memcached
 
 ---
 
-
-
 .left-column[
   ### Database
   ###### RDS
@@ -397,8 +395,233 @@ Similar tools: Apache Pig, IBM Netezza, Exadata, Azure SQL Warehouse
 
 ]
 
+---
+  
+.left-column[
+  ### Analytics 
+  ###### EMR
+]
+
+.right-column[
+##EMR: "Hadoop for Rent"
+* Elastic Map Reduce
+* Automatic deployment of various Hadoop distributions
+* Automatic import of data from S3
+* Spin the cluster up and down as needed
+* Excellent use of Spot instances
+	
+Similar tools: Hadoop, CloudEra
+
+]
 
 
+
+---
+
+.left-column[
+  ### Analytics 
+  ###### EMR
+  ###### ElasticSearch
+]
+.right-column[
+##ElasticSearch: "Distributed Search for Rent"
+* Generic Search Engine
+* Great for use with log files (part of the ELK stack)
+* HA & Distributed
+* Can be used with Logstash and Kibana for Splunk replacement
+* Priced on instances running and data stored 
+	
+Similar tools: ELK, Splunk
+
+]
+
+---
+
+.left-column[
+  ### Analytics 
+  ###### EMR
+  ###### ElasticSearch
+  ###### Kinesis
+
+]
+.right-column[
+##Kinesis: "Streaming Data Endpoint"
+* Absorbs streaming data from sensors
+* Systems, sensors, IoT, etc
+* Massive data loads with Kinesis Firehose
+* Realtime Analytics
+* Maybe push data 
+
+	
+Similar tools: MongoDB, Redis
+
+]
+
+---
+
+.left-column[
+  ### Analytics 
+  ###### EMR
+  ###### ElasticSearch
+  ###### Kinesis
+  ###### Machine Learning
+
+]
+.right-column[
+##Machine Learning: "The Robots Are Aware"
+* Train a system to recognize patterns
+* Use elastic resource to train and improve models
+* Use common prebuilt models
+* Get predictions from those models quickly
+
+
+
+	
+Similar tools: MongoDB, Redis
+
+]
+
+---
+
+.left-column[
+  ### App Services 
+  ###### SNS
+
+
+]
+.right-column[
+##SNS: "Notifications for Rent"
+* Simple system to push notifications
+* Notifications to Mobile, Systems, even Lambda
+
+	
+Similar tools: Pushbullet
+
+]
+
+---
+
+.left-column[
+  ### App Services 
+  ###### SNS
+  ###### API Gateway
+
+
+]
+.right-column[
+##API Gateway: "Endpoints for Rent"
+* Simple way to listen for API requests and react
+* No server to manage/maintain.  No load balancer either.
+* Validate inputs
+* Trigger responses with further API calls, Lambda functions, etc.
+
+	
+Similar tools: Router component of Cloud Foundry
+
+]
+
+---
+
+.left-column[
+  ### App Services 
+  ###### SNS
+  ###### API Gateway
+  ###### Elastic Transcoder
+
+
+]
+.right-column[
+##Transcoder: "Video Conversion for Rent"
+* Simply convert video & audio
+* Read and write from S3
+* Priced on number of minutes
+* I use this personally for movies 😀
+
+
+	
+Similar tools: None
+
+]
+
+---
+
+.left-column[
+  ### App Services 
+  ###### SNS
+  ###### API Gateway
+  ###### Elastic Transcoder
+  ###### SES
+
+
+]
+.right-column[
+##SES: "Spamming for Rent 😬"
+* Simple way to send email from the Cloud
+* Massive volume sending
+* Trackable back to source
+* Receive email and process automatically
+
+	
+Similar tools: MailChimp, Mailgun
+
+]
+
+---
+
+.left-column[
+  ### App Services 
+  ###### SNS
+  ###### API Gateway
+  ###### Elastic Transcoder
+  ###### SES
+  ###### SQS
+
+
+]
+.right-column[
+##SQS: "Message Queues for Rent"
+* Message Queueing System
+* High Availability, and guarenteed delivery
+* VERY high scale
+* Priced per message
+
+	
+Similar tools: ZeroMQ, RabbitMQ, Redis Pub/Sub
+
+]
+
+---
+
+## Phew!
+
+But show me a picture!
+
+---
+
+class: middle
+
+<img src="http://blogs-images.forbes.com/janakirammsv/files/2015/07/API-gateway.jpg" width=100%>
+
+.footnote[source: http://www.forbes.com/sites/janakirammsv/2015/07/16/paas-vendors-watch-out-amazon-is-all-set-to-disrupt-the-market/#4e427458217e]
+
+
+---
+
+# That was cheating - something real!
+
+---
+
+<img src="http://www.conceptdraw.com/solution-park/resource/images/solutions/_aws_simple_icons/Computer-and-Network-AWS-Architecture-Diagrams-3-Tier-Futo-scalable-Web-Application-Architecture.png" width=100%>
+
+.footnote[source: http://www.conceptdraw.com/solution-park/computer-networks-aws]
+
+---
+
+As usual, if you have questions, catch us at:
+
+* Twitter: @mcowger or @jonasrosland
+* Internally: http://inside.emc.com/groups/next
+* On Slack: http://community.emccode.com
 
     </textarea>
 
