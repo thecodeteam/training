@@ -23,7 +23,7 @@ Other possible options: subversion (svn), mercurial (hg), Perforce (p4), ClearCa
 
 ---
 
-# GitHub
+#GitHub
 
 A freemium service to host Git repositories (repos). Public repos are free, private ones are still cheap.
 
@@ -34,17 +34,15 @@ Most open source projects are hosted and collaborated on here.
 
 ---
 
-# Using Git
+#Using Git
 
 (you have `git` installed, right?  It was in the prework!)
 
 ---
 
-#Clone A Repo:
+#Clone A Repo
 
-```git clone https://github.com/jonasrosland/training-repo.git```
-
----
+`git clone https://github.com/jonasrosland/training-repo.git`
 
 Now, explore that repo folder:
 
@@ -56,7 +54,7 @@ Now, explore that repo folder:
 
 #Make A Change
 
-Edit a file in notepad or textedit.  Save it.
+Edit a file in notepad or textedit. Save it.
 
 Back in the CLI, run: `git status`
 
@@ -68,7 +66,7 @@ Back in the CLI, run: `git status`
 
 ---
 
-Revert that commit:
+#Revert that commit
 
 `git reset --soft HEAD~`
 
@@ -85,13 +83,11 @@ Revert that commit:
 * Servers could be deployed like that?
 * You didn't write 'as built' documentation, because your code *was* documentation?
 
-
 ---
 
 #Real World
 
 ![](https://infocus.emc.com/wp-content/uploads/2012/08/KCG.jpg)
-
 
 ---
 

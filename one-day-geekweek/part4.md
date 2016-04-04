@@ -34,7 +34,7 @@ A place to run your cloud native applications, with varying levels of assumption
 
 ---
 
-![](images/pcf.png)
+![](https://blog.vce.com/wp-content/uploads/2016/03/WP-Pivotal-Cloud-Foundry-620x410.png)
 
 ---
 
@@ -61,7 +61,7 @@ background-image: url(http://thelibertarianrepublic.com/wp-content/uploads/2015/
 
 ---
 
-background-image: url(https://pr.netflix.com/customcontentgroup/667/Netflix_Web_Logo.png)
+background-image: url(https://d2ygrtdi28m8fp.cloudfront.net/corporateAssets/Netflix_Logo_DigitalVideo_0701.jpg)
 
 ---
 
