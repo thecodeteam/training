@@ -46,8 +46,8 @@ A single day, heavy duty, partially hands-on introduction to discussions around 
 * Source Code Management
   * Why it matters
   * Infrastructure as Code
-  * Basics of `git`:  `checkout`, forking, `commit`, `push`, pull requests
-  * *Hands On*: `clone`, edit, `commit` a repo.
+  * Basics of `git`:  `checkout`, `forking`, `commit`, `push`, `pull` requests
+  * *Hands On*: `clone`, `edit`, `commit` a repo.
   
 ---
   
