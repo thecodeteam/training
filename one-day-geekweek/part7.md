@@ -8,7 +8,7 @@
 ---
 
 
-* Neutrino & Native Hybrid Clound
+* Neutrino & Native Hybrid Cloud
   * Description coming post announcement
 * VxRail & VxRack
 
