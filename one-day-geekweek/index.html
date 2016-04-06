@@ -16,8 +16,6 @@
       }
 
 
-
-
       * {
           .box-sizing(border-box);
       }
@@ -41,20 +39,20 @@
       }
 
       a {
-          color: #80a000;
+          color: #2C95DD;
           text-decoration: none;
           font-weight: 500;
       }
 
       a:hover, a:focus {
-          color: #576d00;
+          color: #2C95DD;
           text-decoration: underline;
       }
 
       a:focus {
-          outline: 3px solid #80a000;
+          outline: 3px solid #2C95DD;
           outline-offset: 0;
-          background-color: #80a000;
+          background-color: #2C95DD;
           color: #FFF;
           text-decoration: none;
       }
@@ -78,7 +76,8 @@
 
       img {
           vertical-align: middle;
-          max-height: 600px;
+          max-height: 400px;
+		  max-width: 700px;
           margin: 0 auto 1em;
           display: block;
       }
@@ -189,8 +188,27 @@
     <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
     </script>
     <script>
+	var urlParams;
+	(window.onpopstate = function () {
+    var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = window.location.search.substring(1);
+
+    urlParams = {};
+    while (match = search.exec(query))
+       urlParams[decode(match[1])] = decode(match[2]);
+	})();
+	
+	if (urlParams["slide"]) {
+		var slide = urlParams["slide"] + '.md'
+	} else { 
+		var slide = 'agenda.md'
+	}
+	
     var slideshow = remark.create({
-      sourceUrl: 'part2.md'
+      sourceUrl: slide
     });
     </script>
   </body>

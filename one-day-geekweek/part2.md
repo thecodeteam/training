@@ -10,11 +10,11 @@
 
 ---
 
-> 18% of software projects are considered "failed", 43% "challenged"
+> 19% of software projects are considered "failed", 52% "challenged"
 
-> 39% actually succeeding
+> 29% actually succeeding (OnTime, OnBudget with a satisfactory result)
 
--- 2012 study by [The Standish Group](http://www.versionone.com/assets/img/files/CHAOSManifesto2013.pdf)
+-- 2015 study by [The Standish Group](http://www.infoq.com/articles/standish-chaos-2015)
 
 ---
 
@@ -81,7 +81,7 @@ Heavy weight methodologies work in some instances, but there are high costs, and
 * Rigidity of heavy weight methods
 * Bureaucracy introduced by heavy weight methods
 * Unpleasant surprises due to lack of visibility
-* **The myth that a well defined process is more valuable than the people who use it**
+* **The myth that a well-defined process is more valuable than the people who use it**
 
 ---
 
@@ -261,6 +261,6 @@ He or she has no management authority within the team and may never commit to wo
 # Stand Ups
 
 * Daily meeting to answer:
-  * What i did yesterday
-  * What i plan to do today
+  * What I did yesterday
+  * What I plan to do today
   * Anything preventing me from doing that (blockers)
