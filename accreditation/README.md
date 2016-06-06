@@ -4,6 +4,12 @@ This folder contains everything related to the quarterly accreditation courses c
 
 Here are direct links to the accreditation course videos on YouTube:
 
+## Q2 2016
+  - [So You Want To Build An App](https://www.youtube.com/watch?v=0DO_rY3hER8&index=5&list=PLbssOJyyvHuWiBQAg9EFWH570timj2fxt)
+  - [OVerview Of The DevOps Periodic Table](https://www.youtube.com/watch?v=Anbm2G7zpW0&index=6&list=PLbssOJyyvHuWiBQAg9EFWH570timj2fxt)
+  - [Open source is Good for Business and Humanity](https://www.youtube.com/watch?v=Pxn6YX8FjCM&index=7&list=PLbssOJyyvHuWiBQAg9EFWH570timj2fxt)
+  - [Overview of AWS Services](https://www.youtube.com/watch?v=JopakKD3r8U&index=8&list=PLbssOJyyvHuWiBQAg9EFWH570timj2fxt)
+
 ## Q1 2016
   - [Source Control with Git](https://www.youtube.com/watch?v=NPEy4F_j5Hc&index=2&list=PLbssOJyyvHuWiBQAg9EFWH570timj2fxt)
   - [Object Storage](https://www.youtube.com/watch?v=1utJnYL28fo&index=4&list=PLbssOJyyvHuWiBQAg9EFWH570timj2fxt)
