@@ -127,7 +127,7 @@ Create demos and appliances
 
 # For more information
 
-haschicorp.com
+hashicorp.com
 
 vagrantup.com
 
