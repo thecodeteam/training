@@ -5,6 +5,16 @@
 
 ---
 
+# What is REX-Ray?
+
+ - An Open Source project by EMC {code}
+ - Focused on bringing storage and containers closer together
+ - A leading storage project in the Docker ecosystem
+
+![fit, right](images/rexray-logo.jpg)
+
+---
+
 # Problem statement
 
  - Containers are mostly seen as stateless
@@ -19,7 +29,6 @@
  - Be able to handle more than one storage subsystem
  - Integrate and follow Docker’s development cycle
  - Open Source from the start
-
 
 ---
 
@@ -51,8 +60,6 @@
    - EMC (ScaleIO, XtremIO, VMAX, Isilon)
    - VirtualBox
 
-![fit, right](images/rexray-logo.jpg)
-
 ---
 
 # Basic possibilities
@@ -67,15 +74,15 @@
 
 ---
 
+# Demo!
+
+---
+
 # REX-Ray benefits
 
  - Gives you the possibility to use any storage platform, and even multiple platforms at the same time
  - Always in sync with Docker’s development cycle
  - Integrated with Docker, Mesos, Marathon and Kubernetes
-
----
-
-# Demo!
 
 ---
 
